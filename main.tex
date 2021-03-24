@@ -1,0 +1,379 @@
+% INITIAL CONFIGURATION
+\documentclass[a4paper, 10pt, twoside]{book}
+
+
+
+%\usepackage[grid]{eso-pic} % Uncomment this to display a grid over the whole page
+\usepackage{titlesec} % Format title, chapter, sections etc
+                      % check out: https://ctan.org/pkg/titlesec?lang=en
+\usepackage{minitoc}
+\usepackage{lscape}
+\usepackage{afterpage}
+\usepackage{mathtools}
+\usepackage{epigraph}
+\usepackage{lipsum}
+
+% Set the depth and numbering
+% for table of contents (toc)
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{2}
+
+
+% Define function for making first letter bigger
+\font\Cal=cmsy10 at 25pt
+\textwidth=.5\textwidth
+\def\pstart#1{\noindent\smash{\lower3ex\hbox{\llap{\Cal#1}}\hskip-.2em}
+  \parshape=3 1.5em \dimexpr\hsize-1.5em 2em \dimexpr\hsize-2em 0pt \hsize}
+  % \parshape x (=number of lines) y (=amount of indent) i (=textwidth) [yi, yi,...]
+  
+% Epigraph settings
+\renewcommand{\textflush}{flushright}
+\setlength{\epigraphrule}{0pt}
+%
+
+
+
+%%% FORMAT THE STYLE OF CHAPTERS, SECTIONS ETC %%%
+
+\titleformat{\chapter}[display]
+{\large}
+{\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+{2ex}
+{\LARGE\bfseries\filleft}
+[\vspace{2ex}%
+\titlerule]
+
+\titleformat{\section}[block]
+{\filcenter\large
+\addtolength{\titlewidth}{2pc}%
+\titleline*[c]{\titlerule*[.6pc]{\tiny\textbullet}}%
+\addvspace{6pt}%
+\normalfont\bfseries\sffamily}
+{\thesection}{1em}{}
+\titlespacing{\section}
+{5pc}{*2}{*2}[5pc]
+
+\titleformat{\subsection}[block]
+{\normalfont\sffamily}
+{\thesubsection}{.5em}{\titlerule\\[.8ex]\bfseries}
+
+
+\titleformat{\subsubsection}[wrap]
+{\normalfont\fontseries{b}\selectfont\filright}
+{\thesubsubsection.}{.5em}{}
+\titlespacing{\subsubsection}
+{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+%%% END OF FORMATING %%%
+
+
+\usepackage[              % Left and right margins
+    DIV=18,               % You can play with these numbers for a better
+    BCOR=1mm,             % reference look into KOMA-Script CTAN manual
+    headinclude=true,
+    footinclude=false,
+    paper=A4
+    ]{typearea}
+    
+% BASIC THESIS INFORMATION
+\def\title{UNDERSTANDING THE MASS SPECTRUM OF NEUTRON STARS}
+\def\thesisauthor{Savvas Chanlaridis}
+
+
+% commands below work only for twoside option of \documentclass
+\makeatletter
+\if@twoside
+    \newlength{\textblockoffset}
+    \setlength{\textblockoffset}{10mm}
+    \addtolength{\hoffset}{\textblockoffset}
+    \addtolength{\evensidemargin}{-2.0\textblockoffset}
+\fi
+\makeatother
+
+% PACKAGES
+\usepackage{amsmath,amssymb,mathrsfs}  % Basic math packages
+\usepackage{subfiles}
+\usepackage{natbib}                    % A&A bibliography style
+\bibpunct{(}{)}{;}{a}{}{,}
+\usepackage{fancyhdr, graphicx}
+\usepackage{upgreek}                   % More greek letters
+\usepackage{enumerate}
+\usepackage{commath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{blindtext}
+
+% to know the page width and adjust the image size!
+\usepackage{printlen} % \uselengthunit{in}\printlength{\textwidth}
+
+% TABLE PACKAGES
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{tabular}{\small}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% IMAGES PACAKGES
+\usepackage{graphicx}
+\usepackage[font=small]{caption}
+\newtheorem{theorem}{Theorem}
+\usepackage{subcaption}
+
+% TIKZ & PGFPLOTS
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+%\pgfplotsset{compat=1.14}
+\usetikzlibrary{
+    calc,
+    patterns,
+    circuits.logic.US,
+    circuits.ee.IEC,
+    intersections,
+    angles,
+    quotes,
+    arrows,
+    shapes,
+    }
+
+% DEDICATION PAGE CONFIGURATION
+\newenvironment{dedication}
+  {\clearpage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \itshape
+   \raggedleft}
+  {\par
+   \vspace{\stretch{3}}
+   \clearpage}
+   
+% WRITE GREEK TEXT
+\usepackage[greek,english]{babel}
+%\selectlanguage{greek}
+\languageattribute{greek}{polutoniko}
+
+\newenvironment{mygreek}
+  {\clearpage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \itshape
+   \raggedleft}
+  {\par
+   \vspace{\stretch{3}}
+   \clearpage}
+
+% Inline enumerated lists
+\usepackage[inline]{enumitem}
+\usepackage{pdfpages}
+%\includepdfset{offset=0.7cm -0cm}
+%\usepackage[fulladjust]{marginnote}
+
+% PDF CONFIGURATION
+\definecolor{xlinkcolor}{cmyk}{1,1,0,0}
+\usepackage{hyperref}
+\hypersetup{
+	breaklinks,
+    pdffitwindow=true,
+    pdfstartview={FitH},
+    pdftitle={MSc Thesis},                    % TITLE
+    pdfauthor={Savvas Chanlaridis},          % AUTHOR
+    pdfsubject={\title},                      % DOCUMENT SUBJECT
+    pdfcreator={Savvas Chanlaridis},            % CREATOR
+    pdfproducer={\thesisauthor},              % PRODUCER
+    pdfkeywords={Astronomy, Astrophysics},
+    pdfnewwindow=true,
+    colorlinks=true,                          % COMMENT FOR BLACK LINKS
+    linkcolor=xlinkcolor,
+    citecolor=xlinkcolor,
+    urlcolor=blue
+    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{definitions.tex}
+
+\begin{document}
+    \frontmatter  % front and main matter to make roman numbers in between.
+    
+
+
+    % FIRST PAGE TITLE
+    \pdfbookmark[0]{Cover}{title}
+    
+    \begin{titlepage}
+    	\begin{figure}[!t]
+        
+    		\begin{minipage}{.5\textwidth}    
+            	\includegraphics[scale=0.2]{figures/iaforth_logo.jpeg}
+    		\end{minipage}%
+    		\begin{minipage}{0.5\textwidth}
+        		\hspace{2.5cm} \includegraphics[scale=0.21]{figures/uoc_logo.png}
+		    \end{minipage}
+	\end{figure}
+	
+        \begin{center} 
+            \vspace*{2.5cm}
+            \Large \title 
+            \vspace{5cm}
+            
+            \normalsize
+            A dissertation submitted in partial fulfillment of the \\
+            \vspace{0.5cm} 
+            requirements for the degree \\
+            \vspace{0.5cm}
+            of \\
+            \vspace{0.5cm}
+            DOCTOR OF PHILOSOPHY \\
+            \vspace{0.5cm}
+            in \\
+            \vspace{0.5cm}
+            ASTROPHYSICS \\
+            \vspace{0.5cm}
+            by \\
+            \vspace{0.5cm}
+            Savvas Chanlaridis \\
+            \vspace{4cm}
+            \date{}{\today}
+        \end{center}
+    \end{titlepage}
+
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+    
+% SIGNATURE PAGE
+    \newpage
+    \thispagestyle{empty}
+    %\pdfbookmark[0]{Statement}{statement}
+    \par\vspace*{\fill}
+    \noindent I hereby declare that this thesis was formulated by myself and that no sources or tools other than those cited were used.
+    \vspace{0.8cm}
+
+    \begin{center}
+        \begin{tabular}{c@{\hskip 1in}c}
+            \makebox[2in]{\hrulefill} & \makebox[2in]{\hrulefill}\\
+            Date & Signature\\
+        \end{tabular}
+    \end{center}
+    \vspace{1cm}
+
+    \noindent 1. Gutachter: Prof. Dr. Norbert Langer  \\
+    \noindent 2. Gutachter: Prof. Dr. Michael Kramer
+
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+
+    % DEDICATION
+    \begin{dedication}
+        \pdfbookmark[0]{Dedication}{dedication}
+        To my Loved Ones
+    \end{dedication}
+
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+
+    
+    % % GREEK TEXT
+    % \begin{flushright}
+    %     \begin{mygreek}
+    %       % \pdfbookmark[0]{}{mygreek}
+    %         \selectlanguage{greek}
+        
+    %         %ἐν πᾶσι γὰρ τοῖς φυσικοῖς ἔνεστί τι θαυμαστόν \\
+    %         >en p~asi g`ar to~is fusiko~is >'enest'i ti jaumast'on \\
+    %         --Αριστοτέλης, 384-322 π.Χ. \\
+    %         \selectlanguage{english}
+    %         \vspace{0.5cm}
+    %         In all things of nature there is something of the marvelous \\
+    %         --Aristotle, 384-322 BC
+    %     \end{mygreek}
+    % \end{flushright}
+
+
+    % \newpage  % Inserting empty page
+    % \mbox{}
+    % \thispagestyle{empty}
+
+    % ABSTRACT
+    \subfile{abstract/abstract}
+    \addcontentsline{toc}{chapter}{Abstract}
+    
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+
+    % ACKNOWLEDGMENTS
+    \subfile{acknowledgements/acknowledgements}
+    \addcontentsline{toc}{chapter}{Acknowledgements}
+    
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
+
+    % TABLE OF CONTENT
+{   \cleardoublepage
+    \phantomsection
+    
+    \addcontentsline{toc}{chapter}{Contents}
+    
+    % CHANGE COLOR LINK FOR TOC ONLY
+
+ \hypersetup{linkcolor=black, pdfborder=0 0 1}
+ \dominitoc
+  \tableofcontents
+  \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
+}
+
+    % LIST OF FIGURES
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Figures}
+{
+	\hypersetup{linkcolor=black, pdfborder=0 0 1, citecolor=black}
+    \listoffigures 
+    \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
+}
+
+%     % LIST OF TABLES
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Tables}
+    
+{
+	\hypersetup{linkcolor=black, pdfborder=0 0 1, citecolor=black}
+    \listoftables
+    \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
+    \newpage  % Inserting empty page
+  	\mbox{}
+  	\thispagestyle{empty}
+}
+	
+
+   
+
+
+    \mainmatter  % front and main matter to make roman numbers in between
+
+    % BODY
+    \subfile{chapters/chapter1/chapter1}
+    \subfile{chapters/chapter2/chapter2}
+    \subfile{chapters/chapter3/chapter3}
+    % \subfile{chapters/chapter4/chapter4}
+    % \subfile{chapters/chapter5/chapter5}
+
+
+    % APPENDICES
+    %\appendix
+    %\subfile{appendices/appendix1/appendix1}
+    %\subfile{appendices/appendix2/appendix2}
+    %\subfile{appendices/appendix3/appendix3}
+
+    % REFERENCES
+    % If you are using a windows machine and the bibliography doesn't work
+    % remove the extension for .bst and .bib files here!
+
+    % \bibliographystyle{bibliography/bibstyle_apj.bst}
+    % \bibliography{bibliography/bibfile_thesis}
+    % \addcontentsline{toc}{chapter}{Bibliography}
+
+
+\end{document}
