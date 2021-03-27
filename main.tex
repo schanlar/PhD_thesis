@@ -34,7 +34,14 @@
 
 
 %%% FORMAT THE STYLE OF CHAPTERS, SECTIONS ETC %%%
+% Add a horizontal line in the header
+\newpagestyle{main}{%
+  \sethead[\thepage][][\chaptertitle]{\thesection\ \sectiontitle}{}{\thepage}
+  \headrule
+}
+\pagestyle{main}
 
+% Display format of the chapter
 \titleformat{\chapter}[display]
 {\large}
 {\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
@@ -43,6 +50,7 @@
 [\vspace{2ex}%
 \titlerule]
 
+% Display format of the section
 \titleformat{\section}[block]
 {\filcenter\large
 \addtolength{\titlewidth}{2pc}%
@@ -53,11 +61,12 @@
 \titlespacing{\section}
 {5pc}{*2}{*2}[5pc]
 
+% Display format of the subsection
 \titleformat{\subsection}[block]
 {\normalfont\sffamily}
 {\thesubsection}{.5em}{\titlerule\\[.8ex]\bfseries}
 
-
+% Display format of the subsubsection
 \titleformat{\subsubsection}[wrap]
 {\normalfont\fontseries{b}\selectfont\filright}
 {\thesubsubsection.}{.5em}{}
@@ -173,7 +182,7 @@
 	breaklinks,
     pdffitwindow=true,
     pdfstartview={FitH},
-    pdftitle={MSc Thesis},                    % TITLE
+    pdftitle={PhD Thesis},                    % TITLE
     pdfauthor={Savvas Chanlaridis},          % AUTHOR
     pdfsubject={\title},                      % DOCUMENT SUBJECT
     pdfcreator={Savvas Chanlaridis},            % CREATOR
@@ -204,14 +213,14 @@
             	\includegraphics[scale=0.2]{figures/iaforth_logo.jpeg}
     		\end{minipage}%
     		\begin{minipage}{0.5\textwidth}
-        		\hspace{2.5cm} \includegraphics[scale=0.21]{figures/uoc_logo.png}
+        		\hspace{2.0cm} \includegraphics[scale=0.21]{figures/uoc_logo.png}
 		    \end{minipage}
 	\end{figure}
 	
         \begin{center} 
             \vspace*{2.5cm}
-            \Large \title 
-            \vspace{5cm}
+            \LARGE \bfseries \title 
+            \vspace{3cm}
             
             \normalsize
             A dissertation submitted in partial fulfillment of the \\
@@ -220,7 +229,7 @@
             \vspace{0.5cm}
             of \\
             \vspace{0.5cm}
-            DOCTOR OF PHILOSOPHY \\
+            DOCTOR OF PHILOSOPHY (Ph.D.) \\
             \vspace{0.5cm}
             in \\
             \vspace{0.5cm}
@@ -242,20 +251,54 @@
     \newpage
     \thispagestyle{empty}
     %\pdfbookmark[0]{Statement}{statement}
-    \par\vspace*{\fill}
-    \noindent I hereby declare that this thesis was formulated by myself and that no sources or tools other than those cited were used.
-    \vspace{0.8cm}
-
     \begin{center}
-        \begin{tabular}{c@{\hskip 1in}c}
-            \makebox[2in]{\hrulefill} & \makebox[2in]{\hrulefill}\\
-            Date & Signature\\
-        \end{tabular}
+        UNIVERSITY OF CRETE \\
+        \vspace{0.25cm}
+        DEPARTMENT OF PHYSICS \\
+        \vspace{0.5cm}
+        \textbf{Understanding the Mass Spectrum of Neutron Stars} \\
+        \vspace{0.5cm}
+        PhD Dissertation Presented \\
+        \vspace{0.5cm}
+        by \textbf{Savvas Chanlaridis} \\
+        \vspace{0.5cm}
+        in Partial Fulfillment of the Requirements \\
+        \vspace{0.5cm}
+        for the Degree of Doctor of Philosophy
     \end{center}
-    \vspace{1cm}
-
-    \noindent 1. Gutachter: Prof. Dr. Norbert Langer  \\
-    \noindent 2. Gutachter: Prof. Dr. Michael Kramer
+     \vspace{0.8cm}
+     
+    \noindent \textbf{APPROVED BY}:\\
+    \vspace*{1.5cm}
+    
+    \noindent\hrulefill \\
+    \noindent\textbf{Author}: Savvas Chanlaridis \\
+    \vspace*{1cm}
+    
+    \noindent\hrulefill \\
+    \noindent\textbf{Supervisor}: Dr. Ioannis Antoniadis, Associate Researcher, University of Crete, IA-FORTH \\
+    \vspace*{1cm}    
+    
+    \noindent\hrulefill \\
+    \noindent\textbf{Committee Member}: \\
+    \vspace*{1cm}    
+    
+    \noindent\hrulefill \\
+    \noindent\textbf{Committee Member}: \\
+    \vspace*{1cm}    
+    
+    \noindent\hrulefill \\
+    \noindent\textbf{Committee Member}: \\
+    \vspace*{1cm}    
+    
+    \noindent\hrulefill \\
+    \noindent\textbf{Department Chairman}: Dr. Alexandros Georgakilas, Professor, University of Crete \\
+    \vspace*{1cm}  
+    
+    \begin{center}
+        \vspace*{\fill}
+        Heraklion, \date{}{\today}
+    \end{center}
 
     \newpage  % Inserting empty page
     \mbox{}
