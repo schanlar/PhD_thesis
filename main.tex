@@ -3,27 +3,37 @@
 
 
 
-%\usepackage[grid]{eso-pic} % Uncomment this to display a grid over the whole page
 \usepackage{titlesec} % Format title, chapter, sections etc
                       % check out: https://ctan.org/pkg/titlesec?lang=en
 \usepackage{minitoc}
 \usepackage{lscape}
 \usepackage{afterpage}
 \usepackage{mathtools}
+\usepackage{amsmath}
 \usepackage{epigraph}
 \usepackage{lipsum}
+\usepackage[detect-none]{siunitx}
+\sisetup{range-phrase = \text{--}}
+\sisetup{group-separator = {,}}
+\usepackage{xspace}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{txfonts}
+\usepackage{multirow}
+\usepackage{xcolor}
 
 % Set the depth and numbering
 % for table of contents (toc)
-\setcounter{tocdepth}{5}
+\setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
 
 
 % Define function for making first letter bigger
-\font\Cal=cmsy10 at 25pt
+\font\Cal=cmsy10 at 40pt
 \textwidth=.5\textwidth
 \def\pstart#1{\noindent\smash{\lower3ex\hbox{\llap{\Cal#1}}\hskip-.2em}
-  \parshape=3 1.5em \dimexpr\hsize-1.5em 2em \dimexpr\hsize-2em 0pt \hsize}
+  \parshape=3 2.0em \dimexpr\hsize-1.5em 2em \dimexpr\hsize-2em 0pt \hsize}
   % \parshape x (=number of lines) y (=amount of indent) i (=textwidth) [yi, yi,...]
   
 % Epigraph settings
@@ -32,7 +42,8 @@
 %
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% START OF FORMATING %%%
 %%% FORMAT THE STYLE OF CHAPTERS, SECTIONS ETC %%%
 % Add a horizontal line in the header
 \newpagestyle{main}{%
@@ -51,15 +62,15 @@
 \titlerule]
 
 % Display format of the section
-\titleformat{\section}[block]
-{\filcenter\large
-\addtolength{\titlewidth}{2pc}%
-\titleline*[c]{\titlerule*[.6pc]{\tiny\textbullet}}%
-\addvspace{6pt}%
-\normalfont\bfseries\sffamily}
-{\thesection}{1em}{}
-\titlespacing{\section}
-{5pc}{*2}{*2}[5pc]
+% \titleformat{\section}[block]
+% {\filcenter\large
+% \addtolength{\titlewidth}{2pc}%
+% \titleline*[c]{\titlerule*[.6pc]{\tiny\textbullet}}%
+% \addvspace{6pt}%
+% \normalfont\bfseries\sffamily}
+% {\thesection}{1em}{}
+% \titlespacing{\section}
+% {5pc}{*2}{*2}[5pc]
 
 % Display format of the subsection
 \titleformat{\subsection}[block]
@@ -74,7 +85,7 @@
 {12pc}{1.5ex plus .1ex minus .2ex}{1pc}
 
 %%% END OF FORMATING %%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[              % Left and right margins
     DIV=18,               % You can play with these numbers for a better
@@ -99,6 +110,7 @@
 \fi
 \makeatother
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PACKAGES
 \usepackage{amsmath,amssymb,mathrsfs}  % Basic math packages
 \usepackage{subfiles}
@@ -108,8 +120,6 @@
 \usepackage{upgreek}                   % More greek letters
 \usepackage{enumerate}
 \usepackage{commath}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{blindtext}
 
 % to know the page width and adjust the image size!
 \usepackage{printlen} % \uselengthunit{in}\printlength{\textwidth}
@@ -142,6 +152,8 @@
     arrows,
     shapes,
     }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % DEDICATION PAGE CONFIGURATION
 \newenvironment{dedication}
@@ -197,7 +209,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{definitions.tex}
+\newcommand{\seriesone}{\textsc{Series\,I}\xspace} %Series I
+\newcommand{\seriestwo}{\textsc{Series\,II}\xspace} %Series II
 
+
+
+
+
+
+%%% END OF PREAMBLE %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
     \frontmatter  % front and main matter to make roman numbers in between.
     
@@ -307,7 +328,7 @@
     % DEDICATION
     \begin{dedication}
         \pdfbookmark[0]{Dedication}{dedication}
-        To my Loved Ones
+        In loving memory of my mother
     \end{dedication}
 
     \newpage  % Inserting empty page
@@ -405,8 +426,8 @@
 
 
     % APPENDICES
-    %\appendix
-    %\subfile{appendices/appendix1/appendix1}
+    \appendix
+    \subfile{appendices/appendix1/appendix1}
     %\subfile{appendices/appendix2/appendix2}
     %\subfile{appendices/appendix3/appendix3}
 
@@ -414,9 +435,9 @@
     % If you are using a windows machine and the bibliography doesn't work
     % remove the extension for .bst and .bib files here!
 
-    % \bibliographystyle{bibliography/bibstyle_apj.bst}
-    % \bibliography{bibliography/bibfile_thesis}
-    % \addcontentsline{toc}{chapter}{Bibliography}
+    \bibliographystyle{bibliography/bibstyle_apj.bst}
+    \bibliography{bibliography/bibfile_thesis}
+    \addcontentsline{toc}{chapter}{Bibliography}
 
 
 \end{document}
