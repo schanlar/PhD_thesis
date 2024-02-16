@@ -1,6 +1,12 @@
 % INITIAL CONFIGURATION
 \documentclass[a4paper, 10pt, twoside]{book}
 
+%%% FOR INLINE ENUMERATION %%%%
+\newcounter{inlineenum}
+\renewcommand{\theinlineenum}{\alph{inlineenum}}
+\newcommand{\inlineitem}[1][]{\refstepcounter{inlineenum}{(\theinlineenum)~#1}}
+\newcommand{\resetinlineenum}{\setcounter{inlineenum}{0}}
+%%% %%%%
 
 
 \usepackage{titlesec} % Format title, chapter, sections etc
@@ -191,7 +197,7 @@
 \definecolor{xlinkcolor}{cmyk}{1,1,0,0}
 \usepackage{hyperref}
 \hypersetup{
-	breaklinks,
+    breaklinks,
     pdffitwindow=true,
     pdfstartview={FitH},
     pdftitle={PhD Thesis},                    % TITLE
@@ -313,7 +319,7 @@
     \vspace*{1cm}    
     
     \noindent\hrulefill \\
-    \noindent\textbf{Department Chairman}: Dr. Alexandros Georgakilas, Professor, University of Crete \\
+    \noindent\textbf{Department Chairman}: Dr. Andreas Zezas, Professor, University of Crete \\
     \vspace*{1cm}  
     
     \begin{center}
@@ -381,7 +387,7 @@
     
     % CHANGE COLOR LINK FOR TOC ONLY
 
- \hypersetup{linkcolor=black, pdfborder=0 0 1}
+ \hypersetup{linkcolor=black, pdfborder={0 0 0}} % Use pdfborder={0 0 1} for a red border to appear around a link
  \dominitoc
   \tableofcontents
   \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
@@ -392,7 +398,7 @@
     \phantomsection
     \addcontentsline{toc}{chapter}{List of Figures}
 {
-	\hypersetup{linkcolor=black, pdfborder=0 0 1, citecolor=black}
+	\hypersetup{linkcolor=black, pdfborder={0 0 0}, citecolor=black}
     \listoffigures 
     \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
 }
@@ -403,7 +409,7 @@
     \addcontentsline{toc}{chapter}{List of Tables}
     
 {
-	\hypersetup{linkcolor=black, pdfborder=0 0 1, citecolor=black}
+	\hypersetup{linkcolor=black, pdfborder={0 0 0}, citecolor=black}
     \listoftables
     \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
     \newpage  % Inserting empty page
@@ -428,8 +434,8 @@
     % APPENDICES
     \appendix
     \subfile{appendices/appendix1/appendix1}
-    %\subfile{appendices/appendix2/appendix2}
-    %\subfile{appendices/appendix3/appendix3}
+    \subfile{appendices/appendix2/appendix2}
+    \subfile{appendices/appendix3/appendix3}
 
     % REFERENCES
     % If you are using a windows machine and the bibliography doesn't work
