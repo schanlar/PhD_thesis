@@ -41,7 +41,7 @@
 
     \begin{figure}[h!]
         \centering
-        \includegraphics[scale=0.25]{figures/chapter1/hrd_gaia.png}
+        \includegraphics[scale=1.1]{figures/chapter1/hrd_gaia.jpg}
         \caption{Hertzsprung-Russell diagram obtained by a selection of stars from the second release catalogue of ESA's Gaia satellite. Copyright: \href{https://sci.esa.int/web/gaia/-/60198-gaia-hertzsprung-russell-diagram}{ESA/Gaia/DPAC}.}
         \label{fig:hrd_gaia}
     \end{figure}
@@ -49,10 +49,8 @@
     Upon a visual inspection of Fig.~\ref{fig:hrd_gaia}, it becomes evident that stars are not randomly distributed on the H-R diagram but instead cluster, forming distinct structures primarily based on their masses, chemical composition, and evolutionary stage. The most prominent of these structures is a large collection of stars forming a diagonal stripe known as the \textit{``main sequence''}. Above the main sequence lies another feature referred to as the \textit{``giant branch''}, while below the main sequence, stars are distributed on the left-hand side, forming a group of objects known as \textit{``white dwarfs''}. The presence of these structures on the H-R diagram implies the existence of underlying physical laws governing observational characteristics such as the surface luminosity and temperature, which will hopefully become apparent in the following sections.
 
     
-
-    \newpage
     \subsection{Stars in Isolation: From Birth to Death}
-    This section provides a broad overview of the life cycle of individual stars, encompassing their birth through their eventual demise. While we will touch upon the processes occurring within the stellar interior, such as energy generation mechanisms, the significant impact of other factors, such as mixing and rotation, on stellar evolution will be explored in more detail in a subsequent section.
+    This section provides a broad overview of the life cycle of individual stars, encompassing their birth through their eventual demise. While we will touch upon the processes occurring within the stellar interior, such as energy generation mechanisms and mixing, the significant impact of these factors on stellar evolution cannot be fully appreciated within the scope of this section. For this reason, we will provide references to additional resources whenever deemed necessary.
     
     \subsubsection{Star formation}
     The life of a star is the story of a cosmic tug-of-war between gravity and the star's internal pressure. This story begins within giant molecular clouds, an agglomeration of interstellar gas and dust. These molecular clouds are often composed of hydrogen molecules, helium, and trace amounts of other elements\footnote{In astronomy, elements heavier than helium are commonly grouped under the term ``metals'', although this classification doesn't necessarily reflect their chemical properties. The abundance of these heavier elements within celestial structures, such as stars, is quantified by the term ``metallicity''.}, serving as the cosmic nurseries where stars are born (see Fig.~\ref{fig:rho_ophiouchi}).
@@ -60,7 +58,7 @@
     \begin{equation}\label{eq:virial}
         2E_\mathrm{kin} + E_\mathrm{gr} = 0,
     \end{equation}
-    where $E_\mathrm{kin}$ is the kinetic energy and $E_\mathrm{gr}$ is the gravitational potential of the system. For as long as this equation holds true, the system will neither expand nor collapse. If the kinetic energy term dominates, then the thermal pressure overcomes the gravitational attraction and the system will expand. On the other hand, if the gravitational potential term dominates, the system will contract on the free-fall (dynamic) timescale:
+    where $E_\mathrm{kin}$ is the kinetic energy and $E_\mathrm{gr}$ is the gravitational potential energy of the system. For as long as this equation holds true, the system will neither expand nor collapse. If the kinetic energy term dominates, then the thermal pressure overcomes the gravitational attraction and the system will expand. On the other hand, if the gravitational potential term dominates, the system will contract on the free-fall (dynamic) timescale:
     \begin{equation}\label{eq:dynamical_timescale}
         \tau_\mathrm{ff} \propto (G\bar{\rho})^{-1/2},
     \end{equation}
@@ -69,11 +67,11 @@
     \begin{figure}[t]
         \centering
         \includegraphics[scale=0.4]{figures/chapter1/Rho_Ophiuchi_cloud_complex.png}
-        \caption{The $\rho$-Ophiouchi cloud complex, one of the closest star-forming regions to our Solar System, located at the constellation of Ophiuchus. The photograph is a compilation of distinct exposures gathered by the James Webb Space Telescope through the utilization of the NIRCam instrument. Copyright: \href{https://webbtelescope.org/contents/media/images/2023/128/01H449193V5Q4Q6GFBKXAZ3S03}{NASA, ESA, CSA, STScI, Klaus Pontoppidan (STScI)}.}
+        \caption{The $\rho$-Ophiouchi cloud complex, one of the closest star-forming regions to our Solar System, located at the constellation of Ophiuchus. The photograph is a compilation of distinct exposures gathered by the James Webb Space Telescope through the utilization of the NIRCam instrument. Credit: \href{https://webbtelescope.org/contents/media/images/2023/128/01H449193V5Q4Q6GFBKXAZ3S03}{NASA, ESA, CSA, STScI, Klaus Pontoppidan (STScI)}.}
         \label{fig:rho_ophiouchi}
     \end{figure}
 
-    By applying the virial theorem, it can be shown that there exists a critical mass threshold, known as the ``Jeans mass'' ($M_J$), which characterizes the point at which self-gravity becomes dominant, overcoming thermal pressure. The Jeans mass is expressed by the formula:
+    By applying the virial theorem, it can be shown that there exists a critical mass threshold, known as the ``\textit{Jeans mass}'' ($M_J$), which characterizes the point at which self-gravity becomes dominant, overcoming thermal pressure. The Jeans mass is expressed by the formula:
     \begin{equation}\label{eq:jeans_mass}
         M_J \approx \left(\frac{3}{4\pi \rho}\right)^{1/2} \left(\frac{5kT}{G\mu m_H }\right)^{3/2}, 
     \end{equation}
@@ -155,7 +153,7 @@
     \begin{figure}[ht!]
         \centering
         \includegraphics[scale=0.4]{figures/chapter1/sun_granulation.png}
-        \caption{A captivating view of the Sun's photosphere revealing distinct granulations scattered across its surface. In the center, a large black sunspot stands out, its darkness attributed to a lower temperature caused by intense magnetic fields that disrupt the convective transfer of heat. This stark contrast highlights the dynamic interplay of convective processes and magnetic fields on the solar surface. Copyright: \href{https://nso.edu/}{National Solar Observatory}.}
+        \caption{A captivating view of the Sun's photosphere revealing distinct granulations scattered across its surface. In the center, a large black sunspot stands out, its darkness attributed to a lower temperature caused by intense magnetic fields that disrupt the convective transfer of heat. This stark contrast highlights the dynamic interplay of convective processes and magnetic fields on the solar surface. Credit: \href{https://nso.edu/}{NSO/AURA/NSF}.}
         \label{fig:sun_granulation}
     \end{figure}
 
@@ -169,7 +167,7 @@
     \end{equation}
     Here, $\nabla_\mathrm{rad}$ represents the radiative temperature gradient describing the logarithmic temperature variation with depth when energy is transported by radiation, $\nabla_\mathrm{ad}$ is the adiabatic temperature gradient defined similarly to $\nabla_\mathrm{rad}$ but for adiabatic compression or expansion, and $\nabla_\mu$ is the composition gradient accounting for variations in chemical composition within the medium.
     
-    Modeling convection in astrophysical contexts is a notoriously difficult problem and poses significant challenges due to the complex, turbulent nature of convective flows. The inherent non-linearity and multi-scale behavior of convective processes make their accurate representation in numerical simulations demanding. One widely employed approach is the \textit{Mixing Length Theory} (MLT), which simplifies convective dynamics by introducing a characteristic length scale to describe the convective cells' average size and behavior. While MLT has been successful in certain applications, it has limitations in capturing the full complexity of convection, especially in regions with varying conditions. As a result, convection is often treated as a diffusive process in computational models, wherein the convective transport of energy, momentum, and chemical species is approximated using diffusion equations. This simplification facilitates numerical simulations but may overlook finer details of convective behavior, introducing a lot of uncertainties in our stellar evolution models.
+    Modeling convection in astrophysical contexts is a notoriously difficult problem and poses significant challenges due to the complex, turbulent nature of convective flows. The inherent non-linearity and multiscale behavior of convective processes make their accurate representation in numerical simulations demanding. One widely employed approach is the \textit{Mixing Length Theory} (MLT), which simplifies convective dynamics by introducing a characteristic length scale to describe the convective cells' average size and behavior. While MLT has been successful in certain applications, it has limitations in capturing the full complexity of convection, especially in regions with varying conditions. As a result, convection is often treated as a diffusive process in computational models, wherein the convective transport of energy, momentum, and chemical species is approximated using diffusion equations. This simplification facilitates numerical simulations but may overlook finer details of convective behavior, introducing a lot of uncertainties in our stellar evolution models.
 
     Another mixing process observed in stellar interiors is called \textit{semi-convection}, which is characterized by an intermediate state between full convection and radiative diffusion. This phenomenon occurs in regions where convective instability interacts with stratified layers, i.e. in regions that are stable to Ledoux criterion but unstable to Schwarzschild \citep[see][]{spruit:semiconvection}. Semi-convection contributes to the transport of both chemical elements and angular momentum, influencing the internal rotation profiles of stars and impacting their overall evolution.
 
@@ -199,7 +197,7 @@
     
 
     \subsection{Stellar Remnants in a Nutshell}\label{sec:ch1:remnants}
-    Following the cessation of nuclear fusion, stars transition into one of three end states: white dwarfs, neutron stars, or black holes, depending on their initial mass and subsequent evolutionary pathways. In what follows, we briefly discuss the characteristics and formation mechanisms of these stellar remnants.
+    Following the cessation of nuclear fusion, stars transition into one of three possible end states: white dwarfs, neutron stars, or black holes, depending on their initial mass and subsequent evolutionary pathways. This section provides an overview of the distinct characteristics and the mechanisms behind the formation of these stellar remnants. Notably, while all three end states are introduced here, a comprehensive examination of neutron stars---the primary subject of this dissertation---is reserved for a subsequent section. Here, we lay the groundwork for that detailed discussion, setting the stage for an in-depth exploration of neutron stars' composition, equation of state, and internal structure, alongside the challenges and uncertainties that accompany these topics, in Sect.~\ref{sec:ch1:ns_struct}.
     
     \subsubsection{White Dwarfs}
     White dwarfs are formed from the remnants of stars that have exhausted their nuclear fuel. As presented in the previous section, a star burns through its hydrogen in a process known as nuclear fusion, creating helium and later heavier elements up to iron in more massive stars. Once the nuclear fuel is depleted, and if the star's mass is below approximately $8\msun$, it will not undergo a supernova explosion. Instead, it sheds its outer layers, creating a planetary nebula, while the core contracts under gravity. This core remnant is what we call a white dwarf. It is characterized by its incredibly dense composition, primarily consisting of carbon and oxygen, which results from the fusion of helium in its final burning phase.  In some cases, particularly in more massive white dwarfs that have a mass closer to the Chandrasekhar limit (see below), heavier elements like neon and magnesium can be found.
@@ -232,7 +230,7 @@
 
 
     \subsubsection{Neutron Stars \& Pulsars}
-    Neutron stars primarily form from the remnants of massive stars following a supernova explosion. This process begins when a star with a mass between approximately $8$ and $25\msun$ exhausts its nuclear fuel, leading to the collapse of its core. As the core collapses, its density increases dramatically, causing protons and electrons to merge into neutrons via inverse $\beta$-decay. This results in a neutron-dense object with an incredibly high density (much higher than white dwarfs), supported against further collapse by neutron degeneracy pressure. The composition, equation of state, and structure of a neutron star along with its associated uncertainties are discussed in more detail in Sect.~\ref{sec:ch1:ns_struct}.
+    Neutron stars primarily form from the remnants of massive stars following a supernova explosion. This process begins when a star with a mass between approximately $8$ and $25\msun$ exhausts its nuclear fuel, leading to the collapse of its core. As the core collapses, its density increases dramatically, causing protons and electrons to merge into neutrons via inverse $\beta$-decay. This results in a neutron-dense object with an incredibly high density (much higher than white dwarfs), supported against further collapse by neutron degeneracy pressure. 
     Moreover, neutron stars can form through a different pathway involving white dwarfs in binary systems. When a white dwarf accretes material from its companion star, its mass may increase. If the white dwarf's mass exceeds the Chandrasekhar limit, it can undergo a type Ia supernova (see Sect.~\ref{sec:ch1:transients}) or collapse into a neutron star. This process is less common and depends on specific conditions within the binary system, such as the mass transfer rate and the initial mass of the white dwarf.
 
     Just as white dwarfs have the Chandrasekhar limit, neutron stars have an upper mass limit known as the ``Tolman-Oppenheimer-Volkoff'' (TOV) limit. This limit, though not as precisely defined as the Chandrasekhar limit due to uncertainties in the equation of state for neutron star matter, is theorized to be between 2 and 3\msun. Beyond this limit, the neutron degeneracy pressure is insufficient to counteract the gravitational force, leading to further collapse into a black hole. The exact value of the TOV limit depends on the properties of nuclear matter at extremely high densities, which are still a subject of active research.
@@ -252,11 +250,20 @@
         \label{fig:m87_bh}
     \end{figure}
 
-    Within the framework of general relativity, gravity is portrayed not as a force but as the warping of spacetime caused by the localized distribution of mass, according to Einstein's field equations:
+    Within the framework of general relativity, gravity is portrayed not as a force acting at a distance but as the warping of spacetime caused by the localized distribution of mass, according to Einstein's field equations:
     \begin{equation}\label{eq:gr_field_equation}
         R_{\mu \nu} - \frac{1}{2}g_{\mu \nu}R + \Lambda g_{\mu \nu} = \frac{8\pi G}{c^4} T_{\mu \nu}, 
     \end{equation}
-    where $R_{\mu \nu}$ is the Ricci tensor, $g_{\mu \nu}$ is the metric tensor describing the geometry of the spacetime manifold, $R$ is the scalar curvature, $\Lambda$ is the cosmological constant\footnote{The cosmological constant was introduced by Einstein to allow for a static universe (though he later considered it his ``biggest blunder'' after the expansion of the universe was discovered). It is now understood to be related to dark energy.}, $T_{\mu \nu}$ is the stress-energy tensor, $G$ is the gravitational constant, and $c$ is the speed of light in a vacuum. Applying some tensor calculus, allow us to derive the Schwarzschild solution that describes the spacetime geometry surrounding a spherically symmetric (where $T_{\mu \nu} = 0$), non-rotating, and uncharged mass\footnote{The study of more complex systems that consider rotation and/or electric charge lead to other solutions, such as the Kerr and Reissner-Nordstr\"om solutions.}. The spacetime interval\footnote{A scalar quantity that generalizes the notion of distance from Euclidean space to curved spacetime. Also often called ``metric interval'' or simply ``metric''.} of the Schwarzschild solution is given by:
+    where $R_{\mu \nu}$ is the Ricci tensor, $g_{\mu \nu}$ is the metric tensor describing the geometry of the spacetime manifold, $R$ is the scalar curvature, $\Lambda$ is the cosmological constant\footnote{The cosmological constant was introduced by Einstein to allow for a static universe (though he later considered it his ``biggest blunder'' after the expansion of the universe was discovered). It is now understood to be related to dark energy.}, $T_{\mu \nu}$ is the stress-energy tensor, $G$ is the gravitational constant, and $c$ is the speed of light in a vacuum. Although Eq.~\eqref{eq:gr_field_equation} appears simple it is in fact highly non-linear and very difficult to solve. Nonetheless, we can impose some restrictions and explore a particularly intriguing subset of solutions to Einstein's field equations: \textit{the vacuum solutions}. These solutions emerge under conditions where the stress-energy tensor $T_{\mu \nu}$ is equal to zero, indicating regions of spacetime where matter or any form of energy is absent. Mathematically, this scenario simplifies Einstein's field equations to:
+    \begin{equation}\label{eq:vacuum_solutions}
+    R_{\mu \nu} - \frac{1}{2}g_{\mu \nu}R + \Lambda g_{\mu \nu} = 0,
+    \end{equation}
+    by setting the right-hand side of Eq.~\eqref{eq:gr_field_equation} to zero, reflecting the absence of mass-energy sources. These vacuum solutions are critical for understanding the pure gravitational field's geometry, particularly in contexts where the influence of matter can be neglected. Moreover, if we assume that the cosmological constant $\Lambda$ is also zero, Eq.~\eqref{eq:vacuum_solutions} reduces further to:
+    \begin{equation}
+        R_{\mu \nu} = 0\,.
+    \end{equation}
+    
+    Applying some tensor calculus, allow us to derive a particular vacuum solution to Einstein's field equations, called the ``\textit{Schwarzschild solution}'', that describes the spacetime geometry surrounding a spherically symmetric, non-rotating, and uncharged mass\footnote{The study of more complex systems that consider rotation and/or electric charge lead to other vacuum solutions, such as the Kerr and Reissner-Nordstr\"om solutions.}. The spacetime interval\footnote{A scalar quantity that generalizes the notion of distance from Euclidean space to curved spacetime. Also often called ``metric interval'' or simply ``metric''.} of the Schwarzschild solution is given by:
     \begin{equation}\label{eq:schwarzschild_metric}
         ds^2 = -\left(1 - \frac{2GM}{c^2r}\right)c^2dt^2 + \left(1 - \frac{2GM}{c^2r}\right)^{-1}dr^2 + r^2(d\theta^2 + \sin^2\theta d\phi^2),
     \end{equation}
@@ -280,14 +287,91 @@
 
     So far, in our discussion on the Schwarzschild solution, we have never mentioned black holes explicitly. In fact, all solutions stemming from Eq.~\eqref{eq:gr_field_equation} are not limited to describing black holes but are relevant to \textit{any} mass distribution. They are being used in a wide variety of applications, from calculating the precession of planetary orbits to improving the accuracy of the Global Positioning System (GPS). However, one may notice that the coefficient of the radial component of the metric tensor becomes infinite when:
     \begin{equation}\label{eq:schwarzschild_radius}
-        r \equiv r_s = \frac{2GM}{c^2},
+        r = r_s \equiv \frac{2GM}{c^2},
     \end{equation}
     which indicates a point of no return. This radius is called the ``\textit{Schwarzschild radius}'' and defines the boundary of a black hole, known as the ``\textit{event horizon}''. Inside this radius, the spacetime curvature is so extreme that all paths, space-like and time-like, lead inevitably towards the singularity at the center. In other words, any matter or radiation falling past the event horizon is irrevocably drawn into the central singularity, effectively making them invisible and detectable only by their gravitational effects on surrounding matter and radiation.
 
-    Until very recently, the only observational confirmation of the existence of black holes were based on indirect evidence such as accretion disks and the associated X-ray emissions, gravitational lensing, and the orbital motion of stars near the center of galaxies. However, the detection of gravitational waves in September 2015 by the Laser Interferometer Gravitational-Wave Observatory (LIGO) has provided direct evidence of black holes and, notably, black hole mergers \citep{LIGO:BHmerger}. Moreover, in April 2019, the Event Horizon Telescope\footnote{The EHT uses very long baseline interferometry (VLBI) techniques to achieve the necessary resolution to observe the event horizon's "shadow" against the backdrop of the glowing gas in the accretion disk.} (EHT) released the first-ever ``image'' of a black hole's event horizon, or more accurately, the shadow of the supermassive black hole in the center of the galaxy M87 as can be seen in Fig.~\ref{fig:m87_bh}. This image provided direct visual evidence of a black hole's existence, showcasing a central dark region (the shadow) surrounded by a ring-like structure of light emitted by particles accelerated in the intense gravity near the event horizon \citep{EHT:M87}. Both LIGO and EHT observations were monumental confirmations of the predictions made by general relativity regarding the nature of black holes and their impact on surrounding spacetime and matter.
+    Until very recently, the only observational confirmation of the existence of black holes were based on indirect evidence such as accretion disks and the associated X-ray emissions, gravitational lensing, and the orbital motion of stars near the center of galaxies. However, the detection of gravitational waves in September 2015 by the Laser Interferometer Gravitational-Wave Observatory (LIGO) has provided direct evidence of black holes and, notably, black hole mergers \citep{LIGO:BHmerger}. Moreover, in April 2019, the Event Horizon Telescope\footnote{The EHT uses very long baseline interferometry (VLBI) techniques to achieve the necessary resolution to observe the event horizon's ``shadow'' against the backdrop of the glowing gas in the accretion disk.} (EHT) released the first-ever ``image'' of a black hole's event horizon, or more accurately, the shadow of the supermassive black hole in the center of the galaxy M87 as can be seen in Fig.~\ref{fig:m87_bh}. This image provided direct visual evidence of a black hole's existence, showcasing a central dark region (the shadow) surrounded by a ring-like structure of light emitted by particles accelerated in the intense gravity near the event horizon \citep{EHT:M87}. Both LIGO and EHT observations were monumental confirmations of the predictions made by general relativity regarding the nature of black holes and their impact on surrounding spacetime and matter.
 
     \subsection{Binary Evolution}\label{sec:ch1:binaries}
     The evolution of stars in binary systems represents a complex process that differs significantly from the evolution of single stars. When two stars are gravitationally bound in a binary system, they orbit around a common center of mass. This close relationship leads to interactions that can significantly change their evolutionary paths. These interactions may include the transfer of mass from one star to the other, phases where both stars share a common outer layer, and even situations where the two stars merge. Such processes can change the way stars evolve, leading to outcomes that are not seen in the evolution of solitary stars. For instance, binary systems can give rise to phenomena like X-ray binaries, blue stragglers, and type Ia supernovae. These phenomena are important for our understanding of how galaxies evolve and how we measure distances in the universe. In this section, we will explore how the presence of a companion star influences the evolution of stars, highlighting the key differences from the evolution of single stars.
+    \subsubsection{Orbital Dynamics}
+    The foundation for understanding these systems lies in the \textit{restricted three-body problem}, which simplifies the dynamics by considering the gravitational effects of two massive bodies on a third, infinitesimally small mass. The gravitational potential in the vicinity of two massive bodies forms the basis for understanding the motion of stars in a binary system. The potential at any point in space is a function of the distances to each mass, leading to a scalar field that describes how the gravitational force varies across space. Mathematically, the effective gravitational potential $\Phi$ in a rotating frame of reference for a two-body system with masses $M_1$ and $M_2$ is given by:
+    \begin{equation}\label{eq:gr_potential}
+        \Phi = -G \left(\frac{M_1}{r_1} + \frac{M_2}{r_2} \right) - \frac{1}{2}\Omega^2 r_3^2,
+    \end{equation}
+    where $G$ is the gravitational constant, $r_1$ and $r_2$ are the distances to the center of the stars $M_1$ and $M_2$ respectively, $\Omega$ is the orbital angular velocity, and $r_3$ is the distance to the rotational axis of the binary. The equation of motion for a test particle within this effective gravitational field, considering only gravitational and centrifugal forces, can be derived from the gradient of the potential expressed by Eq.~\eqref{eq:gr_potential}.  In a rotating frame, the force experienced by a particle is given by the negative gradient of the effective potential:
+    \begin{equation}\label{eq:equation_of_motion1}
+        \pmb{F} = -\nabla \Phi \Rightarrow m\frac{d^2 \pmb{r}}{dt^2} = -\nabla \Phi,
+    \end{equation}
+    where $m$ is the mass of the test particle. Expanding the gradient $\Phi$, we get:
+    \begin{equation}\label{eq:equation_of_motion2}
+        m \frac{d^2 \pmb{r}}{dt^2} = -G \left( \frac{M_1 (\pmb{r} - \pmb{r}_1)}{|\pmb{r} - \pmb{r}_1|^3} + \frac{M_2 (\pmb{r} - \pmb{r}_2)}{|\pmb{r} - \pmb{r}_2|^3} \right) - \Omega^2 \pmb{r}_3
+    \end{equation}
+    
+    Setting the condition that the sum of forces acting on the test particle reduces to zero, i.e., $\nabla \Phi = 0$, Eq.~\eqref{eq:equation_of_motion2} leads to the identification of five equilibrium points. These stationary solutions are known as \textit{Lagrange points}, named after the Italian-French mathematician Joseph-Louis Lagrange, who first described them in 1772. The five points, designated as $L_1$, $L_2$, $L_3$, $L_4$, and $L_5$, represent positions where a small mass can maintain a stable or quasi-stable equilibrium due to the balancing of the gravitational forces from the two larger masses and the centrifugal force (see also Fig.~\ref{fig:eq_sur}). 
+
+    \begin{figure}[t!]
+        \centering
+        \begin{subfigure}{0.45\textwidth}
+            \centering
+             \includegraphics[width=\columnwidth]{figures/chapter1/equipotentials_mu_0.315.png} 
+        \end{subfigure}
+        %\hspace{0.01cm}
+        \begin{subfigure}{0.535\textwidth}
+            \centering
+            \includegraphics[width=\columnwidth]{figures/chapter1/3Dequipotentials_transparent.png} 
+         \end{subfigure}
+         \caption{Left: Contour map of the five Lagrange points in a two-body system, illustrating the equipotential gravitational lines, with a reduced mass ratio ($\mu$) of approximately $0.315$. The parameters $a$ and $b$ represent scaling factors for the $x$ and $y$ coordinates. The image was created based on a \texttt{python} script, courtesy of \cite{Zingale}.
+         Right: 3D representation of equipotential surfaces. The image was adapted from \cite{Sluijs}.}
+         \label{fig:eq_sur}
+    \end{figure}
+
+    The stability of these points varies, with $L_4$ and $L_5$ generally being more stable due to the configuration leading to a potential well where objects can remain even when slightly perturbed. In contrast, $L_1$, $L_2$, and $L_3$ are saddle points in the gravitational potential, where stability is more delicate and dependent on the specific dynamics of the system \citep[e.g.,][]{Szebehely, Celletti1990, Schwarz2012}. 
+
+    \subsubsection{Mass Loss}
+    Among the five Lagrangian points, $L_1$ is crucial in the dynamics of binary star systems since the equipotential surface passing through that inner point, defines the \textit{Roche lobe}. The configuration of these equipotential surfaces, as depicted in Fig.~\ref{fig:eq_sur}, assume a concentric spherical shape in proximity to the two massive bodies. However, the mutual gravitational forces of the two masses distort these surfaces, elongating them as the distance from the bodies increases. As stars undergo various phases of their life cycles, they may experience significant expansion, increasing their radii to the extent that they surpass the boundaries of their respective Roche lobes. When this occurs, the gravitational equilibrium is disrupted, leading to the flow of stellar material from the inflated star to its companion through the $L_1$ Lagrange point\footnote{Depending on the evolutionary stage of the donor star at the onset of mass transfer, we can discern three main cases: Case A occurs during the main sequence phase, Case B happens after the donor star has left the main sequence but before helium ignition, typically during the RGB phase, and Case C refers to mass transfer initiated after helium has been ignited in the core of the donor star, often during the AGB phase. Additionally, further sub-classifications, such as Case BA or Case BB, exist to describe more specific evolutionary stages and mass transfer scenarios within these broad categories.}. This phenomenon, driven by the differential pressure forces, is termed ``\textit{Roche lobe overflow}'' (RLOF). During RLOF, the donor star may lose a considerable portion of its mass, significantly influencing the mass distribution and evolutionary path of the binary system.
+
+    When matter spills across the inner Lagrange point, it carries its own angular momentum, which is determined by its orbital motion around the companion star before accretion. What happens next depends on the details of the system, such as how the stars move together and the type of the companion star. 
+    If the matter moving towards a companion star carries significant angular momentum, it typically cannot directly fall onto the star's surface. The reason is that the angular momentum acts as a barrier, preventing the material from making a straight descent. Consequently, the material starts to orbit the star, leading to the formation of an \textit{accretion disk}. Within this disk, the material gradually sheds some of its orbital angular momentum, which helps it overcome the outward push of the centrifugal force. As a result, the material can move closer to the star and eventually gets accreted onto its surface.
+    
+    However, not all matter transferred through $L_1$ forms an accretion disk. Sometimes, especially if the companion star is a normal star such as our Sun and not a compact object, the matter might fall directly onto the star. This can happen if the material does not have much angular momentum to begin with or if the orbital motion of the stars within the binary system allows the material to flow straight onto the companion star without needing to orbit it first.
+
+    Although RLOF is of paramount importance in determining the fate of binary star systems, an analytical formula to precisely define the Roche lobes' boundaries for any arbitrary mass ratio and separation distance between the two stars does not exist. The absence of such an expression stems from the highly non-linear nature of the gravitational potential field surrounding the binary stars that has no exact mathematical solution. Hence, we rely on approximations to estimate the size of the Roche lobes. One such approximation was developed by Peter Eggleton in 1983, through fitting to numerical models and exhibits a remarkable accuracy with a broad range of mass ratios. The Eggleton's empirical formula is given by:
+    \begin{equation}\label{eq:eggleton_formula}
+       R_L = \frac{0.49 q^{2/3} a}{0.6 q^{2/3} + \ln(1 + q^{1/3})},
+    \end{equation}
+    where $R_L$ is the radius of the Roche lobe, $q$ is the mass ratio of the two stars defined as $q\equiv M_\mathrm{donor}/M_\mathrm{accretor}$, and $a$ is the semi-major axis of the binary system's orbit.
+
+    In concluding this section, it is important to mention that based on how matter fills their equipotential surfaces, binary star systems can be classified into three main categories: \textit{detached binaries}, \textit{semi-detached binaries}, and \textit{contact binaries}. In detached binaries, both stars are comfortably within their respective Roche lobes, with no mass transfer occurring between them; their equipotential surfaces are not filled to the point of overflow, allowing each star to evolve independently. Semi-detached binaries feature one star that fills its Roche lobe and transfers mass to its companion, which does not fill its own Roche lobe; this setup leads to a dynamic interaction where one star significantly affects the evolution of the other. Contact binaries are even more intimately connected, with both stars filling their Roche lobes to the extent that their outer equipotential surfaces are in contact, allowing for the transfer of mass between the stars and often resulting in shared outer envelopes.
+
+    \subsubsection{Angular Momentum Loss}
+    Angular momentum plays a pivotal role in the evolution of binary star systems, influencing their orbital dynamics, mass transfer processes, and ultimate fate. Various mechanisms can lead to angular momentum loss, significantly impacting the separation between the components, the mass transfer rate, and the evolution of the system as a whole. Next we discuss some notable mechanisms relevant to binary systems.
+    \begin{enumerate}
+        \item \textit{Non-conservative mass transfer}
+        
+        In binary star systems, mass transfer from one star to another is a common occurrence, especially when one of the stars fills its Roche lobe. While this process can lead to angular momentum redistribution within the system, part of the mass---and consequently, angular momentum---may be lost to the system entirely. This happens in non-conservative mass transfer scenarios, where the transferred mass can be ejected from the system through stellar winds or jets, or form a circumbinary disk that eventually disperses the material into space. In the latter case, interaction between the binary and the disk can lead to angular momentum being transferred from the binary to the disk, effectively removing angular momentum from the system. The loss of mass and angular momentum through these processes can cause the binary components to spiral closer together or, in some cases, result in an increase in orbital separation, depending on the specific dynamics and mass ratios of the system.
+
+        \item \textit{Magnetic braking}
+
+        Magnetic braking is another significant mechanism for angular momentum loss, particularly relevant in close binary systems containing at least one star with a strong magnetic field. As the star rotates, its magnetic field interacts with the stellar wind. This interaction transfers angular momentum from the star to the stellar wind, which then carries it away as it escapes into space. Over time, magnetic braking can lead to a decrease in the rotation rate of the star and a gradual tightening of the binary orbit, as the loss of angular momentum from the system causes the stars to move closer together.
+
+        \item \textit{Tidal friction}
+        
+        In close binary systems, tidal forces can lead to the synchronization of rotation periods with the orbital period and the circularization of orbits. These tidal interactions can redistribute angular momentum within the system, leading to a net loss as the system evolves towards equilibrium. Tidal friction can cause internal angular momentum to be converted into heat, gradually slowing the rotation of the stars relative to their orbital motion.
+
+        \item \textit{Gravitational waves}
+
+        In the weak gravity limit, a regime in which the gravitational field is sufficiently weak that the spacetime can be approximated as flat, the spacetime metric $g_{\mu \nu}$ is approximated as a small perturbation $h_{\mu \nu}$ on the flat Minkowski spacetime $\eta_{\mu \nu}$ such that:
+        \begin{equation}\label{eq:weak_gravity_limit}
+            g_{\mu \nu} = \eta_{\mu \nu} + h_{\mu \nu},\quad \text{with}\quad |h_{\mu \nu}| \ll 1\,.
+        \end{equation}
+        This approximation allows the complex, non-linear Einstein field equations to be linearized, simplifying the analysis considerably. Gravitational waves are solutions to these linearized equations\footnote{Unlike the Schwarzschild solution, here we solve the linearized equations with a non-zero stress-energy tensor.}, representing ripples in the fabric of spacetime that propagate outward from their source at the speed of light. These perturbations, caused by the acceleration of mass such as the motion of stars in a binary system or asymmetric mass distributions, carry energy and angular momentum away from the system. This emission leads to a gradual decrease in the orbital separation and period of the binary, causing the stars to spiral closer together.
+    \end{enumerate}
+
+
+
+    
 
     \subsection{Supernovae: Origins and Classification}\label{sec:ch1:transients}
     Supernovae (SNe) represent one of the most energetic and cataclysmic events in the universe, marking the death of massive stars and leading to the birth of compact object with extreme density and gravity, such as neutron stars. This section focuses on explosion mechanisms which play pivotal roles in neutron star formation, while deliberately omitting other types of supernovae (e.g. pair-instability supernovae). These mechanisms highlight the diverse pathways through which a supernova can lead to the formation of a neutron star, each involving unique stellar processes. Finally, a brief overview of the classification of supernovae into types Ia, Ib/c, and II will also be provided to lay the groundwork for understanding their observational characteristics.
@@ -295,7 +379,7 @@
         \centering
         \includegraphics[scale=0.2]{figures/chapter1/SN1994D_NGC4526.png}
         %\caption{Supernova 1994D (bottom left), a type Ia supernova located in the outskirts of the galaxy NGC 4526. Credit: \href{https://hubblesite.org/contents/media/images/1999/19/813-Image.html}{NASA, ESA, The Hubble Key Project Team, and The High-Z Supernova Search Team}.}
-        \caption{Galaxy NGC 4526 with the brilliant Type Ia Supernova 1994D illuminating the bottom left, showcasing the immense luminosity of supernovae as they momentarily outshine their host galaxies. Credit: \href{https://hubblesite.org/contents/media/images/1999/19/813-Image.html}{NASA, ESA, The Hubble Key Project Team, and The High-Z Supernova Search Team}.}
+        \caption{Galaxy NGC 4526 with the magnicifent Type Ia Supernova 1994D illuminating the bottom left, showcasing the immense luminosity of supernovae as they momentarily outshine their host galaxies. Credit: \href{https://hubblesite.org/contents/media/images/1999/19/813-Image.html}{NASA, ESA, The Hubble Key Project Team, and The High-Z Supernova Search Team}.}
         \label{fig:sn1994d}
     \end{figure}
     \subsubsection{Core-Collapse Supernovae}
@@ -316,9 +400,21 @@
     In contrast to type I supernovae, which are identified by their lack of hydrogen lines in their spectra, type II supernovae prominently feature hydrogen emission lines, signifying the explosive death of massive stars that have retained their hydrogen envelopes until their catastrophic end. Observationally, this category displays a wide range of spectral features and light curve behaviors from the pronounced plateau of some events, indicative of a prolonged period of cooling and recombination of hydrogen (SNe II-P), to the more linear decline after peak brightness seen in others (SNe II-L), which suggests a different density of the ejected material or energy of the explosion. Additionally, some type II supernovae exhibit narrow or complex emission lines in their spectra (SNe II-n), pointing to interactions between the supernova ejecta and circumstellar material previously shed by the star.  Each subclass not only sheds light on the mechanisms behind these stellar explosions but also provides insights into the life cycles of massive stars, their mass loss processes, and the environments in which they evolve.
 
 
-    \section{The Structure of Neutron Stars}\label{sec:ch1:ns_struct}
 
-    \subsection{Formation and Hydrostatic Equilibrium}
+
+
+
+
+
+
+
+
+
+
+
+    \section{A Comprehensive Overview of Neutron Stars}\label{sec:ch1:ns_struct}
+
+    \subsection{Formation and Hydrostatic Equilibrium (working title)}
 
     \subsection{Structure and Equation of State}
     \subsection{Exotic Phases and a Third Family of Compact Stars}
