@@ -32,6 +32,7 @@
     \end{center}
 
     (abridged) When stripped from their hydrogen-rich envelopes, stars with initial masses between $\sim 7$ and $11\msun$ develop massive degenerate cores and collapse. Depending on the final structure and composition, the outcome can range from a thermonuclear explosion, to the formation of a neutron star in an electron-capture supernova (ECSN). It has been recently demonstrated that stars in this mass range may initiate explosive oxygen burning when their central densities are still below $\rhoc \lesssim 10^{9.6}\denu$. This makes them interesting candidates for Type\,Ia supernovae---which we call (C)ONe \ias---and might have broader implications for the formation of neutron stars via ECSNe. Here, we model the evolution of $252$ helium stars with initial masses in the $\numrange{0.8}{3.5}\msun$ range, and metallicities between $Z=10^{-4}$ and $0.02$. We use these models to constrain the central densities, compositions and envelope masses at the time of explosive oxygen ignition. We further investigate the sensitivity of these properties to mass loss rate assumptions using additional models with varying wind efficiencies. We find that helium stars with masses between $\sim1.8$ and $2.7\msun$ evolve onto $\numrange{1.35}{1.37}\msun$ (C)ONe cores that initiate explosive burning at central densities between $\logrhoc \sim 9.3$ and $9.6$. We constrain the amount of residual carbon retained after core carbon burning, and conclude that it plays a critical role in determining the final outcome: Chandrasekhar-mass degenerate cores that retain more than $\sim 0.005\msun$ of carbon result in (C)ONe SNe Ia, while those with lower carbon mass become ECSNe. We find that (C)ONe SNe Ia are more likely to occur at high metallicities, whereas at low metallicities ECSNe dominate.
+
     
     {\hypersetup{linkcolor=black, pdfborder={0 0 0}}
         \minitoc
@@ -275,7 +276,7 @@ Stars with initial masses between $\sim 1.9\msun$ and $\sim  2.8\msun$ (see Figs
 With the exception of a few models with $f_{\rm OV}> 0$ (see Sect.~\ref{sec:cone_core_evolution}), for  most stars in this mass range, carbon still ignites  in a shell but the carbon flame
 is able to propagate all the way to the center, thereby forming an ONe-dominated core. 
 However, our simulations show that in all cases, some residual carbon remains
-distributed throughout the degenerate core, with average mass fractions of $0.0003 \lesssim X(\iso{C}{12}) \lesssim 0.11$ (see Appendix~\ref{apx:composition} for representative carbon abundance profiles). 
+distributed throughout the degenerate core, with average mass fractions of $0.0003 \lesssim X(\iso{C}{12}) \lesssim 0.11$ (see Appendix~\ref{apx:composition_seriesI} for representative carbon abundance profiles). 
 Figure~\ref{fig:carbon_mass_fractions} shows variations in  the average residual carbon abundance of the degenerate core as a function of initial mass.
 These abundances were calculated using the \mesa profile nearest to $\logrhoc=9$, that is after the main carbon burning phase and before the onset of Urca reactions. As can be seen, the amount of residual carbon varies strongly both with initial mass and metallicity, especially for $f_{\rm OV}>0$.  
  The residual-carbon profile remains practically unchanged until the  onset of exothermic weak reactions at $\logrhoc\simeq 9.6$ (see Fig.~\ref{fig:RhoT}).
@@ -436,8 +437,6 @@ ONe cores that  do not manage to reach the Chandrasekhar-mass limit  become mass
 To further constrain the initial-to-final mass relation, we  attempted to interpolate between our models,  by fitting a power-law function of the form $a(x-b)^3 + c$, as can be seen in 
 Fig.~\ref{fig:coreGrowth}. Here, we only used models that terminated after ejecting most of their envelope (residual envelope mass $M_{\rm env} < 0.1\msun$), as well as those that evolved toward a core-collapse SN. We found reasonable fits only for  $f_{\rm OV} = 0$ models, as those terminated at similar evolutionary stages. These fits similarly suggest that the Chandrasekhar-mass limit can be reached for $M_{\rm He, i}\gtrsim \numrange{2.0}{2.1}\msun$. 
 
-
-
 \begin{figure*}[h!]
     \centering
     \begin{subfigure}{.5\textwidth}
@@ -459,6 +458,7 @@ Fig.~\ref{fig:coreGrowth}. Here, we only used models that terminated after eject
     \label{fig:coreGrowth}
 \end{figure*}
 
+\newpage
 \subsection{Hybrid CONe cores with near-\mch\ masses}\label{sec:cone_core_evolution}
 Two of our \seriesone models developed a hybrid 
 structure in their core, but still managed to reach 
@@ -488,7 +488,7 @@ If the envelope is removed at an earlier stage, for instance as a result of mass
 hybrid CONe WD would have been formed, similarly to the models   
 discussed in Sect.~\ref{sec:wd_evolution}.
 
-
+\newpage
 \subsection{Pre-explosion properties of (C)ONe cores: \ias and ECSNe}\label{sec:explosion_properties} 
 Based on the results presented  above, stars with a degenerate near-\mch\ core in the $\numrange{1.35}{1.37}\msun$ range may experience one of the following outcomes: firstly, for ONe cores, if oxygen ignites at low densities ($\logrhoc \lesssim 9.8$) and the core immediately expands as a response to the thermonuclear runaway, then $e$-captures on \iso{Ne}{20} may be completely avoided. In this case, the star may  undergo a thermonuclear runaway that resembles a \ia explosion. The kinetic energy of the ejecta and the composition of the material  depend on the explosion conditions, for instance $Y_{\rm e}$ and $E_{\rm bin}$.
 
@@ -534,7 +534,7 @@ As can be seen, two models ignited oxygen when $\logrhoc\simeq 9.3$. The model r
 Finally, one \seriestwo model with reduced wind efficiency, ignited oxygen only after surpassing the density threshold for 
 $e$-captures on \iso{Ne}{20} and will therefore produce an ECSN. As we discuss in Sect.~\ref{sec:physical_uncertainties}, we identify the decisive property for this behavior to be its low residual carbon abundance. Hence, we expect the same outcome  for all stars with  similar compositions. 
 
-
+\newpage
 \subsection{Core-collapse supernovae}\label{sec:ccsn_evolution}
 If $ M_i  \gtrsim 2.8\msun$ (for models without overshooting), then the core reaches a 
 sufficiently high temperature to undergo on-center carbon ignition, under nondegenerate conditions, leading to more advanced burning stages. The evolution of these stars is similar to those described in \cite{Jones2013apj} and \cite{Woosley:2019sdf}.
@@ -711,7 +711,7 @@ core evolution is not completely decoupled from the envelope during carbon burni
 
 The  model with the lowest amount of residual carbon that was able to initiate an ONe \ia, 
 had an initial mass of $M_{\rm He, i}=2.6\msun$ and a mass averaged carbon mass fraction of $X(\iso{C}{12})\simeq 0.004$ within the degenerate core. 
-Hence for an ONe \ia to occur, the core must have a minimum carbon mass fraction of $0.002 < X_{\rm min}(\iso{C}{12}) < 0.004$ (see Appendix~\ref{apx:composition} for distribution profiles).  
+Hence for an ONe \ia to occur, the core must have a minimum carbon mass fraction of $0.002 < X_{\rm min}(\iso{C}{12}) < 0.004$ (see Appendices~\ref{apx:composition_seriesI} and \ref{apx:composition_seriesII} for distribution profiles).  
 Based on these constrains, we conclude (rather conservatively) that near-\mch  ONe cores with carbon mass fractions $X_{\rm min}(\iso{C}{12}) \geq 0.004$ experience an ONe \ia, while those with a smaller carbon content undergo an ECSN (thermonuclear or core-collapse).
 Given that the carbon abundance in the core changes with initial metallicity, so does the relative rates of ONe \ias and ECSNe, with the former being more likely for higher metallicities. 
 
@@ -814,5 +814,58 @@ present some interest as possible thermonuclear SN and NS progenitors. Their hig
 imply that they only need to accrete very small amounts of mass to become unstable. Their collapse would then lead to a thermonuclear deflagration
 \citep{Meng:2014qta,Willcox:2016yyp,Bravo:2019fwh}, or the formation of a neutron star in an accretion-induced collapse \citep[e.g.,][]{Nomoto:1991abc,Tauris:2013zna,Ruiter:2018ouw,Wang:2020pzc}. Similarly to what has been discussed in this work, we expect the core composition---particularly the amount of residual carbon and its distribution in the core---to play a critical role in determining their fate \citep{brooks2017}. It is conceivable that if these WDs can achieve oxygen ignition conditions similar to those of (C)ONe \ias, then the resulting explosions would also have similar appearance. In this case, (C)ONe WDs may contribute \ias with much longer delay times.    
 
+
+\begin{subappendices}
+\section{The \seriesone Grid}\label{apx:composition_seriesI}
+
+
+\begin{figure*}[hbt!]
+    \centering
+    \includegraphics[height=8cm]{figures/chapter2/abundances/1p8_logRho9_abun.pdf}\quad
+    \includegraphics[height=8cm]{figures/chapter2/abundances/1p8_final_abun.pdf}
+    \caption{Abundance profiles of the \seriesone hybrid stellar model with $ 1.8\msun,  Z=0.02;f_{OV}=0.014$. The left panel refers to the structure when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$ (indicated by the black cross-mark in Fig.~\ref{fig:RhoT}). The right panel shows the final chemical composition of the model.} 
+\end{figure*}
+
+\begin{figure*}[hbt!]
+    \centering
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p5_logRho_9_abun.pdf}\quad
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p5_final_abun.pdf}\par\medskip
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p5_abun_carbon_sup.pdf}
+    \caption{Abundance profiles of the \seriesone $ 2.5\msun,  Z=0.02;f_{OV}=0.0$ stellar model. The top-left panel refers to the structure when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$. The distribution of residual carbon from previous burning stages is visible. The top-right panel shows the final composition of this model. Ignition of residual carbon leads to thermonuclear explosion.
+    The panel at the bottom shows the final structure of the same model, in the case where carbon-consuming nuclear reactions have been turned off.
+    In this scenario, the core reaches the density threshold for $e$-captures on Ne nuclei to commence, leading to formation of \iso{O}{20}, and most likely to an ECSN.}
+    \label{apx:fig:eta1p0}
+\end{figure*}
+
+
+\clearpage
+\section{The \seriestwo Grid}\label{apx:composition_seriesII}
+
+\begin{figure*}[hbt!]
+    \centering 
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p0_eta0p25_Rho9.pdf}\quad
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p0_eta0p25_final_abun.pdf}
+    \caption{Abundance profiles of the \seriestwo $ 2.0\msun,  Z=0.02;f_{OV}=0.0; \eta=0.25$ stellar model. The left panel refers to the structure when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$ (shortly before the Urca cooling phase). The right panel shows the final chemical composition of the model after the ignition of neon.}
+    \label{apx:fig:eta0p25}
+\end{figure*}
+
+\begin{figure*}[hbt!]
+    \centering 
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p7_eta0p8_Rho9.pdf}\quad
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p7_eta0p8_final_abun.pdf}
+    \caption{Abundance profiles of the \seriestwo $ 2.7\msun,  Z=0.02;f_{OV}=0.0; \eta=0.8$ stellar model. The left panel refers to the structure when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$ (shortly before the Urca cooling phase). The right panel shows the final chemical composition of the model after the ignition of neon. This model has reached the critical density for $e$-captures on \iso{Ne}{20} which leads to the formation of \iso{O}{20} (cyan line).}
+    \label{apx:fig:eta0p8}
+\end{figure*}
+
+\begin{figure*}[hbt!]
+    \centering 
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p1_eta1p58_Rho9.pdf}\quad
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p1_eta1p58_final_abun.pdf}
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p4_eta1p58_Rho9.pdf}\quad
+    \includegraphics[height=8cm]{figures/chapter2/abundances/2p4_eta1p58_final_abun.pdf}
+    \caption{Abundance profiles for two of our \seriestwo models with $2.1\msun,  Z=0.02;f_{OV}=0.0; \eta=1.6$ (top panel) and $2.4\msun,  Z=0.02;f_{OV}=0.0; \eta=1.6$ (bottom panel). On the left, the plots refer to chemical composition when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$ (shortly before the Urca cooling phase). On the right, the plots refer to the final chemical composition of our models. In the case of the $2.4\msun$ model, off-center ignition of oxygen leads to the formation of a silicon core with amounts of residual oxygen distributed within the core.}
+    \label{apx:fig:eta1p58}
+\end{figure*}
+\end{subappendices}
 
 \end{document}

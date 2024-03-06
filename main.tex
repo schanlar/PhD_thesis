@@ -29,6 +29,9 @@
 \usepackage{multirow}
 \usepackage{xcolor}
 
+\usepackage{appendix}
+\usepackage{chngcntr}
+
 % Set the depth and numbering
 % for table of contents (toc)
 \setcounter{tocdepth}{2}
@@ -163,14 +166,19 @@
 
 % DEDICATION PAGE CONFIGURATION
 \newenvironment{dedication}
-  {\clearpage
-   \thispagestyle{empty}
-   \vspace*{\stretch{1}}
-   \itshape
-   \raggedleft}
-  {\par
-   \vspace{\stretch{3}}
-   \clearpage}
+  {
+   \clearpage            % Start on a new page
+   \thispagestyle{empty} % Page without headers or footers
+   \vspace*{\stretch{1}} % Add vertical space to push the text down
+   \itshape              % Italicize the text
+   \centering            % Center the text horizontally
+  }
+  {
+   \par                  % Ensure the paragraph ends here
+   \vspace{\stretch{3}}  % Add additional vertical space at the bottom
+   \clearpage            % End on a new page, ready for the next section
+  }
+
    
 % WRITE GREEK TEXT
 \usepackage[greek,english]{babel}
@@ -195,19 +203,21 @@
 
 % PDF CONFIGURATION
 \definecolor{xlinkcolor}{cmyk}{1,1,0,0}
+% \definecolor{xlinkcolor}{cmyk}{0,0,0,100} % black color -- for printed version
 \usepackage{hyperref}
 \hypersetup{
     breaklinks,
     pdffitwindow=true,
     pdfstartview={FitH},
-    pdftitle={PhD Thesis},                    % TITLE
-    pdfauthor={Savvas Chanlaridis},          % AUTHOR
-    pdfsubject={\title},                      % DOCUMENT SUBJECT
-    pdfcreator={Savvas Chanlaridis},            % CREATOR
-    pdfproducer={\thesisauthor},              % PRODUCER
+    pdftitle={PhD Thesis},                     % TITLE
+    pdfauthor={Savvas Chanlaridis},            % AUTHOR
+    pdfsubject={\title},                       % DOCUMENT SUBJECT
+    pdfcreator={Savvas Chanlaridis},           % CREATOR
+    pdfproducer={\thesisauthor},               % PRODUCER
     pdfkeywords={Astronomy, Astrophysics},
     pdfnewwindow=true,
-    colorlinks=true,                          % COMMENT FOR BLACK LINKS
+    pdfborder={0 0 0},
+    colorlinks=true,                           % COMMENT FOR BLACK LINKS
     linkcolor=xlinkcolor,
     citecolor=xlinkcolor,
     urlcolor=blue
@@ -215,12 +225,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{definitions.tex}
-\newcommand{\seriesone}{\textsc{Series\,I}\xspace} %Series I
-\newcommand{\seriestwo}{\textsc{Series\,II}\xspace} %Series II
+\newcommand{\seriesone}{\textsc{Series\,I}\xspace}  % Series I
+\newcommand{\seriestwo}{\textsc{Series\,II}\xspace} % Series II
 
 
 
-
+\AtBeginEnvironment{subappendices}{%
+  \clearpage
+  \section*{Appendix}
+  \addcontentsline{toc}{section}{Appendix}
+  \counterwithin{figure}{section}
+  \counterwithin{table}{section}
+}
 
 
 %%% END OF PREAMBLE %%%
@@ -260,12 +276,14 @@
             \vspace{0.5cm}
             in \\
             \vspace{0.5cm}
-            ASTROPHYSICS \\
+            -- ASTROPHYSICS -- \\
             \vspace{0.5cm}
             by \\
             \vspace{0.5cm}
             Savvas Chanlaridis \\
             \vspace{4cm}
+            Date of Defence \\
+            \vspace{0.5cm}
             \date{}{\today}
         \end{center}
     \end{titlepage}
@@ -334,7 +352,8 @@
     % DEDICATION
     \begin{dedication}
         \pdfbookmark[0]{Dedication}{dedication}
-        In loving memory of my mother
+        % This work is wholeheartedly dedicated to my beloved wife and daughter, who have been my constant source of love and motivation. Your unwavering support and sacrifices have been the backbone of my journey. To my late mother, whose memory and teachings continue to guide me, you are missed beyond words and this achievement is a tribute to the indelible mark you've left on my heart. Lastly, to my family, whose encouragement and belief in me have shaped my path, this accomplishment is not just mine but ours. Thank you for being my strength, my inspiration, and my sanctuary.
+        To my wife and daughter, the lights of my life; my late mother, whose memory and teachings continue to guide me; and my family, my unwavering support---this thesis is dedicated to you all.
     \end{dedication}
 
     \newpage  % Inserting empty page
@@ -383,7 +402,7 @@
 {   \cleardoublepage
     \phantomsection
     
-    \addcontentsline{toc}{chapter}{Contents}
+    % \addcontentsline{toc}{chapter}{Contents}
     
     % CHANGE COLOR LINK FOR TOC ONLY
 
@@ -435,7 +454,7 @@
     \appendix
     \subfile{appendices/appendix1/appendix1}
     \subfile{appendices/appendix2/appendix2}
-    \subfile{appendices/appendix3/appendix3}
+    % \subfile{appendices/appendix3/appendix3}
 
     % REFERENCES
     % If you are using a windows machine and the bibliography doesn't work
