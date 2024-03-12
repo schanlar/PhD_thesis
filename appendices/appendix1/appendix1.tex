@@ -2,6 +2,9 @@
 
 \begin{document}
 \chapter{The Equation of State of Ideal Gases}\label{apx:eos}
+    {\hypersetup{linkcolor=black, pdfborder={0 0 0}}
+        \minitoc
+    }
 \section{Deriving the Equation of State: A Macroscopic Approach}
 In the context of thermodynamics, the equation of state is a fundamental relation that characterizes the state of matter under a given set of physical conditions. Typically, it is represented in the form $P=P(\rho,T)$, where $P$ denotes the pressure, $\rho$ the density, and $T$ the temperature. 
 
@@ -132,7 +135,7 @@ Though at first glance the equations \eqref{apx:eq:eos_chi_rho_chi_T} and \eqref
 \subsection{The Classical Ideal Gas}
 In an ideal gas, the momentum distribution is given by the Maxwell-Boltzmann distribution:
 \begin{equation}
-    n(p) dp = \frac{n}{(2\pi m kT)^{3/2}} \exp\left(- \frac{p^2}{2mkT}\right) 4\pi p^2 dp
+    n(p) dp = \frac{n}{(2\pi m k_BT)^{3/2}} \exp\left(- \frac{p^2}{2mk_BT}\right) 4\pi p^2 dp
 \end{equation}
 therefore, according to the relationship derived earlier for the non-relativistic case (Eq.~\ref{apx:eq:pressure_internal_energy_relation_for_nr_case}), the equation of state for an ideal gas is given by
 \begin{equation}\label{apx:eq:pgas}
@@ -140,7 +143,7 @@ therefore, according to the relationship derived earlier for the non-relativisti
 \end{equation}
 In order to find the expression for the mean kinetic energy, we begin with the Maxwell-Boltzmann distribution for the speeds of gas particles which is given by:
 \begin{equation*}
-    f(v)dv = 4\pi \left( \frac{m}{2\pi kT} \right)^{3/2} v^2 \exp\left(-\frac{mv^2}{2kT}\right)dv
+    f(v)dv = 4\pi \left( \frac{m}{2\pi k_BT} \right)^{3/2} v^2 \exp\left(-\frac{mv^2}{2k_BT}\right)dv
 \end{equation*}
 The mean kinetic energy $\langle E_{\text{kin}} \rangle$ of a particle in an ideal gas can be expressed by integrating over all possible speeds, weighted by the probability distribution:
 \begin{equation*}
@@ -148,15 +151,15 @@ The mean kinetic energy $\langle E_{\text{kin}} \rangle$ of a particle in an ide
 \end{equation*}
 Substituting the expression for $f(v)dv$ into the equation for $\langle E_{\text{kin}} \rangle$ gives:
 \begin{equation*}
-    \langle E_{\text{kin}} \rangle = \int_{0}^{\infty} \frac{1}{2} m v^2 4\pi \left( \frac{m}{2\pi kT} \right)^{3/2} v^2 \exp\left(-\frac{mv^2}{2kT}\right) dv
+    \langle E_{\text{kin}} \rangle = \int_{0}^{\infty} \frac{1}{2} m v^2 4\pi \left( \frac{m}{2\pi k_BT} \right)^{3/2} v^2 \exp\left(-\frac{mv^2}{2k_BT}\right) dv
 \end{equation*}
 This integral can be solved by using integration by parts, and directly leads to the expression for the mean kinetic energy:
 \begin{equation*}
-    \langle E_\mathrm{kin} \rangle = \frac{3}{2}kT
+    \langle E_\mathrm{kin} \rangle = \frac{3}{2}k_BT
 \end{equation*}
 Substituting to Eq.~\eqref{apx:eq:pgas} we conclude that the thermal pressure in the case of the classical ideal gas is given by:
 \begin{equation}
-    \boxed{P_{\text{gas}} = \frac{2}{3}u = \frac{2}{3} n \langle E_{\text{kin}} \rangle = nkT = \frac{\rho}{\mu m_H}kT}
+    \boxed{P_{\text{gas}} = \frac{2}{3}u = \frac{2}{3} n \langle E_{\text{kin}} \rangle = nk_BT = \frac{\rho}{\mu m_H}k_BT}
 \end{equation}
 which represents the well-known ideal gas law, emerging from considering non-relativistic classical particles. Here $\mu$ is the mean molecular weight, $m_H$ is the mass of the hydrogen atom, and $k$ is the Boltzmann constant.
 Notice that this law arises from the generalized equation of state with $\chi_\rho = \chi_T = 1$, highlighting the intrinsic connection between microscopic particle dynamics and macroscopic thermodynamic properties.

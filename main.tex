@@ -28,9 +28,16 @@
 \usepackage{txfonts}
 \usepackage{multirow}
 \usepackage{xcolor}
-
+\usepackage{longtable}
 \usepackage{appendix}
 \usepackage{chngcntr}
+
+\usepackage{nomencl}
+\makenomenclature
+
+% Define a command for easier nomenclature entries (optional)
+\newcommand{\nomencl}[2]{\nomenclature{#1}{#2}}
+
 
 % Set the depth and numbering
 % for table of contents (toc)
@@ -229,7 +236,7 @@
 \newcommand{\seriestwo}{\textsc{Series\,II}\xspace} % Series II
 
 
-
+%% Control how chapter appendices appear
 \AtBeginEnvironment{subappendices}{%
   \clearpage
   \section*{Appendix}
@@ -243,201 +250,82 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
     \frontmatter  % front and main matter to make roman numbers in between.
-    
 
-
-    % FIRST PAGE TITLE
-    \pdfbookmark[0]{Cover}{title}
-    
-    \begin{titlepage}
-    	\begin{figure}[!t]
-        
-    		\begin{minipage}{.5\textwidth}    
-            	\includegraphics[scale=0.2]{figures/iaforth_logo.jpeg}
-    		\end{minipage}%
-    		\begin{minipage}{0.5\textwidth}
-        		\hspace{2.0cm} \includegraphics[scale=0.21]{figures/uoc_logo.png}
-		    \end{minipage}
-	\end{figure}
-	
-        \begin{center} 
-            \vspace*{2.5cm}
-            \LARGE \bfseries \title 
-            \vspace{3cm}
-            
-            \normalsize
-            A dissertation submitted in partial fulfillment of the \\
-            \vspace{0.5cm} 
-            requirements for the degree \\
-            \vspace{0.5cm}
-            of \\
-            \vspace{0.5cm}
-            DOCTOR OF PHILOSOPHY (Ph.D.) \\
-            \vspace{0.5cm}
-            in \\
-            \vspace{0.5cm}
-            -- ASTROPHYSICS -- \\
-            \vspace{0.5cm}
-            by \\
-            \vspace{0.5cm}
-            Savvas Chanlaridis \\
-            \vspace{4cm}
-            Date of Defence \\
-            \vspace{0.5cm}
-            \date{}{\today}
-        \end{center}
-    \end{titlepage}
-
-    \newpage  % Inserting empty page
-    \mbox{}
-    \thispagestyle{empty}
-    
-% SIGNATURE PAGE
-    \newpage
-    \thispagestyle{empty}
-    %\pdfbookmark[0]{Statement}{statement}
-    \begin{center}
-        UNIVERSITY OF CRETE \\
-        \vspace{0.25cm}
-        DEPARTMENT OF PHYSICS \\
-        \vspace{0.5cm}
-        \textbf{Understanding the Mass Spectrum of Neutron Stars} \\
-        \vspace{0.5cm}
-        PhD Dissertation Presented \\
-        \vspace{0.5cm}
-        by \textbf{Savvas Chanlaridis} \\
-        \vspace{0.5cm}
-        in Partial Fulfillment of the Requirements \\
-        \vspace{0.5cm}
-        for the Degree of Doctor of Philosophy
-    \end{center}
-     \vspace{0.8cm}
-     
-    \noindent \textbf{APPROVED BY}:\\
-    \vspace*{1.5cm}
-    
-    \noindent\hrulefill \\
-    \noindent\textbf{Author}: Savvas Chanlaridis, Doctoral Researcher, University of Crete, IA-FORTH \\
-    \vspace*{1cm}
-    
-    \noindent\hrulefill \\
-    \noindent\textbf{Supervisor}: Dr. Ioannis Antoniadis, Associate Researcher, University of Crete, IA-FORTH \\
-    \vspace*{1cm}    
-    
-    \noindent\hrulefill \\
-    \noindent\textbf{Committee Member}: Dr. Andreas Zezas, Professor, University of Crete, IA-FORTH \\
-    \vspace*{1cm}    
-    
-    \noindent\hrulefill \\
-    \noindent\textbf{Committee Member}: Dr. Vasiliki Pavlidou, Associate Professor, University of Crete, IA-FORTH \\
-    \vspace*{1cm}    
-    
-    \noindent\hrulefill \\
-    \noindent\textbf{Committee Member}: Dr. Ioannis Antoniadis, Associate Researcher, University of Crete, IA-FORTH \\
-    \vspace*{1cm}    
-    
-    \noindent\hrulefill \\
-    \noindent\textbf{Department Chairman}: Dr. Andreas Zezas, Professor, University of Crete \\
-    \vspace*{1cm}  
-    
-    \begin{center}
-        \vspace*{\fill}
-        Heraklion, \date{}{\today}
-    \end{center}
-
-    \newpage  % Inserting empty page
+    %%% FIRST PAGE TITLE %%%
+    \subfile{titlepage/titlepage}
+    \newpage  
     \mbox{}
     \thispagestyle{empty}
 
-    % DEDICATION
-    \begin{dedication}
-        \pdfbookmark[0]{Dedication}{dedication}
-        % This work is wholeheartedly dedicated to my beloved wife and daughter, who have been my constant source of love and motivation. Your unwavering support and sacrifices have been the backbone of my journey. To my late mother, whose memory and teachings continue to guide me, you are missed beyond words and this achievement is a tribute to the indelible mark you've left on my heart. Lastly, to my family, whose encouragement and belief in me have shaped my path, this accomplishment is not just mine but ours. Thank you for being my strength, my inspiration, and my sanctuary.
-        To my wife and daughter, the lights of my life; my late mother, whose memory and teachings continue to guide me; and my family, my unwavering support---this thesis is dedicated to you all.
-    \end{dedication}
-
-    \newpage  % Inserting empty page
+    %%% SIGNATURE/STATEMENT PAGE %%%
+    \subfile{signaturepage/signaturepage}
+    \newpage  
     \mbox{}
     \thispagestyle{empty}
 
-    
-    % % GREEK TEXT
-    % \begin{flushright}
-    %     \begin{mygreek}
-    %       % \pdfbookmark[0]{}{mygreek}
-    %         \selectlanguage{greek}
-        
-    %         %ἐν πᾶσι γὰρ τοῖς φυσικοῖς ἔνεστί τι θαυμαστόν \\
-    %         >en p~asi g`ar to~is fusiko~is >'enest'i ti jaumast'on \\
-    %         --Αριστοτέλης, 384-322 π.Χ. \\
-    %         \selectlanguage{english}
-    %         \vspace{0.5cm}
-    %         In all things of nature there is something of the marvelous \\
-    %         --Aristotle, 384-322 BC
-    %     \end{mygreek}
-    % \end{flushright}
-
-
-    % \newpage  % Inserting empty page
-    % \mbox{}
-    % \thispagestyle{empty}
-
-    % ABSTRACT
+    %%% ABSTRACT PAGE %%%
     \subfile{abstract/abstract}
     \addcontentsline{toc}{chapter}{Abstract}
-    
-    \newpage  % Inserting empty page
+    \adjustmtc
+    \newpage  
     \mbox{}
     \thispagestyle{empty}
 
-    % ACKNOWLEDGMENTS
+    %%% DEDICATION PAGE %%%
+    \subfile{dedication/dedication}
+    \newpage  
+    \mbox{}
+    \thispagestyle{empty}
+
+    %%% ACKNOWLEDGMENTS PAGE %%%
     \subfile{acknowledgements/acknowledgements}
     \addcontentsline{toc}{chapter}{Acknowledgements}
-    
-    \newpage  % Inserting empty page
+    \adjustmtc
+    \newpage
     \mbox{}
     \thispagestyle{empty}
 
-    % TABLE OF CONTENT
-{   \cleardoublepage
+    %%% TABLE OF CONTENT %%%
+    {  
+    \cleardoublepage
     \phantomsection
-    
-    % \addcontentsline{toc}{chapter}{Contents}
-    
     % CHANGE COLOR LINK FOR TOC ONLY
+    \hypersetup{linkcolor=black, pdfborder={0 0 0}} % Use pdfborder={0 0 1} for a red border to appear around a link
+    \dominitoc
+    \tableofcontents
+    \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
+    }
 
- \hypersetup{linkcolor=black, pdfborder={0 0 0}} % Use pdfborder={0 0 1} for a red border to appear around a link
- \dominitoc
-  \tableofcontents
-  \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
-}
-
-    % LIST OF FIGURES
+    %%% LIST OF FIGURES %%%
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{List of Figures}
-{
-	\hypersetup{linkcolor=black, pdfborder={0 0 0}, citecolor=black}
+    {
+    \hypersetup{linkcolor=black, pdfborder={0 0 0}, citecolor=black}
     \listoffigures 
-    \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
-}
-
-%     % LIST OF TABLES
+    \adjustmtc
+    }
+    
+    %%% LIST OF TABLES %%%
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{List of Tables}
-    
-{
-	\hypersetup{linkcolor=black, pdfborder={0 0 0}, citecolor=black}
+    {
+    \hypersetup{linkcolor=black, pdfborder={0 0 0}, citecolor=black}
     \listoftables
-    \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
-    \newpage  % Inserting empty page
-  	\mbox{}
-  	\thispagestyle{empty}
-}
-	
-
-   
+    \adjustmtc 
+    \newpage  
+    \mbox{}
+    \thispagestyle{empty}
+    }
+    
+    %%% NOMENCLATURE %%%
+    \subfile{nomenclature/nomenclature}
+    \addcontentsline{toc}{chapter}{Glossary and Nomenclature}
+    \adjustmtc
+    \newpage 
+    \mbox{}
+    \thispagestyle{empty}
 
 
     \mainmatter  % front and main matter to make roman numbers in between
@@ -452,9 +340,12 @@
 
     % APPENDICES
     \appendix
+    \addcontentsline{toc}{chapter}{Appendices}
+    \adjustmtc
     \subfile{appendices/appendix1/appendix1}
     \subfile{appendices/appendix2/appendix2}
     % \subfile{appendices/appendix3/appendix3}
+    
 
     % REFERENCES
     % If you are using a windows machine and the bibliography doesn't work
@@ -463,6 +354,7 @@
     \bibliographystyle{bibliography/bibstyle_apj.bst}
     \bibliography{bibliography/bibfile_thesis}
     \addcontentsline{toc}{chapter}{Bibliography}
+    \adjustmtc
 
 
 \end{document}
