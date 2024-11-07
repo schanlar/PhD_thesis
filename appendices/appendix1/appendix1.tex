@@ -6,13 +6,13 @@
         \minitoc
     }
 \section{Deriving the Equation of State: A Macroscopic Approach}
-In the context of thermodynamics, the equation of state is a fundamental relation that characterizes the state of matter under a given set of physical conditions. Typically, it is represented in the form $P=P(\rho,T)$, where $P$ denotes the pressure, $\rho$ the density, and $T$ the temperature. 
+In thermodynamics, the equation of state is a fundamental relationship that defines the state of a material system under specific physical conditions. Typically, it is expressed in the form $P=P(\rho,T)$, where $P$ denotes the pressure, $\rho$ the density, and $T$ the temperature. 
 
-To further our understanding, it is often advantageous to express the equation of state in a differential form. This differential representation can be derived by initially stating the equation of state as a generalized power law:
+To deepen our understanding, it is often useful to express the equation of state in differential form.  This differential representation can be derived by initially expressing the equation of state as a generalized power law:
 \begin{equation}
     P = \rho^{\chi_\rho} T^{\chi_T},
 \end{equation}
-where $\chi_\rho$ and $\chi_T$ are exponents that describe how pressure $P$, varies with changes in density $\rho$, and temperature $T$, respectively. The derivation of its differential form begins by applying the principles of partial differentiation to this power law, leading to the total differential of pressure as:
+where $\chi_\rho$ and $\chi_T$ are exponents that describe how pressure $P$, varies with changes in density $\rho$, and temperature $T$, respectively. The derivation of the differential form begins by applying the principles of partial differentiation to this power law, resulting in the total differential of pressure as:
 \begin{equation*}
     dP = \left( \frac{\partial P}{\partial \rho} \right)_T d\rho + \left( \frac{\partial P}{\partial T} \right)_\rho dT.
 \end{equation*}
@@ -22,146 +22,148 @@ Expanding this differential using the initial power law yields:
 \end{equation*}
 which, upon further manipulation, can be expressed in terms of relative changes:
 \begin{equation}
-    \frac{dP}{P} = \chi_\rho \frac{d\rho}{\rho} + \chi_T \frac{dT}{T}
+    \frac{dP}{P} = \chi_\rho \frac{d\rho}{\rho} + \chi_T \frac{dT}{T}.
 \end{equation}
 This equation succinctly captures the relative change in pressure in response to infinitesimal changes in density and temperature. 
 
 By comparing the relations:
 \begin{align*}
     \label{apx:eq:differential_form_of_eos}
-    dP &= \left( \frac{\partial P}{\partial \rho} \right)_T d\rho + \left( \frac{\partial P}{\partial T} \right)_\rho dT \\\\
-    \frac{dP}{P} &= \chi_\rho \frac{d\rho}{\rho} + \chi_T \frac{dT}{T}
+    dP &= \left( \frac{\partial P}{\partial \rho} \right)_T d\rho + \left( \frac{\partial P}{\partial T} \right)_\rho dT, \\\\
+    \frac{dP}{P} &= \chi_\rho \frac{d\rho}{\rho} + \chi_T \frac{dT}{T},
 \end{align*}
 we find that the exponents $\chi_\rho$ and $\chi_T$ are given by the equations:
 \begin{align*}
-    \chi_\rho &= \frac{\rho}{P} \left( \frac{\partial P}{\partial \rho} \right)_T \\\\
-    \chi_T &= \frac{T}{P} \left( \frac{\partial P}{\partial T} \right)_\rho
+    \chi_\rho &= \frac{\rho}{P} \left( \frac{\partial P}{\partial \rho} \right)_T, \\\\
+    \chi_T &= \frac{T}{P} \left( \frac{\partial P}{\partial T} \right)_\rho.
 \end{align*}
 
 However, one can find an even more elegant expression for the aforementioned exponents as follows:
 \begin{align*}
      P &= \rho^{\chi_\rho} T^{\chi_T} \Rightarrow \log \,P = \log \,\left( \rho^{\chi_\rho} T^{\chi_T} \right) = \log \,\rho^{\chi_\rho} + \log \,T^{\chi_T} \Rightarrow \\\\
-     &\Rightarrow \log \,P = \chi_\rho \log \,\rho + \chi_T \log \,T
+     &\Rightarrow \log \,P = \chi_\rho \log \,\rho + \chi_T \log \,T.
 \end{align*}
-The total differential then is
+The total differential then is:
 \begin{equation*}
-    d\log \,P = \left( \frac{\partial \log \,P}{\partial \log \,\rho} \right)_T d \log \,\rho + \left( \frac{\partial \log \,P}{\partial \log \,T} \right)_\rho d \log \,T
+    d\log \,P = \left( \frac{\partial \log \,P}{\partial \log \,\rho} \right)_T d \log \,\rho + \left( \frac{\partial \log \,P}{\partial \log \,T} \right)_\rho d \log \,T,
 \end{equation*}
-so that
+so that:
 \begin{equation*}
-    d \log \,P = \chi_\rho d\log \,\rho + \chi_T d \log \,T
+    d \log \,P = \chi_\rho d\log \,\rho + \chi_T d \log \,T,
 \end{equation*}
-and by comparing the last two equations, it finally emerges that
+and by comparing the last two equations, it finally emerges that:
 \begin{align}
-    \chi_\rho &= \frac{\rho}{P} \left( \frac{\partial P}{\partial \rho} \right)_T = \left( \frac{\partial \log \,P}{\partial \log \,\rho} \right)_T \label{apx:eq:chi_rho}\\\nonumber\\
-    \chi_T &= \frac{T}{P} \left( \frac{\partial P}{\partial T} \right)_\rho = \left( \frac{\partial \log \,P}{\partial \log \,T} \right)_\rho \label{apx:eq:chi_T}
+    \chi_\rho &= \frac{\rho}{P} \left( \frac{\partial P}{\partial \rho} \right)_T = \left( \frac{\partial \log \,P}{\partial \log \,\rho} \right)_T, \label{apx:eq:chi_rho}\\\nonumber\\
+    \chi_T &= \frac{T}{P} \left( \frac{\partial P}{\partial T} \right)_\rho = \left( \frac{\partial \log \,P}{\partial \log \,T} \right)_\rho. \label{apx:eq:chi_T}
 \end{align}
-This derivation elegantly illustrates how the exponents $\chi_\rho$ and $\chi_T$ can be expressed in terms of logarithmic derivatives. Through the logarithmic transformation of the equation of state, we obtain a clear and concise formula for these exponents, linking them directly to the partial derivatives of the logarithm of pressure with respect to the logarithms of density and temperature. 
-In the most general case, the exponents $\chi_\rho$ and $\chi_T$ themselves depend on $\rho$ and $T$. However, if they are (approximately) constant, the equation of state can be written as
+This derivation elegantly illustrates how the exponents $\chi_\rho$ and $\chi_T$ can be expressed in terms of logarithmic derivatives. By applying a logarithmic transformation to the equation of state, we obtain a clear and concise formula for these exponents, linking them directly to the partial derivatives of the logarithm of pressure with respect to the logarithms of density and temperature. 
+In the most general case, the exponents $\chi_\rho$ and $\chi_T$ may depend on $\rho$ and $T$. However, if they are approximately constant, the equation of state can be written as:
 \begin{equation}
     \label{apx:eq:eos_chi_rho_chi_T}
-    P = P_0 \,\rho^{\chi_\rho} \,T^{\chi_T}
+    P = P_0 \,\rho^{\chi_\rho} \,T^{\chi_T}.
 \end{equation}
-This formulation provides a simplified yet powerful representation of the equation of state, assuming that the exponents $\chi_\rho$ and $\chi_T$ remain invariant over the range of interest. Here, $P_0$ serves as a reference pressure, encapsulating the initial conditions or the normalization factor for the system.
+This formulation provides a simplified yet powerful representation of the equation of state, assuming that the exponents $\chi_\rho$ and $\chi_T$ remain invariant over the range of interest. Here, $P_0$ serves as a reference pressure, encapsulating the initial conditions and acting as a normalization factor for the system.
 
 
 
 \section{Deriving the Equation of State: A Microscopic Approach}
-In the previous section, we explored the derivation of the generalized equation of state, Eq.~\eqref{apx:eq:eos_chi_rho_chi_T}, which encapsulates the macroscopic response of a gas to changes in density and temperature, parameterized by the exponents $\chi_\rho$ and $\chi_T$. This formulation elegantly bridges thermodynamic properties with the statistical behavior of gas molecules under a wide range of conditions. In this section, we will derive another form of the generalized equation of state, which offers a complementary perspective by directly connecting the pressure of a gas to its microscopic kinetic energy and particle density.
+In the previous section, we examined the derivation of the generalized equation of state, Eq.~\eqref{apx:eq:eos_chi_rho_chi_T}, which captures the macroscopic response of a gas to changes in density and temperature, parameterized by the exponents $\chi_\rho$ and $\chi_T$.
+This formulation provides an elegant link between thermodynamic properties and the statistical behavior of gas molecules across a broad range of conditions.
+In this section, we derive an alternative form of the generalized equation of state, which offers a complementary perspective by directly relating the pressure of a gas to its microscopic kinetic energy and particle density.
 
-In the study of the thermodynamic properties of an ideal gas, a fundamental aspect is understanding the distribution of particle momenta within the gas, denoted as $n(p)$. In other words, the distribution function $n(p)dp$ represents the number of particles per unit volume with momentum $p$ in the range $p \in [p, p+dp]$. If $n(p)$ s known, key physical quantities such as the number density, energy density, and pressure can be derived from the following integrals:
+A key focus in studying the thermodynamic properties of an ideal gas is understanding the distribution of particle momenta within the gas, represented by $n(p)$. The distribution function $n(p)dp$ describes the number of particles per unit volume with momentum $p$ within the interval $p \in [p, p+dp]$. Given $n(p)$ important physical quantities---such as the number density, energy density, and pressure---can be determined from the following integrals:
 \begin{enumerate}
     \item \textit{Number density}
         \begin{equation}\label{apx:eq:number_density_integral}
-            n = \int_{0}^{\infty} n(p) dp
+            n = \int_{0}^{\infty} n(p) dp,
         \end{equation}
         
     \item \textit{Energy Density}
         \begin{equation}\label{apx:eq:energy_density_integral}
-            u = \int_{0}^{\infty} E_{\text{kin}} n(p) dp = n \langle E_{\text{kin}} \rangle
+            u = \int_{0}^{\infty} E_{\text{kin}} n(p) dp = n \langle E_{\text{kin}} \rangle,
         \end{equation}
         
     \item \textit{Pressure}
         \begin{equation}\label{apx:eq:pressure_integral} 
-            P = \frac{1}{3}\int_{0}^{\infty} p \,v_p \,n(p) dp = \frac{1}{3} n \langle p \,v_p \rangle
+            P = \frac{1}{3}\int_{0}^{\infty} p \,v_p \,n(p) dp = \frac{1}{3} n \langle p \,v_p \rangle.
         \end{equation}
 \end{enumerate}
-Equation~\eqref{apx:eq:number_density_integral}  is straightforward, stemming directly from the definition of $n(p)$. It calculates the total number of particles per unit volume, integrating the momentum distribution over all possible momenta.
-The second relationship for energy density (Eq.~\eqref{apx:eq:energy_density_integral}) comes from the definition of an ideal gas, where the internal energy is solely kinetic. Here, $E_\mathrm{kin}$ represents the kinetic energy of a particle with momentum $p$ and velocity $v_p$. This equation yields the total kinetic energy per unit volume, effectively averaging the kinetic energy across the distribution of particles. The equation for pressure, however, requires a deeper examination. It is derived from the kinetic theory of gases and is based on the principle that pressure arises from the collisions of particles with the walls of their container, with each particle transferring momentum proportional to $p\,v_p$ per unit area per unit time. The factor of $1/3$ reflects the isotropic nature of gas particle motion, assuming that the momentum transfer is uniformly distributed among the three spatial dimensions according to the equipartition theorem. This integral captures the contribution of each particle, with momentum $p$ and velocity $v_p$, to the total pressure exerted by the gas.
+Equation~\eqref{apx:eq:number_density_integral}  is straightforward, stemming directly from the definition of $n(p)$. It computes the total number of particles per unit volume by integrating the momentum distribution over all possible momenta.
+The second relationship for energy density (Eq.~\eqref{apx:eq:energy_density_integral}) follows from the definition of an ideal gas, where the internal energy is purely kinetic. Here, $E_\mathrm{kin}$ represents the kinetic energy of a particle with momentum $p$ and velocity $v_p$. This equation yields the total kinetic energy per unit volume, effectively providing an average of the kinetic energy across the particle distribution. The equation for pressure, however, requires a more in-depth examination. Derived from the kinetic theory of gases, it is based on the principle that pressure results from particle collisions with the container walls, with each particle transferring momentum proportional to $p\,v_p$ per unit area per unit time. The factor $1/3$ accounts for the isotropic nature of particle motion in a gas, assuming momentum transfer is uniformly distributed across the three spatial dimensions, as described by the equipartition theorem. This integral captures each particle's contribution, with momentum $p$ and velocity $v_p$, to the total pressure exerted by the gas.
 
-Having defined the quantities above, we now seek to establish a relationship between pressure and internal energy. According to special relativity, the momentum and velocity of particles are related to their energy by the equations:
+Having defined the quantities above, we now seek to establish a relationship between pressure and internal energy. According to special relativity, the momentum and velocity of particles are related to their energy by the following equations:
 \begin{equation}
-    \epsilon^2 = p^2 c^2 + m^2 c^4
+    \epsilon^2 = p^2 c^2 + m^2 c^4,
 \end{equation}
 and
 \begin{align}
     \nonumber \frac{\partial}{\partial p} (\epsilon^2) &= \frac{\partial}{\partial p} (p^2 c^2 + m^2 c^4) \Rightarrow 2\epsilon \frac{\partial \epsilon}{\partial p} = 2p c^2 \Rightarrow \\\nonumber\\
-    &\Rightarrow \frac{\partial \epsilon}{\partial p} \equiv v_p = \frac{pc^2}{\epsilon}
+    &\Rightarrow \frac{\partial \epsilon}{\partial p} \equiv v_p = \frac{pc^2}{\epsilon}.
 \end{align}
 Using these relations, we can derive connections between pressure and internal energy for an ideal gas in both the non-relativistic (NR) and extremely relativistic (ER) limits:
 \begin{itemize}
     \item \textbf{NR limit}: In this scenario, momenta are much smaller than $mc$ ($p \ll mc$)
 
-    $$\epsilon^2 = p^2 c^2 + m^2 c^4 \Rightarrow \epsilon^2 = c^2 \left(p^2 + m^2c^2 \right)$$
-    Given $p \ll mc$,  we approximate $\epsilon \simeq mc^2$, therefore
-    $$v_p = \frac{pc^2}{\epsilon} = \frac{p}{m}$$
-    The kinetic energy is expectedly $E_{\text{kin}} = \frac{p^2}{2m}$ so that $\langle p v_p \rangle = \langle \frac{p^2}{m} \rangle = 2 \langle E_{\text{kin}} \rangle $.
-    Finally, from the integral relations \eqref{apx:eq:energy_density_integral}, \eqref{apx:eq:pressure_integral}, it follows that
+    $$\epsilon^2 = p^2 c^2 + m^2 c^4 \Rightarrow \epsilon^2 = c^2 \left(p^2 + m^2c^2 \right).$$
+    Given $p \ll mc$, we approximate $\epsilon \simeq mc^2$, therefore:
+    $$v_p = \frac{pc^2}{\epsilon} = \frac{p}{m}.$$
+    The kinetic energy is given by $E_{\text{kin}} = p^2/2m$ so that $\langle p v_p \rangle = \langle \frac{p^2}{m} \rangle = 2 \langle E_{\text{kin}} \rangle $.
+    Finally, from the integral relations \eqref{apx:eq:energy_density_integral} and \eqref{apx:eq:pressure_integral}, it follows that:
     \begin{equation}
         \label{apx:eq:pressure_internal_energy_relation_for_nr_case}
-        P = \frac{2}{3}u
+        P = \frac{2}{3}u.
     \end{equation}
 
 
     \item \textbf{ER limit}: In this case, we have $p \gg mc$. This means $\epsilon = pc$, hence $v_p = c \longrightarrow \langle p v_p \rangle = \langle pc \rangle = \langle \epsilon \rangle$.
-    Consequently, from the integral relations \eqref{apx:eq:energy_density_integral}, \eqref{apx:eq:pressure_integral}, it follows that
+    Consequently, from the integral relations \eqref{apx:eq:energy_density_integral} and \eqref{apx:eq:pressure_integral}, it follows that:
     \begin{equation}
         \label{apx:eq:pressure_internal_energy_relation_for_er_case}
-        P = \frac{1}{3}u
+        P = \frac{1}{3}u.
     \end{equation}
 \end{itemize}
-Generalizing, we can write
+Generalizing, we can write:
 \begin{equation}\label{apx:eq:second_generalized_eos}
     P = \zeta n \langle E \rangle,
 \end{equation}
-where $\zeta = 2/3$ or $\zeta = 1/3$, for the non-relativistic and relativistic limits, respectively. This aligns with our intuition that the pressure resulting from particle collisions would be proportional to the particle density and their kinetic energy:
+where $\zeta = 2/3$ or $\zeta = 1/3$, for the non-relativistic and relativistic limits, respectively. This aligns with our intuition that the pressure arising from particle collisions would be proportional to the particle density and their kinetic energy:
 \begin{equation*}
-    P \sim n mv^2 \sim n E_{\text{kin}}
+    P \sim n mv^2 \sim n E_{\text{kin}}.
 \end{equation*}
 
 
-Though at first glance the equations \eqref{apx:eq:eos_chi_rho_chi_T} and \eqref{apx:eq:second_generalized_eos} may appear distinct, they are inherently linked through the principles of statistical mechanics. The former emphasizes the macroscopic response to changes in physical conditions, encoded in the exponents $\chi_\rho$ and $\chi_T$, while the latter delves into the microscopic basis of pressure in terms of particle density and kinetic energy. To demonstrate their connection we will explore their application in two ideal gas cases: the classical Maxwell-Boltzmann ideal gas and the ideal quantum Fermi gas.
+Though at first glance the equations \eqref{apx:eq:eos_chi_rho_chi_T} and \eqref{apx:eq:second_generalized_eos} may seem distinct, they are inherently connected through the principles of statistical mechanics. The former emphasizes the macroscopic response to changes in physical conditions, encoded in the exponents $\chi_\rho$ and $\chi_T$, while the latter explores the microscopic origins of pressure in terms of particle density and kinetic energy. To illustrate their connection we will examine their application in two ideal gas cases: the classical Maxwell-Boltzmann ideal gas and the ideal quantum Fermi gas.
 
 \subsection{The Classical Ideal Gas}
 In an ideal gas, the momentum distribution is given by the Maxwell-Boltzmann distribution:
 \begin{equation}
-    n(p) dp = \frac{n}{(2\pi m k_BT)^{3/2}} \exp\left(- \frac{p^2}{2mk_BT}\right) 4\pi p^2 dp
+    n(p) dp = \frac{n}{(2\pi m k_BT)^{3/2}} \exp\left(- \frac{p^2}{2mk_BT}\right) 4\pi p^2 dp,
 \end{equation}
-therefore, according to the relationship derived earlier for the non-relativistic case (Eq.~\ref{apx:eq:pressure_internal_energy_relation_for_nr_case}), the equation of state for an ideal gas is given by
+therefore, according to the relationship derived earlier for the non-relativistic case (Eq.~\ref{apx:eq:pressure_internal_energy_relation_for_nr_case}), the equation of state for an ideal gas is given by:
 \begin{equation}\label{apx:eq:pgas}
-    P_{\text{gas}} = \frac{2}{3}u = \frac{2}{3} n \langle E_{\text{kin}} \rangle
+    P_{\text{gas}} = \frac{2}{3}u = \frac{2}{3} n \langle E_{\text{kin}} \rangle.
 \end{equation}
-In order to find the expression for the mean kinetic energy, we begin with the Maxwell-Boltzmann distribution for the speeds of gas particles which is given by:
+To derive the expression for the mean kinetic energy, we begin with the Maxwell-Boltzmann distribution for the speeds of gas particles, which is given by:
 \begin{equation*}
-    f(v)dv = 4\pi \left( \frac{m}{2\pi k_BT} \right)^{3/2} v^2 \exp\left(-\frac{mv^2}{2k_BT}\right)dv
+    f(v)dv = 4\pi \left( \frac{m}{2\pi k_BT} \right)^{3/2} v^2 \exp\left(-\frac{mv^2}{2k_BT}\right)dv.
 \end{equation*}
-The mean kinetic energy $\langle E_{\text{kin}} \rangle$ of a particle in an ideal gas can be expressed by integrating over all possible speeds, weighted by the probability distribution:
+The mean kinetic energy, $\langle E_{\text{kin}} \rangle$, of a particle in an ideal gas can be expressed by integrating over all possible speeds, weighted by the probability distribution:
 \begin{equation*}
-    \langle E_{\text{kin}} \rangle = \int_{0}^{\infty} \frac{1}{2} m v^2 f(v) dv
+    \langle E_{\text{kin}} \rangle = \int_{0}^{\infty} \frac{1}{2} m v^2 f(v) dv.
 \end{equation*}
-Substituting the expression for $f(v)dv$ into the equation for $\langle E_{\text{kin}} \rangle$ gives:
+Substituting the expression for $f(v)dv$ into the equation for $\langle E_{\text{kin}} \rangle$ yields:
 \begin{equation*}
-    \langle E_{\text{kin}} \rangle = \int_{0}^{\infty} \frac{1}{2} m v^2 4\pi \left( \frac{m}{2\pi k_BT} \right)^{3/2} v^2 \exp\left(-\frac{mv^2}{2k_BT}\right) dv
+    \langle E_{\text{kin}} \rangle = \int_{0}^{\infty} \frac{1}{2} m v^2 4\pi \left( \frac{m}{2\pi k_BT} \right)^{3/2} v^2 \exp\left(-\frac{mv^2}{2k_BT}\right) dv.
 \end{equation*}
-This integral can be solved by using integration by parts, and directly leads to the expression for the mean kinetic energy:
+This integral can be solved using integration by parts, which directly yields the expression for the mean kinetic energy:
 \begin{equation*}
-    \langle E_\mathrm{kin} \rangle = \frac{3}{2}k_BT
+    \langle E_\mathrm{kin} \rangle = \frac{3}{2}k_BT.
 \end{equation*}
-Substituting to Eq.~\eqref{apx:eq:pgas} we conclude that the thermal pressure in the case of the classical ideal gas is given by:
+Substituting to Eq.~\eqref{apx:eq:pgas}, we conclude that the thermal pressure in the case of the classical ideal gas is given by:
 \begin{equation}
     \boxed{P_{\text{gas}} = \frac{2}{3}u = \frac{2}{3} n \langle E_{\text{kin}} \rangle = nk_BT = \frac{\rho}{\mu m_H}k_BT}
 \end{equation}
-which represents the well-known ideal gas law, emerging from considering non-relativistic classical particles. Here $\mu$ is the mean molecular weight, $m_H$ is the mass of the hydrogen atom, and $k$ is the Boltzmann constant.
+which represents the well-known ideal gas law, emerging from considering non-relativistic classical particles. Here, $\mu$ is the mean molecular weight, $m_H$ is the mass of the hydrogen atom, and $k_B$ is the Boltzmann constant.
 Notice that this law arises from the generalized equation of state with $\chi_\rho = \chi_T = 1$, highlighting the intrinsic connection between microscopic particle dynamics and macroscopic thermodynamic properties.
 
 
@@ -173,83 +175,80 @@ According to statistical quantum physics, a collection of many indistinguishable
     \begin{equation}
     f(\boldsymbol{p}) = \frac{1}{e^{(E(p) - \mu) / (k_B T)} \pm 1},
     \end{equation}
-where the ``$\pm$'' signature takes the positive value for fermions and the negative value for bosons. In the first case, the distribution is called the \textit{Fermi-Dirac distribution}, while in the second case, it is called the \textit{Bose-Einstein distribution}. The quantity represented by $\mu$ is called the ``chemical potential'' and is a form of potential energy that is related to the number density and temperature of the particles.
+where the ``$\pm$'' sign takes the positive value for fermions and the negative value for bosons. In the first case, the distribution is referred to as the \textit{Fermi-Dirac distribution}, while in the second case, it is called the \textit{Bose-Einstein distribution}. The quantity $\mu$, known as the chemical potential, represents a form of potential energy that is related to the number density and temperature of the particles.
 
-In the classical limit, that is, in the limit where the average distance between particles is much greater than the De Broglie wavelength of the particles, the above momentum distribution function can be approximated by the Maxwell-Boltzmann distribution. In the opposite case, quantum mechanical phenomena cannot be ignored. At this point, it is essential to refer to two fundamental principles of quantum mechanics. The first is the \textit{Heisenberg's uncertainty principle}
+In the classical limit, that is, in the limit where the average distance between particles is much greater than the de Broglie wavelength of the particles, the above momentum distribution function can be approximated by the Maxwell-Boltzmann distribution. In the opposite case, quantum mechanical phenomena cannot be neglected. At this stage, it becomes essential to reference two fundamental principles of quantum mechanics. The first is the \textit{Heisenberg's uncertainty principle}:
 \begin{equation}
 \Delta x \Delta p_x \geq h \longrightarrow (\Delta x)^3 (\Delta p)^3 \geq h^3 \equiv V_x V_p \geq h^3,
 \end{equation}
-where $V_x$ is the geometric volume and $V_y$ is the volume in momentum space. An interpretation of this fundamental principle of quantum mechanics is that phase space is quantized, i.e., the minimum volume that a fermion can occupy is
-$$\Delta x \Delta y \Delta z \Delta p_x \Delta p_y \Delta p_z = h^3$$
+where $V_x$ is the geometric volume and $V_y$ is the volume in momentum space. An interpretation of this fundamental principle of quantum mechanics is that phase space is quantized, i.e., the minimum volume that a fermion can occupy is:
+$$\Delta x \Delta y \Delta z \Delta p_x \Delta p_y \Delta p_z = h^3,$$
 which is called a ``quantum cell'' and is defined in the 6-dimensional phase space.
 
-The second principle of quantum mechanics that concerns us is the \textit{Pauli's exclusion principle}. According to this principle, it is not possible for two or more fermions to exist with all their quantum numbers identical within a quantum cell. As a consequence of the exclusion principle and the uncertainty principle, the number of energy states corresponding to momenta between $p$ and $p + dp$ will be
+The second principle of quantum mechanics relevant to our discussion is the \textit{Pauli's exclusion principle}. According to this principle, it is not possible for two or more fermions to exist with all their quantum numbers identical within a quantum cell. As a consequence of both the exclusion principle and the uncertainty principle, the number of energy states corresponding to momenta between $p$ and $p + dp$ is given by:
 $$V_x V_p \geq h^3 \longrightarrow g(s) = g\frac{V_x V_p}{h^3},$$
-where $g$ is the degeneracy of the energy states per quantum cell in the phase space and $V_x V_p = h^3$ is the minimum volume according to the uncertainty principle. The quantity $g(s)$ is called the ``density of states'' and for fermions, it is assumed that $g=2$ so that the density of states becomes
-$$ \frac{V_x}{h^3} 8 \pi p^2dp $$
-It follows that the number of fermions, $N(p)dp$, will be
-$$N(p)dp \leq \frac{V_x}{h^3} 8 \pi p^2dp $$
-with equality holding when all the lowest possible energy states are occupied. Indeed, this happens in a fully degenerate fermion gas as we will see later, for which we can simply write:
-$$N(p) = g \frac{V_x V_p}{h^3} = 2 \frac{V_x V_p}{h^3}$$
-
-Based on the above, and because $N = n V_x$, the number of fermions in a given phase space with momenta between $p$ and $p + dp$ will be
+where $g$ is the degeneracy of the energy states per quantum cell in the phase space and $V_x V_p = h^3$ is the minimum volume according to the uncertainty principle. The quantity $g(s)$ is called the ``density of states'' and for fermions, it is assumed that $g=2$ so that the density of states becomes:
+$$ \frac{V_x}{h^3} 8 \pi p^2dp. $$
+It follows that the number of fermions, $N(p)dp$, is given by:
+$$N(p)dp \leq \frac{V_x}{h^3} 8 \pi p^2dp, $$
+with equality holding when all the lowest possible energy states are occupied. Indeed, this occurs in a fully degenerate fermion gas, as we will discuss later, for which we can simply write:
+$$N(p) = g \frac{V_x V_p}{h^3} = 2 \frac{V_x V_p}{h^3}.$$
+Based on the above, and because $N = n V_x$, the number of fermions in a given phase space with momenta between $p$ and $p + dp$ is given by:
 \begin{equation}
-    n(p) dp = f g \frac{V_p}{h^3} = f g \frac{4\pi p^2 dp}{h^3} = \frac{g}{e^{(E - \mu)/k_B T} + 1} \frac{4\pi p^2}{h^3} dp
+    n(p) dp = f g \frac{V_p}{h^3} = f g \frac{4\pi p^2 dp}{h^3} = \frac{g}{e^{(E - \mu)/k_B T} + 1} \frac{4\pi p^2}{h^3} dp.
 \end{equation}
 
-Suppose we have a distribution of electrons (fermions), then the number density of the electrons will be according to the relation
+Suppose we have a distribution of electrons (fermions); then the number density of the electrons is given by the relation:
 \begin{equation}
-    n_e = \int_0^{\infty} n_e (p) dp =  \frac{8\pi}{h^3} \int_0^{\infty} \frac{p^2 dp}{e^{(E - \mu)/k_B T} + 1}
+    n_e = \int_0^{\infty} n_e (p) dp =  \frac{8\pi}{h^3} \int_0^{\infty} \frac{p^2 dp}{e^{(E - \mu)/k_B T} + 1}.
 \end{equation}
-Under conditions of high pressure and low temperature, the energy of thermal motion of an electron is much smaller than its rest energy, and therefore, the electrons fall to their lowest possible energy levels. All the energy levels of the electrons, up to a highest possible, are occupied, while all those higher than this are empty. This highest energy level that our quantum system has is called \textit{Fermi energy}, $\epsilon_F$, which is defined as
-$$\mu = mc^2 + \epsilon_F$$
-Thus, when $k_B T \ll \mu \rightarrow k_B T \ll \epsilon_F$, we say that the electron gas is \textit{fully degenerate}.
+Under conditions of high pressure and low temperature, the thermal energy of an electron is much smaller than its rest energy. As a result, the electrons occupy the lowest possible energy levels. All energy levels up to a certain maximum are filled, while those above this level remain empty. The highest energy level that the quantum system reaches is called the \textit{Fermi energy}, $\epsilon_F$, which is defined as:
+$$\mu = mc^2 + \epsilon_F.$$
+Thus, when $k_B T \ll \mu$ (or equivalently, $k_B T \ll \epsilon_F$), the electron gas is considered \textit{fully degenerate}.
+Instead of the term "Fermi energy," we can say that there exists a highest momentum value in a fully degenerate fermion gas, which we correspondingly call the \textit{Fermi momentum}, $p_F$. The Fermi momentum is related to the Fermi energy as follows: for a non-relativistic gas, $\epsilon_F = p_F^2 / 2m_e$, and for a relativistic gas, $\epsilon_F = c\,p_F$.
 
-Instead of the term ``Fermi energy'', we could say that there exists a highest momentum value in a fully degenerate fermion gas, which correspondingly we call \textit{Fermi momentum}, $p_F$. The Fermi momentum is connected to the Fermi energy as $\epsilon_F = p_F^2 / 2m_e$, for a non-relativistic gas, and $\epsilon_F = c\,p_F$ for a relativistic gas.
-
-Under the conditions $E \ll \mu$ and $T = 0$, the number density of electrons will be
+Under the conditions $E \ll \mu$ and $T = 0$, the number density of electrons is given by:
 \begin{equation}
     \label{apx:electron_number_density_degenerate_gas}
-    n_e = \frac{8\pi}{h^3} \int_0^{p_F} \frac{p^2 dp}{e^{(E - \mu)/k_B T} + 1} = \frac{8\pi}{h^3} \int_0^{p_F} p^2 dp = \frac{8\pi}{3h^3} p_F^3
+    n_e = \frac{8\pi}{h^3} \int_0^{p_F} \frac{p^2 dp}{e^{(E - \mu)/k_B T} + 1} = \frac{8\pi}{h^3} \int_0^{p_F} p^2 dp = \frac{8\pi}{3h^3} p_F^3,
 \end{equation}
-as $e^{(E - \mu)/k_B T} \rightarrow 0$. The upper limit of integration for a fully degenerate gas is the Fermi momentum, as---by definition---electrons cannot have momentum (energy) greater than this limit. It thus appears that
+as $e^{(E - \mu)/k_B T} \rightarrow 0$. The upper limit of integration for a fully degenerate gas is the Fermi momentum, since, by definition, electrons cannot possess momentum (or energy) greater than this limit. Therefore, we have:
 \begin{equation}
     \label{apx:eq:fermi_momentum}
-    p_F = h \left( \frac{3 n_e}{8 \pi} \right)^{1/3} \longrightarrow p_F \propto n_e^{1/3}
+    p_F = h \left( \frac{3 n_e}{8 \pi} \right)^{1/3} \longrightarrow p_F \propto n_e^{1/3}.
 \end{equation}
 
-Using the information we have mentioned up to this point, we can easily find the expression of the equation of state that describes both a non-relativistic and a relativistic degenerate gas. For the first case, where the electrons are not moving at relativistic speeds, it holds that $E_\text{kin} = p^2 / 2m$ and $P = \frac{2}{3}n \langle E_\text{kin} \rangle$, while degeneracy leads us to write
+Using the information discussed so far, we can easily derive the equation of state for both non-relativistic and relativistic degenerate gases. In the non-relativistic case, where the electrons are not moving at relativistic speeds, it holds that $E_\text{kin} = p^2 / 2m$ and $P = \frac{2}{3}n \langle E_\text{kin} \rangle$. Considering degeneracy, we can write:
 \begin{align*}
     \langle E_\text{kin} \rangle &= \frac{1}{N} \int_0^{\epsilon_F} E N(E) dE = \frac{1}{N} \int_0^{p_F} \frac{p^2}{2m} \frac{2}{h^3} V_x 4\pi p^2 dp \\\\
     &= \frac{4\pi V_x}{m N h^3} \int_0^{p_F} p^4 dp = \frac{4\pi V_x}{m N h^3} \frac{p_F^5}{5} = \frac{p_F^2}{2m} \frac{8\pi V_x}{5Nh^3} p_F^3 \\\\
     &= \frac{p_F^2}{2m} \frac{8\pi V_x}{5Nh^3} \frac{3 V_p}{4\pi} = \frac{p_F^2}{2m} \frac{2 V_x V_p}{Nh^3} \frac{3}{5} \Rightarrow \\\\
-    &\Rightarrow \langle E_{\text{kin}} \rangle = \frac{3}{5} \frac{p_F^2}{2m} = \frac{3}{5} \epsilon_F
+    &\Rightarrow \langle E_{\text{kin}} \rangle = \frac{3}{5} \frac{p_F^2}{2m} = \frac{3}{5} \epsilon_F,
 \end{align*}
-where we made use of $V_p = \frac{4}{3} \pi p_F^3$ and $V_x V_p = N h^3/2$. 
-
-The pressure exerted by the degenerate electron gas will then be
-$$P_{\text{deg}} = \frac{2}{3} n_e \langle E_{\text{kin}} \rangle  = \frac{2}{3} \frac{8\pi}{3h^3} p_F^3 \frac{3}{5}\frac{p_F^2}{2m_e} = \frac{16\pi}{30m_e h^3}p_F^5$$
-However, the Fermi momentum can be written according to the relation \eqref{apx:eq:fermi_momentum} as
-$$p_F = \left( \frac{3}{8\pi} \right)^{1/3} h n_e^{1/3} = \left(\frac{3}{8\pi} \right)^{1/3} h \left(\frac{\rho}{\mu m_H} \right)^{1/3}$$
-where $\rho$ is the mass density while $\mu$ refers to the mean molecular weight and not the chemical potential. Combining the last two equations results in the pressure being
+where we have used $V_p = \frac{4}{3} \pi p_F^3$ and $V_x V_p = N h^3/2$. 
+The pressure exerted by the degenerate electron gas is then given by:
+$$P_{\text{deg}} = \frac{2}{3} n_e \langle E_{\text{kin}} \rangle  = \frac{2}{3} \frac{8\pi}{3h^3} p_F^3 \frac{3}{5}\frac{p_F^2}{2m_e} = \frac{16\pi}{30m_e h^3}p_F^5.$$
+However, the Fermi momentum can be written according to Eq.~\eqref{apx:eq:fermi_momentum} as:
+$$p_F = \left( \frac{3}{8\pi} \right)^{1/3} h n_e^{1/3} = \left(\frac{3}{8\pi} \right)^{1/3} h \left(\frac{\rho}{\mu m_H} \right)^{1/3},$$
+where $\rho$ is the mass density and $\mu$ refers to the mean molecular weight, not the chemical potential. Combining the last two equations, we obtain the pressure as:
 \begin{equation}
     \label{apx:eq:degenerate_eos_nr}
     \boxed{P_{\text{deg}}^{\text{NR}} = \frac{16 \pi h^2}{30m_e} \left[ \frac{3}{8\pi m_H} \left(\frac{Z}{A} \right) \right]^{5/3} \rho^{5/3} \longrightarrow P_{\text{deg}}^{\text{NR}} = K_{\text{NR}} \left( \frac{Z}{A} \right)^{5/3} \rho^{5/3}}
 \end{equation}
 This is the equation of state that describes a \textit{non-relativistic, degenerate electron gas}. The term $K_{\text{NR}}$ is a constant that depends on the mass of the fermions (in our case, electrons) while for the mean molecular weight, it holds that $\frac{Z}{A} = \frac{1}{\mu}$.
-
-Similarly, we can find the equation of state that describes a relativistic, degenerate gas by using $P = \frac{1}{3}n \langle E \rangle$ and $E = p\,c$
+Similarly, we can derive the equation of state for a relativistic, degenerate gas by using $P = \frac{1}{3}n \langle E \rangle$ and $E = p\,c$:
 \begin{equation}
     \label{apx:eq:degenerate_eos_er}
     \boxed{P_{\text{deg}}^{\text{ER}} = \frac{1}{8} \left( \frac{3}{\pi} \right)^{1/3} \frac{c\,h}{m^{4/3}} \rho^{4/3} \longrightarrow P_{\text{deg}}^{\text{ER}} = K_{\text{ER}} \rho^{4/3}}
 \end{equation}
+where $K_{\text{ER}}$ is a constant.
 
-Finally, it's worth mentioning that while the pressure of a degenerate gas is independent of temperature (i.e., it is not of thermal nature), the condition for the degeneracy of a gas depends both on the density and the temperature. Indeed, the above results were derived from the quantum mechanical study of fermions at absolute zero ($T=0$), while it is easy to show that for the case of a non-relativistic gas, the Fermi energy is
-$$\epsilon_F = \frac{3\hbar^2}{m} \left[\left( \frac{Z}{A} \right) \frac{\rho}{m_H} \right]^{2/3} \longrightarrow \epsilon_F \propto n_e^{2/3} \propto \rho_e^{2/3}$$
-This means that the condition for degeneracy\footnote{We could also define the \textit{Fermi temperature} as $\epsilon_F = k_B T_F$ and use it in the condition for degeneracy instead of the Fermi energy.} can be written as
-$$k_B T \ll \epsilon_F \Rightarrow \frac{T}{\rho^{2/3}} \ll D$$
-where $D$ is a constant. This implies that for high temperature values, the degeneracy of a gas can be lifted and it can return to the state of an ideal gas.
+Finally, it is important to note that while the pressure of a degenerate gas is independent of temperature (i.e., it is not of thermal nature), the condition for the degeneracy of a gas depends both on the density and the temperature. Indeed, the results presented above were derived from a quantum mechanical treatment of fermions at absolute zero ($T=0$). It is easy to show that for the case of a non-relativistic gas, the Fermi energy is:
+$$\epsilon_F = \frac{3\hbar^2}{m} \left[\left( \frac{Z}{A} \right) \frac{\rho}{m_H} \right]^{2/3} \longrightarrow \epsilon_F \propto n_e^{2/3} \propto \rho_e^{2/3}.$$
+This means that the condition for degeneracy\footnote{We could also define the \textit{Fermi temperature} as $\epsilon_F = k_B T_F$ and use it in the condition for degeneracy instead of the Fermi energy.} can be written as:
+$$k_B T \ll \epsilon_F \Rightarrow \frac{T}{\rho^{2/3}} \ll D,$$
+where $D$ is a constant. Thus, for sufficiently high temperatures, the degeneracy condition can be lifted, and the gas can transition back to a state akin to an ideal gas.
 
-The case of a partially degenerate ideal gas ($k_B T \sim \epsilon_F$) is significantly more complex in terms of calculating the required physical quantities because it no longer requires all energy levels to be occupied, and thus, the momentum distribution does not have an upper limit at the Fermi momentum. For this reason, we will not delve into this case.
+The case of a partially degenerate ideal gas, where $k_B T \sim \epsilon_F$, is significantly more complex when calculating the required physical quantities. In this scenario, not all energy levels are fully occupied, meaning the momentum distribution no longer has an upper limit at the Fermi momentum. Due to the increased complexity in modeling this case, we will not further examine this topic here.
 
 \end{document}
