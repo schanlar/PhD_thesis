@@ -36,7 +36,7 @@
 % -----------------------------------------------------------
 %%                  INTRODUCTION
 % -----------------------------------------------------------
-\section{Introduction} \label{sec:intro}
+\section{Introduction} \label{sec:ch2:intro}
 
 The relation between a star's initial properties and the type of remnant it produces remains equivocal.  In isolation, stars with zero-age main sequence 
 (ZAMS)  masses above $\sim $11\msun\ are  thought to produce 
@@ -71,19 +71,19 @@ processed in nuclear statistical equilibrium, tECSNe have been proposed as candi
 underproduced in normal type\,Ia SNe \citep[\ias;][]{Jones:2018ule}. Intriguingly, the chemical composition of some presolar meteoric grains compares well with  the  predicted nucleosynthetic signature of these events \citep{Jones:2018ule}. Some compact objects also seem consistent with the expectations for tECSN remnants \citep{raddi2019a,tauris2019}. 
 
 Recent advances in our understanding of SAGB stars suggest that they might be even more prone to disruption than previously thought. Firstly, the second forbidden 2$^{+}$\,$\rightarrow$\,0$^{+}$ 
-ground state transition in the $\beta$-decay of \iso{F}{20} has now been measured \citep{kirsebom2019b}, and found to be several orders of magnitude stronger than previously predicted. This makes $e$-captures on \iso{Ne}{20} a key energy source even at densities below  $10^{10}\denu$ \citep{kirsebom2019a,kirsebom2019b,Leung:2019phz}. Secondly, state-of-the-art simulations consistently show that some carbon is retained after the carbon burning phase \citep[][see also Sect.~\ref{sec:results}]{Iben:1983ts,Garcia1997,siess2006,Denissenkov:2013qaa,Farmer:2015afs,doherty2015,Lecoanet:2016abca,Jones:2018ule}. Due to its lower ignition temperature compared to oxygen, residual carbon can significantly 
+ground state transition in the $\beta$-decay of \iso{F}{20} has now been measured \citep{kirsebom2019b}, and found to be several orders of magnitude stronger than previously predicted. This makes $e$-captures on \iso{Ne}{20} a key energy source even at densities below  $10^{10}\denu$ \citep{kirsebom2019a,kirsebom2019b,Leung:2019phz}. Secondly, state-of-the-art simulations consistently show that some carbon is retained after the carbon burning phase \citep[][see also Sect.~\ref{sec:ch2:results}]{Iben:1983ts,Garcia1997,siess2006,Denissenkov:2013qaa,Farmer:2015afs,doherty2015,Lecoanet:2016abca,Jones:2018ule}. Due to its lower ignition temperature compared to oxygen, residual carbon can significantly 
 influence  the explosion conditions. In some cases, during the main carbon burning episode, the flame, which ignites off-center, may  never reach the core, thereby creating a hybrid structure in which a CO-dominated core is surrounded by an 
 ONe-dominated envelope \citep[][and references therein]{Denissenkov:2013qaa,Farmer:2015afs}. 
 
 In a previous paper \citep[][henceforth \citetalias{antoniadis2020}]{antoniadis2020}, we examin the evolution of two stripped helium star models with masses of 1.8 and 2.5\msun. We show that these stars initiate explosive oxygen burning at central densities $\lesssim 6\times 10^9\denu$, thereby completely avoiding  $e$-captures on \iso{Ne}{20}. At the same time, their envelopes expand significantly, leading to intense mass loss and the complete depletion of helium. The combination of low ignition densities, and helium-free composition, make these stars atypical progenitor candidates for thermonuclear  \ias \citep[henceforth (C)ONe \ias; see also][]{waldman2006a, waldman2008}. In addition, this behavior may also reduce significantly the mass range for which thermonuclear and core-collapse ECSNe may occur. To gauge  which flavor of \ia this channel may be relevant to, as well as the broader consequences for ECSNe, it is important to constrain the range of masses for which this outcome is possible, the  stellar structure and composition at the onset of collapse, as well as the sensitivity of these properties to underlying physical uncertainties. 
 
-In this work we present detailed one-dimensional stellar evolution models that cover a broad range of initial helium star  masses, compositions, and physical assumptions. The text is organized as follows: in Sect.~\ref{sec:methods} we describe our methodology and input physics. In Sect.~\ref{sec:results} we present the results of our calculations and in Sect.~\ref{sec:physical_uncertainties} we discuss various physical uncertainties in the input physics. Finally, in Sect.~\ref{sec:summary} we conclude with a concise summary and a discussion on the ramifications of our models for ECSNe and \ias. 
+In this work we present detailed one-dimensional stellar evolution models that cover a broad range of initial helium star  masses, compositions, and physical assumptions. The text is organized as follows: in Sect.~\ref{sec:ch2:methods} we describe our methodology and input physics. In Sect.~\ref{sec:ch2:results} we present the results of our calculations and in Sect.~\ref{sec:ch2:physical_uncertainties} we discuss various physical uncertainties in the input physics. Finally, in Sect.~\ref{sec:ch2:summary} we conclude with a concise summary and a discussion on the ramifications of our models for ECSNe and \ias. 
 
 % ---------------------------------------------------------------------------------
 %                                   METHODS
 % ---------------------------------------------------------------------------------
 
-\section{Simulations and physical assumptions} \label{sec:methods}
+\section{Simulations and physical assumptions} \label{sec:ch2:methods}
 
 We perform our numerical simulations using the implicit 
 one-dimensional code \textbf{M}odules 
@@ -101,7 +101,7 @@ We used the  \texttt{HELM} \citep{HELM:eos} and \texttt{PC} \citep{PC:eos} equat
 
 Convection was treated according to the modified mixing-length theory (MLT) prescription of \cite{MLT_Henyey} with a mixing-length parameter of $\alpha_{\text{ML}} = 2.0$. Contrary to the default MLT option in \mesa, this treatment allows for the convective efficiency to vary with the opaqueness of the convective element \citep{Paxton:2010ji}. 
 Stability against convection was evaluated using the Ledoux criterion. 
-Convective energy transport was computed using the \texttt{MLT++} variation of standard MLT \citep{Paxton:2015jva}. This artificially reduces large  superadiabatic temperature gradients to improve numerical stability (for a discussion on the consequences of this choice we refer to Sect.~\ref{sec:uncertainties}). 
+Convective energy transport was computed using the \texttt{MLT++} variation of standard MLT \citep{Paxton:2015jva}. This artificially reduces large  superadiabatic temperature gradients to improve numerical stability (for a discussion on the consequences of this choice we refer to Sect.~\ref{sec:ch2:uncertainties}). 
 We also adopted an  efficiency parameter of $\alpha_{\text{SEM}} = 1.0$ for semiconvection \citep{Langer1991}, and a diffusion coefficient of  $D_{\text{TH}} = 1.0$ for thermohaline mixing \citep{Brown_2013}. Both semiconvection and thermohaline mixing are treated by \mesa\ as diffusive processes \citep{kippenhahn1980,Langer1983}. We did not employ the predictive mixing implementation  described in \cite{Paxton:2017eie}. Lastly, we considered the effect of  overshooting across convective boundaries. Even though overshooting is likely not particularly strong  in this mass range, especially between the CO-core and envelope interface \citep{Lecoanet:2016abca}, it might have a significant influence on the propagation of the carbon burning flame \citep{Farmer:2015afs}. Motivated by this, we computed models with small variations in overshooting efficiency. More specifically, following \cite{Jones2013apj}, we considered three scaling factors of $f_{\rm OV}$ = 0.0, 0.014 and 0.016, where $f_{\rm OV}$ is defined  as a fraction of the local pressure scale height, $H_p$, and relates to the diffusion coefficient, $D_{\text{OV}}$ via,
 
 
@@ -155,7 +155,7 @@ explosive oxygen burning and shortly before achieving the conditions for nuclear
 %%                  RESULTS 
 % -----------------------------------------------------------
 
-\section{Results} \label{sec:results}
+\section{Results} \label{sec:ch2:results}
 
 Figure~\ref{fig:tams_vs_mass} shows the duration of the core helium burning phase as a function of initial mass, while Fig.~\ref{fig:hrd_series1} illustrates the Hertzsprung-Russell diagram for five representative models from \seriesone (see below). Figure~\ref{fig:RhoT} shows the core temperature and density evolution for the same stars. 
 
@@ -171,7 +171,7 @@ All models undergo a  period of stable core helium burning that lasts between 1.
 where $M_{\rm{He, i}}$ is the initial mass of the model. In agreement with \cite{Yan_2016}, we find that models in which overshooting is included result in larger convective core masses and longer lifetimes. 
 The difference in lifetimes between models with $f_{\rm OV}=0$ and $f_{\rm OV}>0$ is more pronounced at lower 
 initial masses. This is due to an increase in the amount of fuel added to the core which does not result in a 
-strong luminosity increase. The helium burning lifetime of helium star models in the metallicity range covered by our grids is largely insensitive to variations of this parameter\footnote{We note that metallicity variations would affect the mass of \iso{He}{4}-rich regions (and thus their burning lifetime) if we were to start our calculations with a normal \iso{H}{1}-rich star. This however does not affect the results presented here.}. This is in contrast to what has been found for larger-mass helium stars ($M_{\rm{He, i}} \gtrsim 4\msun$) which are subject to stronger mass loss rates during core helium burning \citep{Aguilera-Dena:2021abc}. The influence of overshooting and initial composition is further discussed in Sect.~\ref{sec:physical_uncertainties}. 
+strong luminosity increase. The helium burning lifetime of helium star models in the metallicity range covered by our grids is largely insensitive to variations of this parameter\footnote{We note that metallicity variations would affect the mass of \iso{He}{4}-rich regions (and thus their burning lifetime) if we were to start our calculations with a normal \iso{H}{1}-rich star. This however does not affect the results presented here.}. This is in contrast to what has been found for larger-mass helium stars ($M_{\rm{He, i}} \gtrsim 4\msun$) which are subject to stronger mass loss rates during core helium burning \citep{Aguilera-Dena:2021abc}. The influence of overshooting and initial composition is further discussed in Sect.~\ref{sec:ch2:physical_uncertainties}. 
 
 
 \begin{figure}[h!]
@@ -194,7 +194,7 @@ according to their core composition and final fate.
 
 
 
-\subsection{CO \& hybrid CONe white dwarfs}\label{sec:wd_evolution}
+\subsection{CO \& hybrid CONe white dwarfs}\label{sec:ch2:wd_evolution}
 For $M_{\rm{He, i}}\lesssim 1.4\msun$ 
 ($\lesssim1.2\msun$ for $Z=10^{-4}$;  see 
 Figs.~\ref{fig:parameterSpace} and \ref{fig:final_fates}  for 
@@ -241,8 +241,8 @@ temperature of $\log_{10} (T_{\rm{eff}}/{\rm K}) \simeq 3.85$, and is expelled i
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter2/final_fates/final_fates_graph_with_farmers_zams.pdf}
     \caption{Final fates as a function of initial helium star mass and initial metallicity. The left panel corresponds to models without overshooting, while the right panel corresponds to models with overshooting across convective boundaries ($\rm f_{OV} = 0.014, 0.016$). Hatched regions show models with ONe cores featuring residual carbon, which evolve either toward an ONe WD, a thermal runaway, or an ECSN.
-    The boundary between ONe \ias and ECSNe corresponds to models with average residual carbon mass fractions of $X(\iso{C}{12}) \simeq 0.004$ (see Sect.~\ref{sec:physical_uncertainties}). 
-    The ZAMS masses (of solar metallicity models) were mapped based on Fig. 4 of  \cite{Farmer:2015afs}. For $M_{\rm ZAMS} < 7.0\msun$ we extrapolated the mass using the fitting function $M_{\rm ZAMS} = 2(M_{\rm He, core} + 2.45)$. For more details, see Sect.~\ref{sec:results}.}
+    The boundary between ONe \ias and ECSNe corresponds to models with average residual carbon mass fractions of $X(\iso{C}{12}) \simeq 0.004$ (see Sect.~\ref{sec:ch2:physical_uncertainties}). 
+    The ZAMS masses (of solar metallicity models) were mapped based on Fig. 4 of  \cite{Farmer:2015afs}. For $M_{\rm ZAMS} < 7.0\msun$ we extrapolated the mass using the fitting function $M_{\rm ZAMS} = 2(M_{\rm He, core} + 2.45)$. For more details, see Sect.~\ref{sec:ch2:results}.}
     \label{fig:final_fates}
 \end{figure*}
 
@@ -255,18 +255,18 @@ In this case, the core exhibits a hybrid-like structure, where the inner layers 
 In our \seriesone models, the lowest-mass helium star that ignites carbon off-center is a $1.3\msun$ model with $(Z,f_{\rm OV})=(10^{-4},0.0)$. The ignition happens at a mass coordinate of $\sim 1.2\msun$ and the flame stops at a mass coordinate of $\sim 1.1\msun$. The highest-mass model that forms such a hybrid structure is a $1.8\msun$ helium star with $Z=0.02,f_{\text{OV}} = (0.02,0.014)$, that ignites carbon at a  mass coordinate of $\sim 1.1\msun$. The flame quenching occurs at $\sim 0.9\msun$. 
 
 The evolution of a representative model from this category is illustrated with green in Figs.~\ref{fig:hrd_series1} and \ref{fig:RhoT}. An overview of mass boundaries for hybrid WDs, and their dependence on metallicity and overshooting can be seen in Figs.~\ref{fig:parameterSpace} and \ref{fig:final_fates}. 
-In the latter, we map helium core masses to ZAMS masses based on Fig. 4 of \cite{Farmer:2015afs}. This does not take into account the role of metallicity in setting the relation between initial mass and helium core mass, but we expect the difference to be small. In the absence of further binary interactions after the hydrogen envelope removal, the final hybrid CONe WDs in our models have masses between 1.2 and 1.33\msun. This means that they only need to accrete very small amounts of matter to reach the Chandrasekhar-mass limit (see Sect.~\ref{sec:summary} for a discussion). 
+In the latter, we map helium core masses to ZAMS masses based on Fig. 4 of \cite{Farmer:2015afs}. This does not take into account the role of metallicity in setting the relation between initial mass and helium core mass, but we expect the difference to be small. In the absence of further binary interactions after the hydrogen envelope removal, the final hybrid CONe WDs in our models have masses between 1.2 and 1.33\msun. This means that they only need to accrete very small amounts of matter to reach the Chandrasekhar-mass limit (see Sect.~\ref{sec:ch2:summary} for a discussion). 
 
 
 
 
 
-\subsection{ONe cores}\label{sec:one_core_evolution}
+\subsection{ONe cores}\label{sec:ch2:one_core_evolution}
 Stars with initial masses between $\sim 1.9\msun$ and $\sim  2.8\msun$ (see Figs.~\ref{fig:parameterSpace} and \ref{fig:final_fates}),  stand out due to their ability to develop highly degenerate ONe cores. As discussed in \citetalias{antoniadis2020}, one key property that  plays a critical role in determining the final fate of these stars is the amount of residual carbon distributed throughout the core  after the main carbon burning phase. 
-With the exception of a few models with $f_{\rm OV}> 0$ (see Sect.~\ref{sec:cone_core_evolution}), for  most stars in this mass range, carbon still ignites  in a shell but the carbon flame
+With the exception of a few models with $f_{\rm OV}> 0$ (see Sect.~\ref{sec:ch2:cone_core_evolution}), for  most stars in this mass range, carbon still ignites  in a shell but the carbon flame
 is able to propagate all the way to the center, thereby forming an ONe-dominated core. 
 However, our simulations show that in all cases, some residual carbon remains
-distributed throughout the degenerate core, with average mass fractions of $0.0003 \lesssim X(\iso{C}{12}) \lesssim 0.11$ (see Appendix~\ref{apx:composition_seriesI} for representative carbon abundance profiles). 
+distributed throughout the degenerate core, with average mass fractions of $0.0003 \lesssim X(\iso{C}{12}) \lesssim 0.11$ (see Appendix~\ref{apx:ch2:composition_seriesI} for representative carbon abundance profiles). 
 Figure~\ref{fig:carbon_mass_fractions} shows variations in  the average residual carbon abundance of the degenerate core as a function of initial mass.
 These abundances were calculated using the \mesa profile nearest to $\logrhoc=9$, that is after the main carbon burning phase and before the onset of Urca reactions. As can be seen, the amount of residual carbon varies strongly both with initial mass and metallicity, especially for $f_{\rm OV}>0$.  
  The residual-carbon profile remains practically unchanged until the  onset of exothermic weak reactions at $\logrhoc\simeq 9.6$ (see Fig.~\ref{fig:RhoT}).
@@ -340,7 +340,7 @@ The surface composition is dominated by helium  (see Fig.~\ref{fig:surface_abun_
       \centering
       \includegraphics[width=0.95\columnwidth]{figures/chapter2/mass_radius/mass_radius.pdf}
     \end{subfigure}
-    \caption{Radius as a function of initial mass for our \seriesone models. The left panel shows the evolution of the radius during helium main sequence phase. The commencement and finish of core helium burning are shown by nonfilled and filled data points, respectively. The maximum radius reached is depicted in the right panel. These radii might be underestimated since \texttt{MLT++}  suppresses envelope inflation (see Sect.~\ref{sec:uncertainties}).}
+    \caption{Radius as a function of initial mass for our \seriesone models. The left panel shows the evolution of the radius during helium main sequence phase. The commencement and finish of core helium burning are shown by nonfilled and filled data points, respectively. The maximum radius reached is depicted in the right panel. These radii might be underestimated since \texttt{MLT++}  suppresses envelope inflation (see Sect.~\ref{sec:ch2:uncertainties}).}
     \label{fig:mass_radius}
 \end{figure}
 
@@ -348,7 +348,7 @@ Following carbon burning, the degenerate core is composed primarily of oxygen an
 For the last $\sim$10$^4$\,yr of the evolution, the center contracts and cools due to thermal neutrino losses, while the envelope 
 expands and develops a deep convective region that penetrates into the thin nuclear burning shell. Using the standard MLT formalism, during this stage the envelope becomes dynamically unstable, resulting in numerical convergence issues. This is a known 
 problem in radiation-dominated envelopes of massive stars where convection is not strong enough to carry away  energy. With the 
-\texttt{MLT++} that we employed in our calculations  (see Sect.~\ref{sec:uncertainties}),  the envelope is allowed to expand to $R \simeq 
+\texttt{MLT++} that we employed in our calculations  (see Sect.~\ref{sec:ch2:uncertainties}),  the envelope is allowed to expand to $R \simeq 
 930$\,R$_\odot$, as can be seen in the bottom panel of Fig.~\ref{fig:lum_teff_mdot_rad}, and Fig.~\ref{fig:mass_radius} where
 we display the maximum radius of our \seriesone models as a function of the initial helium star mass. The star reaches high luminosities ($L \simeq 10^{6.25}$\,L$_\odot$) 
 resulting in a very strong wind of $\dot{M} \simeq 
@@ -368,7 +368,7 @@ the limited nuclear network that we employed,  the estimates for the wind mass l
 are consistent with  the theoretical upper limit for 
 super-Eddington winds  \citep{Owocki:2004zz, Smith2006}. The 
 aforementioned behavior, also appears to be indifferent 
-to variations in wind efficiency (see Sect.~\ref{sec:physical_uncertainties}).
+to variations in wind efficiency (see Sect.~\ref{sec:ch2:physical_uncertainties}).
 
 The  mass of the star following this phase is $1.39\msun$, 
 while the mass of the degenerate core has reached  $\sim 1.26\msun$, due to shell accretion 
@@ -397,17 +397,17 @@ $Y_e = 0.496$, and  the total binding energy is $E_{\text{bin}} = - 5.76 \times 
 This ignition density is much lower than what is expected for typical ECSNe; $\logrhoc \simeq 10$. 
 Our simulation indicates that the energy released at this stage, causes the core to expand.
 In turn, this means that $e$-captures on \iso{Ne}{20} are likely completely avoided.  
-As discussed in \citetalias{antoniadis2020} and in Sect.~\ref{sec:explosion_properties}, 
+As discussed in \citetalias{antoniadis2020} and in Sect.~\ref{sec:ch2:explosion_properties}, 
 the available nuclear energy in principle suffices to completely unbind the star which, 
 by virtue of vigorous shell burning, contains no helium at the time of the explosion. 
 Such a thermonuclear runaway would therefore be observable as a SN\,Ia subtype. 
 Further details on the chemical makeup of this model, at various 
-evolutionary points, can be found in Appendix~\ref{apx:composition}.
+evolutionary points, can be found in Appendix~\ref{apx:ch2:composition}.
 
 In total, only four ONe models from \seriesone evolved past the runaway oxygen burning phase  
 (green fully hatched squares in Fig.~\ref{fig:parameterSpace}) before terminating due to 
 numerical difficulties related to  high  temperatures ($T_{\rm c}\gtrsim 10^{9.4}$\,K).  
-An additional seven models from \seriestwo (Section~\ref{sec:physical_uncertainties}) 
+An additional seven models from \seriestwo (Section~\ref{sec:ch2:physical_uncertainties}) 
 also initiated oxygen burning before stopping for the same reason ($M_{\rm He, i}=2.0-2.7\msun$). 
 Furthermore, sixteen models terminated during the Urca cooling phase, 
 when they already had a near-\mch\ core---within the $\numrange{1.35}{1.37}\msun$ range---and no helium in their envelopes (hatched squares in Fig.~\ref{fig:parameterSpace}).
@@ -449,7 +449,7 @@ Fig.~\ref{fig:coreGrowth}. Here, we only used models that terminated after eject
 \end{figure*}
 
 \newpage
-\subsection{Hybrid CONe cores with near-\mch\ masses}\label{sec:cone_core_evolution}
+\subsection{Hybrid CONe cores with near-\mch\ masses}\label{sec:ch2:cone_core_evolution}
 Two of our \seriesone models developed a hybrid 
 structure in their core, but still managed to reach 
 the Chandrasekhar-mass limit. Both stars had an 
@@ -476,10 +476,10 @@ As in the case of ONe cores, the helium envelope of those hybrid models
 is lost only after the core has reached a near-Chandrasekhar mass value. 
 If the envelope is removed at an earlier stage, for instance as a result of mass transfer or a common envelope event, then a sub-M$_{\text{Ch}}$ 
 hybrid CONe WD would have been formed, similarly to the models   
-discussed in Sect.~\ref{sec:wd_evolution}.
+discussed in Sect.~\ref{sec:ch2:wd_evolution}.
 
 \newpage
-\subsection{Pre-explosion properties of (C)ONe cores: \ias and ECSNe}\label{sec:explosion_properties} 
+\subsection{Pre-explosion properties of (C)ONe cores: \ias and ECSNe}\label{sec:ch2:explosion_properties} 
 Based on the results presented  above, stars with a degenerate near-\mch\ core in the $\numrange{1.35}{1.37}\msun$ range may experience one of the following outcomes: firstly, for ONe cores, if oxygen ignites at low densities ($\logrhoc \lesssim 9.8$) and the core immediately expands as a response to the thermonuclear runaway, then $e$-captures on \iso{Ne}{20} may be completely avoided. In this case, the star may  undergo a thermonuclear runaway that resembles a \ia explosion. The kinetic energy of the ejecta and the composition of the material  depend on the explosion conditions, for instance $Y_{\rm e}$ and $E_{\rm bin}$.
 
 Secondly, hybrid near-\mch\  cores ignite oxygen at even lower densities ($\logrhoc \lesssim 9.3$). These objects do not experience $e$-captures and may yield \ia-like explosions with higher kinetic energies compared to ONe cores. 
@@ -487,7 +487,7 @@ Secondly, hybrid near-\mch\  cores ignite oxygen at even lower densities ($\logr
 Lastly, if an ONe core ignites oxygen at high densities ($\logrhoc \gtrsim 10$) then $e$-captures on \iso{Ne}{20} lead to rapid deleptonization, and the star  evolves toward an ECSN. Depending on the explosion conditions, the latter can be either a tECSN, in which part of the star is disrupted, or a ccECSN that forms a neutron star. 
     
 
-In the remainder of this section, we describe the pre-explosion properties of models that successfully initiated explosive oxygen burning. A more in-depth discussion on the possible final fates of near-\mch\ models that terminated before reaching this stage follows in Sect.~\ref{sec:physical_uncertainties}. 
+In the remainder of this section, we describe the pre-explosion properties of models that successfully initiated explosive oxygen burning. A more in-depth discussion on the possible final fates of near-\mch\ models that terminated before reaching this stage follows in Sect.~\ref{sec:ch2:physical_uncertainties}. 
 
 Figure~\ref{fig:composition_series2} summarizes  the relation between $Y_{\rm e}$, central density, and binding energy at the onset of oxygen ignition for the twelve models that evolved past this phase. 
 As can be seen, with few exceptions, the binding energy of these models lies within $-5.8 \leq E_{\text{bin}} / 10^{50}\,\text{erg} \leq -5.4$ and the average electron-to-baryon ratio is $0.494 \leq Y_e \leq 0.499$. 
@@ -520,12 +520,12 @@ then up to $1\msun$ of nickel may be synthesized (see \citetalias{antoniadis2020
     \label{fig:composition_series2}
 \end{figure}
 
-As can be seen, two models ignited oxygen when $\logrhoc\simeq 9.3$. The model represented by a red square corresponds to the CONe cores described in Sect.~\ref{sec:cone_core_evolution} and produces an explosion that belongs to the second category (CONe SNe\,Ia). The other model (depicted with brown color) is a \seriestwo ONe core with initial mass of $2.1$\msun\ and an enhanced wind efficiency of $\eta = 1.6$ (see Sect.~\ref{sec:eta_1p58_evolution}). The explosion would belong to the first category discussed above, producing ejecta with kinetic energy of $\sim  10^{51}\, \text{erg}$. 
+As can be seen, two models ignited oxygen when $\logrhoc\simeq 9.3$. The model represented by a red square corresponds to the CONe cores described in Sect.~\ref{sec:ch2:cone_core_evolution} and produces an explosion that belongs to the second category (CONe SNe\,Ia). The other model (depicted with brown color) is a \seriestwo ONe core with initial mass of $2.1$\msun\ and an enhanced wind efficiency of $\eta = 1.6$ (see Sect.~\ref{sec:ch2:eta_1p58_evolution}). The explosion would belong to the first category discussed above, producing ejecta with kinetic energy of $\sim  10^{51}\, \text{erg}$. 
 Finally, one \seriestwo model with reduced wind efficiency, ignited oxygen only after surpassing the density threshold for 
-$e$-captures on \iso{Ne}{20} and will therefore produce an ECSN. As we discuss in Sect.~\ref{sec:physical_uncertainties}, we identify the decisive property for this behavior to be its low residual carbon abundance. Hence, we expect the same outcome  for all stars with  similar compositions. 
+$e$-captures on \iso{Ne}{20} and will therefore produce an ECSN. As we discuss in Sect.~\ref{sec:ch2:physical_uncertainties}, we identify the decisive property for this behavior to be its low residual carbon abundance. Hence, we expect the same outcome  for all stars with  similar compositions. 
 
 \newpage
-\subsection{Core-collapse supernovae}\label{sec:ccsn_evolution}
+\subsection{Core-collapse supernovae}\label{sec:ch2:ccsn_evolution}
 If $ M_i  \gtrsim 2.8\msun$ (for models without overshooting), then the core reaches a 
 sufficiently high temperature to undergo on-center carbon ignition, under nondegenerate conditions, leading to more advanced burning stages. The evolution of these stars is similar to those described in \cite{Jones2013apj} and \cite{Woosley:2019sdf}.
 Models that fall within this category, develop a silicon core and evolve toward an iron core-collapse that  ultimately forms a neutron 
@@ -538,9 +538,9 @@ which may result in the formation of ultra-stripped SNe  \citep{Tauris:2015xra}.
 
 
 
-\section{Physical uncertainties} \label{sec:physical_uncertainties}
+\section{Physical uncertainties} \label{sec:ch2:physical_uncertainties}
 
-\subsection{Wind and mass loss uncertainties}\label{sec:series2_grid}
+\subsection{Wind and mass loss uncertainties}\label{sec:ch2:series2_grid}
 There are two phases where mass loss through stellar winds  affects the outcome of our model computations. Firstly, 
 because of its long duration, mass loss during the core helium burning 
 phase may influence both the total mass and the size of the degenerate core. In our  \seriesone models the total mass removed in this phase is $\mathcal{O}(0.1\msun)$. Secondly, our models reach very high 
@@ -562,7 +562,7 @@ super-Eddington luminosities of up to $\log_{10}{L/{\rm L}_\odot = 6.25}$.
 This results in a strong stellar wind that eventually removes the \iso{He}{4}-rich envelope. While the mass loss rates of such stars are also extremely uncertain, it is notable that the maximum wind strength achieved in our models lies  near the theoretically expected maximum values for super-Eddington winds \citep[][]{Owocki:2004zz,Smith2006}. 
 
 To further explore the influence of mass loss uncertainties, we computed an additional grid consisting of 110,  $(Z, f_{\rm OV})=(0.02,0.0)$ models, with varying wind efficiency parameter ($\eta$). 
-Figure~\ref{fig:etas} shows the effects of wind on core growth (top panel), and on the retention efficiency of envelope mass (bottom panel). Notwithstanding that most models in the  $\numrange{1.8}{2.7}\msun$ mass range terminated during the Urca reactions stage, we find that the ability of the core to reach a near-Chandrasekhar mass is not hindered by the adopted wind efficiency parameter. Contrarily, the mass of the envelope retained by the star is sensitive to the  $\eta$-parameter. The chemical composition of the envelope is similar to our \seriesone models, where the original helium-rich envelope has been replaced by a metal-rich atmosphere due to intense helium shell burning (see Appendix~\ref{apx:composition}). As all models within the $\eta = 0.1, 0.5$ subsets failed to converge after the $e$-captures on \iso{Mg}{24}, in the remainder of this section we describe some representative evolutionary models from the remaining subsets, namely $\eta = 0.25, 0.8, 1.6$.
+Figure~\ref{fig:etas} shows the effects of wind on core growth (top panel), and on the retention efficiency of envelope mass (bottom panel). Notwithstanding that most models in the  $\numrange{1.8}{2.7}\msun$ mass range terminated during the Urca reactions stage, we find that the ability of the core to reach a near-Chandrasekhar mass is not hindered by the adopted wind efficiency parameter. Contrarily, the mass of the envelope retained by the star is sensitive to the  $\eta$-parameter. The chemical composition of the envelope is similar to our \seriesone models, where the original helium-rich envelope has been replaced by a metal-rich atmosphere due to intense helium shell burning (see Appendix~\ref{apx:ch2:composition}). As all models within the $\eta = 0.1, 0.5$ subsets failed to converge after the $e$-captures on \iso{Mg}{24}, in the remainder of this section we describe some representative evolutionary models from the remaining subsets, namely $\eta = 0.25, 0.8, 1.6$.
 
 
 \begin{figure}[h!]
@@ -580,10 +580,10 @@ Figure~\ref{fig:etas} shows the effects of wind on core growth (top panel), and 
     \label{fig:etas}
 \end{figure}
 
-\subsubsection{Evolution at Low Wind Efficiency ($\eta = 0.25$)}\label{sec:eta_0p25_evolution}
+\subsubsection{Evolution at Low Wind Efficiency ($\eta = 0.25$)}\label{sec:ch2:eta_0p25_evolution}
 In this section, we present the evolution of a \seriestwo model with initial mass of $2.0\msun$, since it is the lowest initial mass model with $\eta < 1.0$ able to achieve oxygen ignition, and simultaneously holds the most massive envelope compared to similar models within this grid.
 
-The off-center ignition of carbon took place at a mass coordinate of $\sim 0.5\msun$ when the total mass of the star was $\sim 1.95\msun$ and the mass of the core was $\sim 1.01\msun$. The main carbon burning phase lasted $\sim 56\,\text{kyr}$, resulting in an ONe core of $M_{\rm c} \approx 1.37\msun$, composed primarily of oxygen and neon with central abundances of $X(\iso{O}{16}) \approx 0.27$ and $X(\iso{Ne}{20}) \approx 0.32$ respectively. The degenerate core also retained some residual carbon mass fraction of $X(\iso{C}{12}) \approx 0.02$. During this time the star grew to $R \simeq 158$\,R$_\odot$ and had an effective temperature of $\log_{10} (T_{\text{eff}} / \text{K}) \simeq 3.78$ while it was losing mass at a rate $\dot{M} \simeq 5.5 \times 10^{-8}\msun \text{yr}^{-1}$. At the end of the simulation it possessed a helium-free, metal-rich envelope of $M_{\text{env}} \simeq 0.38\msun$  (see Fig.~\ref{apx:fig:eta0p25}).
+The off-center ignition of carbon took place at a mass coordinate of $\sim 0.5\msun$ when the total mass of the star was $\sim 1.95\msun$ and the mass of the core was $\sim 1.01\msun$. The main carbon burning phase lasted $\sim 56\,\text{kyr}$, resulting in an ONe core of $M_{\rm c} \approx 1.37\msun$, composed primarily of oxygen and neon with central abundances of $X(\iso{O}{16}) \approx 0.27$ and $X(\iso{Ne}{20}) \approx 0.32$ respectively. The degenerate core also retained some residual carbon mass fraction of $X(\iso{C}{12}) \approx 0.02$. During this time the star grew to $R \simeq 158$\,R$_\odot$ and had an effective temperature of $\log_{10} (T_{\text{eff}} / \text{K}) \simeq 3.78$ while it was losing mass at a rate $\dot{M} \simeq 5.5 \times 10^{-8}\msun \text{yr}^{-1}$. At the end of the simulation it possessed a helium-free, metal-rich envelope of $M_{\text{env}} \simeq 0.38\msun$  (see Fig.~\ref{apx:ch2:fig:eta0p25}).
 
 Figure~\ref{fig:rhot_series2} illustrates the evolution of the core in 
 terms of central density and central temperature. By comparing the 
@@ -645,7 +645,7 @@ progenitors through our evolutionary channel in models with such a small wind ef
 demonstrates the robustness of our conclusions to assumptions in the wind. 
 
 
-\subsubsection{Evolution at Moderate Wind Efficiency ($\eta = 0.8$)}\label{sec:eta_0p8_evolution}
+\subsubsection{Evolution at Moderate Wind Efficiency ($\eta = 0.8$)}\label{sec:ch2:eta_0p8_evolution}
 
 For the subset of models with $\eta=0.8$, only four in the mass range $\numrange{2.4}{2.7}\msun$, reached the residual carbon ignition stage. All of these models develop a degenerate ONe core of $\sim 1.37\msun$ with an average residual carbon abundance of $0.002 \leq X(\iso{C}{12}) \leq 0.008$. Three of them ignited oxygen at low densities, with the subsequent evolution being  almost identical to their \seriesone counterparts. 
 
@@ -654,21 +654,21 @@ After $\sim 66\,\text{yr}$ the core contracted  again, reaching the threshold de
 
 
 
-\subsubsection{Evolution at High Wind Efficiency ($\eta = 1.6$)} \label{sec:eta_1p58_evolution}
-We also investigated the evolution of models with an enhanced wind efficiency. We were able to follow the evolution of only two models, after oxygen ignition. The first stellar model had an initial mass of $2.1\msun$ and ignited carbon off-center when the total mass is $M_\text{tot} \simeq 1.8\msun$. The characteristics of carbon burning (ignition location, flame propagation) and the evolution of the envelope are similar to the ones we describe in Sect.~\ref{sec:eta_0p25_evolution}. As a result of the enhanced wind efficiency, the star lost mass during this time at a rate of $\dot{M} \approx 3.9 \times 10^{-7}\msun \text{yr}^{-1}$ allowing the degenerate ONe core to grow to $\sim 1.35\msun$ with a central abundance of residual carbon circa $X(\iso{C}{12}) \approx 0.025$. 
+\subsubsection{Evolution at High Wind Efficiency ($\eta = 1.6$)} \label{sec:ch2:eta_1p58_evolution}
+We also investigated the evolution of models with an enhanced wind efficiency. We were able to follow the evolution of only two models, after oxygen ignition. The first stellar model had an initial mass of $2.1\msun$ and ignited carbon off-center when the total mass is $M_\text{tot} \simeq 1.8\msun$. The characteristics of carbon burning (ignition location, flame propagation) and the evolution of the envelope are similar to the ones we describe in Sect.~\ref{sec:ch2:eta_0p25_evolution}. As a result of the enhanced wind efficiency, the star lost mass during this time at a rate of $\dot{M} \approx 3.9 \times 10^{-7}\msun \text{yr}^{-1}$ allowing the degenerate ONe core to grow to $\sim 1.35\msun$ with a central abundance of residual carbon circa $X(\iso{C}{12}) \approx 0.025$. 
 
 After the onset of Urca cooling, the star entered a simmering phase that lasted $\sim 737\,\text{yr}$, until the core reached its maximum compactness when $\log_{10} (\rho_c / \text{g cm}^{-3}) \approx 9.28 $. When this happened, the temperature reached a value of $\log_{10} (T_c / \text{K}) \approx 8.51$, triggering residual carbon ignition. The next $\sim 12.5\,\text{yr}$ were  characterized by vigorous burning which led to a thermal runaway. At the time of oxygen ignition the core had a central abundance of  $X(\iso{O}{16}) \approx 0.35$ and $X(\iso{Ne}{20}) \approx 0.43$, and an average electron-to-baryon ratio of $Y_e = 0.498$.
 
-The second stellar model had an initial mass of $2.4\msun$, an ONe core of $\sim 1.36\msun$, and a central abundance of leftover carbon of $X(\iso{C}{12}) \approx 0.01$. Its evolution followed the same steps already described above. The main difference was that after the depletion of residual carbon, the core expanded significantly and oxygen was ignited off-center. This resulted to  residual oxygen being distributed within a silicon core $(X(\iso{O}{16}) = 0.007)$, as seen in the bottom-right panel of Fig.~\ref{apx:fig:eta1p58}.
+The second stellar model had an initial mass of $2.4\msun$, an ONe core of $\sim 1.36\msun$, and a central abundance of leftover carbon of $X(\iso{C}{12}) \approx 0.01$. Its evolution followed the same steps already described above. The main difference was that after the depletion of residual carbon, the core expanded significantly and oxygen was ignited off-center. This resulted to  residual oxygen being distributed within a silicon core $(X(\iso{O}{16}) = 0.007)$, as seen in the bottom-right panel of Fig.~\ref{apx:ch2:fig:eta1p58}.
 Although we could not follow the evolution past this stage, the model most likely evolves toward a core-collapse SN, similar to the ultra-stripped SN scenario described by \cite{Tauris:2015xra}.
 
 
 
-\subsection{Residual carbon: (C)ONe \ias vs ECSNe}\label{sec:carbon}
-In Sects.~\ref{sec:one_core_evolution} and \ref{sec:cone_core_evolution} we discussed how in a subset of our (C)ONe models, 
+\subsection{Residual carbon: (C)ONe \ias vs ECSNe}\label{sec:ch2:carbon}
+In Sects.~\ref{sec:ch2:one_core_evolution} and \ref{sec:ch2:cone_core_evolution} we discussed how in a subset of our (C)ONe models, 
 the ignition of residual  carbon leads to explosive oxygen burning. Besides its critical role in enabling thermonuclear 
 explosions, the amount of residual carbon may also influence the explosion energetics and \iso{Ni}{56} 
-yields \citep[see Sect.~\ref{sec:explosion_properties} and also][]{Willcox:2016yyp}. 
+yields \citep[see Sect.~\ref{sec:ch2:explosion_properties} and also][]{Willcox:2016yyp}. 
 The carbon abundance in (C)ONe WDs also influences their ability to trigger \ias via mass accretion   
  \citep[e.g., see][]{Dominguez1993,  Garcia1997, Gutierrez2005, Waldman2007, Schwab:2018cnb}.
   
@@ -701,7 +701,7 @@ core evolution is not completely decoupled from the envelope during carbon burni
 
 The  model with the lowest amount of residual carbon that was able to initiate an ONe \ia, 
 had an initial mass of $M_{\rm He, i}=2.6\msun$ and a mass averaged carbon mass fraction of $X(\iso{C}{12})\simeq 0.004$ within the degenerate core. 
-Hence for an ONe \ia to occur, the core must have a minimum carbon mass fraction of $0.002 < X_{\rm min}(\iso{C}{12}) < 0.004$ (see Appendices~\ref{apx:composition_seriesI} and \ref{apx:composition_seriesII} for distribution profiles).  
+Hence for an ONe \ia to occur, the core must have a minimum carbon mass fraction of $0.002 < X_{\rm min}(\iso{C}{12}) < 0.004$ (see Appendices~\ref{apx:ch2:composition_seriesI} and \ref{apx:ch2:composition_seriesII} for distribution profiles).  
 Based on these constrains, we conclude (rather conservatively) that near-\mch  ONe cores with carbon mass fractions $X_{\rm min}(\iso{C}{12}) \geq 0.004$ experience an ONe \ia, while those with a smaller carbon content undergo an ECSN (thermonuclear or core-collapse).
 Given that the carbon abundance in the core changes with initial metallicity, so does the relative rates of ONe \ias and ECSNe, with the former being more likely for higher metallicities. 
 
@@ -726,7 +726,7 @@ Contrarily, we find significant radius expansion for all models with initial mas
 Bearing in mind the importance of these caveats, we plan to investigate this further by performing detailed binary calculations in a future project.
 
 
-\subsection{Other sources of uncertainty}\label{sec:uncertainties}
+\subsection{Other sources of uncertainty}\label{sec:ch2:uncertainties}
 
 Besides the effects discussed previously in this section, there are several additional physical uncertainties that may influence the final fate of stars in this regime. 
 One of these uncertain factors is the propagation of the flame during the main  carbon burning phase. 
@@ -766,30 +766,30 @@ non-negligible effect on the overall outcome by reducing the carbon ignition den
 
 
 
-\section{Summary \& discussion} \label{sec:summary}
+\section{Summary \& discussion} \label{sec:ch2:summary}
  \cite{antoniadis2020}  presented a case study of two helium star models that  develop a 
 degenerate (C)ONe core  and subsequently experience a 
 thermal runaway when their central density is $9.2 \lesssim \logrhoc \lesssim 9.8$. These stars likely avoid $e$-captures on 
 \iso{Ne}{20} and produce a (C)ONe \ia. 
 In this work, we build on this result by using \mesa to model the evolution of $\numrange{0.8}{3.5}\msun$ helium stars, exploring the influence of initial composition, stellar-wind efficiency, and mixing assumptions. 
-Our models confirm that (C)ONe \ias may occur for a sizeable fraction of  helium stars in the $\numrange{1.7}{2.6}\msun$ range. The salient properties of our models which we identify as responsible for enabling this outcome can be summarized as follows: firstly, unlike hydrogen-rich SAGB stars, our models do not experience a 2DU episode, nor undergo unstable shell burning. Consequently, their cores grow fast via stable \iso{He}{4}-shell burning. This significantly broadens the mass range for which stars develop degenerate Chandrasekhar-mass cores. Our findings (Fig.~\ref{fig:final_fates}) are consistent with previous studies  \citep[e.g.,][]{Podsiadlowski:2003py,Poelarends:2007ip,Poelarends:2017dua}, confirming that ECSNe are mostly relevant to interacting binary systems. In Sects.~\ref{sec:one_core_evolution} and \ref{sec:cone_core_evolution} we argue that all (C)ONe cores originating from helium stars with initial masses $M_{\rm He, i}\gtrsim 2.1\msun$ are able to reach the Chandrasekhar limit, independently of overshooting efficiency and initial metallicity. At $Z=0.02$ and $f_{\rm OV}>0$, near-\mch\ cores become possible for all stars with  $M_{\rm He, i}\gtrsim 1.9\msun$. This includes the entire mass range for which ONe cores are produced. Consequently, ONe WDs are not expected for these initial conditions.
+Our models confirm that (C)ONe \ias may occur for a sizeable fraction of  helium stars in the $\numrange{1.7}{2.6}\msun$ range. The salient properties of our models which we identify as responsible for enabling this outcome can be summarized as follows: firstly, unlike hydrogen-rich SAGB stars, our models do not experience a 2DU episode, nor undergo unstable shell burning. Consequently, their cores grow fast via stable \iso{He}{4}-shell burning. This significantly broadens the mass range for which stars develop degenerate Chandrasekhar-mass cores. Our findings (Fig.~\ref{fig:final_fates}) are consistent with previous studies  \citep[e.g.,][]{Podsiadlowski:2003py,Poelarends:2007ip,Poelarends:2017dua}, confirming that ECSNe are mostly relevant to interacting binary systems. In Sects.~\ref{sec:ch2:one_core_evolution} and \ref{sec:ch2:cone_core_evolution} we argue that all (C)ONe cores originating from helium stars with initial masses $M_{\rm He, i}\gtrsim 2.1\msun$ are able to reach the Chandrasekhar limit, independently of overshooting efficiency and initial metallicity. At $Z=0.02$ and $f_{\rm OV}>0$, near-\mch\ cores become possible for all stars with  $M_{\rm He, i}\gtrsim 1.9\msun$. This includes the entire mass range for which ONe cores are produced. Consequently, ONe WDs are not expected for these initial conditions.
 
 Secondly, (C)ONe cores are formed via carbon burning that initiates off-center and propagates inward. This leaves a certain amount of unburned carbon distributed throughout the core.  
-In Sects.~\ref{sec:one_core_evolution} and \ref{sec:carbon} we demonstrate that leftover carbon plays a critical role in determining the final fate of near-\mch\ (C)ONe cores. For hybrid CONe compositions, residual carbon ignites when $\logrhoc \simeq 9.3$ leading to a thermonuclear runaway. Similarly, in ONe cores a carbon simmering phase is triggered by exothermic $e$-captures on \iso{Mg}{24} and \iso{Na}{24}. This may raise the temperature sufficiently to initiate explosive oxygen burning when $\logrho \lesssim 9.8$. 
+In Sects.~\ref{sec:ch2:one_core_evolution} and \ref{sec:ch2:carbon} we demonstrate that leftover carbon plays a critical role in determining the final fate of near-\mch\ (C)ONe cores. For hybrid CONe compositions, residual carbon ignites when $\logrhoc \simeq 9.3$ leading to a thermonuclear runaway. Similarly, in ONe cores a carbon simmering phase is triggered by exothermic $e$-captures on \iso{Mg}{24} and \iso{Na}{24}. This may raise the temperature sufficiently to initiate explosive oxygen burning when $\logrho \lesssim 9.8$. 
 
-Our models suggest that degenerate cores with a mass averaged mass fraction of $X(\iso{C}{12})\gtrsim 0.004$ produce ONe \ias, whereas those with lower \iso{C}{12} mass fractions yield ECSNe (Section~\ref{sec:carbon}). This is approximately equal to 0.005\msun\ of residual carbon distributed in the degenerate core. Figure~\ref{fig:carbon_mass_fractions} illustrates how the residual \iso{C}{12} mass fraction varies with initial mass, composition, and overshooting efficiency. Larger residual carbon mass fractions are favored for lower masses and high metallicities, especially for $f_{\rm OV}>0$. This means that (C)ONe \ias are mostly relevant to high-metallicity environments: for $Z=0.02$, the initial mass range for which near-\mch\ degenerate cores have $X(\iso{C}{12})\leq 0.004$ is $(M^{\rm min}_{\rm He, i},M^{\rm max}_{\rm He, i})  \simeq (2.1, 2.7)$ or $(1.8, 2.3)$\msun\ for $f_{\rm OV}=0.0$ and 0.016, respectively. For $Z\leq10^{-3}$, the corresponding range becomes $\sim(2.1, 2.5)$ and $(2.0, 2.1)$\msun\ for $f_{\rm OV}=0.0$ and 0.016.
+Our models suggest that degenerate cores with a mass averaged mass fraction of $X(\iso{C}{12})\gtrsim 0.004$ produce ONe \ias, whereas those with lower \iso{C}{12} mass fractions yield ECSNe (Section~\ref{sec:ch2:carbon}). This is approximately equal to 0.005\msun\ of residual carbon distributed in the degenerate core. Figure~\ref{fig:carbon_mass_fractions} illustrates how the residual \iso{C}{12} mass fraction varies with initial mass, composition, and overshooting efficiency. Larger residual carbon mass fractions are favored for lower masses and high metallicities, especially for $f_{\rm OV}>0$. This means that (C)ONe \ias are mostly relevant to high-metallicity environments: for $Z=0.02$, the initial mass range for which near-\mch\ degenerate cores have $X(\iso{C}{12})\leq 0.004$ is $(M^{\rm min}_{\rm He, i},M^{\rm max}_{\rm He, i})  \simeq (2.1, 2.7)$ or $(1.8, 2.3)$\msun\ for $f_{\rm OV}=0.0$ and 0.016, respectively. For $Z\leq10^{-3}$, the corresponding range becomes $\sim(2.1, 2.5)$ and $(2.0, 2.1)$\msun\ for $f_{\rm OV}=0.0$ and 0.016.
 
-Thirdly, prior to collapse, near-\mch\ models undergo a period of vigorous shell burning, during which the envelope reaches super-Eddington luminosities. In Sect.~\ref{sec:results} we demonstrate that this ``hot-bottom \iso{He}{4}-burning'' episode leads to helium-free, metal-rich envelopes. In Sect.~\ref{sec:physical_uncertainties} we explore uncertainties related to the power of the stellar wind. We find that the final envelope mass depends on the strength of the stellar wind during the core helium burning phase. However, in all cases, no helium is present at the time of core-collapse.  
+Thirdly, prior to collapse, near-\mch\ models undergo a period of vigorous shell burning, during which the envelope reaches super-Eddington luminosities. In Sect.~\ref{sec:ch2:results} we demonstrate that this ``hot-bottom \iso{He}{4}-burning'' episode leads to helium-free, metal-rich envelopes. In Sect.~\ref{sec:ch2:physical_uncertainties} we explore uncertainties related to the power of the stellar wind. We find that the final envelope mass depends on the strength of the stellar wind during the core helium burning phase. However, in all cases, no helium is present at the time of core-collapse.  
 
 
-In Sect.~\ref{sec:physical_uncertainties} we discuss several factors that could affect these explosions, including uncertainties in nuclear reaction rates, mixing processes, stellar winds, and binary interaction. If (C)ONe \ias indeed occur in nature, they can significantly influence the properties of compact object populations, as well as the chemical evolution of galaxies. For instance, the formation of neutron stars via ECSNe in binaries would be affected, particularly at high metallicities. Such potentially important consequences raise the question of how (C)ONe \ias and their progenitors could  be identified. In Sect.~\ref{sec:explosion_properties} we estimated that (C)ONe \ias have a sufficiently large reservoir of nuclear energy to appear similar to normal \ias in terms of iron-group elements yields and kinetic energies. Evidently, more robust constraints on the nucleosynthesis and  explosion energies require detailed multidimensional hydrodynamic simulations of the explosive oxygen burning phase. Another distinct characteristic that could help constrain their observational counterparts is the intense mass loss taking place during the few thousand years leading to the explosion. This mass loss history will likely create  a dense metal-rich circumstellar material (CSM) that can subsequently interact with the SN ejecta. This presents some similarities to the ``core-denegerate'' \ia scenario \citep[e.g.,][]{Wang:2016alt,soker2019,Soker:2021dii}. However, binary interactions---involving these stars with the most extended envelopes---may occur leading to a more diverse CSM spectrum.
+In Sect.~\ref{sec:ch2:physical_uncertainties} we discuss several factors that could affect these explosions, including uncertainties in nuclear reaction rates, mixing processes, stellar winds, and binary interaction. If (C)ONe \ias indeed occur in nature, they can significantly influence the properties of compact object populations, as well as the chemical evolution of galaxies. For instance, the formation of neutron stars via ECSNe in binaries would be affected, particularly at high metallicities. Such potentially important consequences raise the question of how (C)ONe \ias and their progenitors could  be identified. In Sect.~\ref{sec:ch2:explosion_properties} we estimated that (C)ONe \ias have a sufficiently large reservoir of nuclear energy to appear similar to normal \ias in terms of iron-group elements yields and kinetic energies. Evidently, more robust constraints on the nucleosynthesis and  explosion energies require detailed multidimensional hydrodynamic simulations of the explosive oxygen burning phase. Another distinct characteristic that could help constrain their observational counterparts is the intense mass loss taking place during the few thousand years leading to the explosion. This mass loss history will likely create  a dense metal-rich circumstellar material (CSM) that can subsequently interact with the SN ejecta. This presents some similarities to the ``core-denegerate'' \ia scenario \citep[e.g.,][]{Wang:2016alt,soker2019,Soker:2021dii}. However, binary interactions---involving these stars with the most extended envelopes---may occur leading to a more diverse CSM spectrum.
 
 In terms of explosion sites, we expect (C)ONe \ias to be relevant mostly to high-metallicity star-forming regions. Similarly to ECSNe, we expect a delay time distribution dominated by the main sequence lifetime of their progenitors, that is to be $\mathcal{O}$(200\,Myr), although it might be possible to form similar ONe cores via WD mergers \citep{Schwab:2016lep}.
 \cite{antoniadis2020}, argued that the frequency of ONe \ias can be comparable to the observed SNe Ib/c rates. Considering the results presented here, we update the relative ratio between ONe \ias and SNe Ib/c to be $\numrange{0.17}{0.30}$ at $Z=0.02$ and $\numrange{0.03}{0.13}$ at $Z=10^{-4}$ \citep[assuming a][initial mass function]{Chabrier:2004vw}.
 
 Interestingly, these population properties are very similar to what has been inferred for SNe\,Iax \citep{Foley:2012tu,Meng:2017ijx,Jha:2017gwq} but also for some  high-velocity \citep[e.g.,][]{Pan:2020grt,Zeng:2021vsz} and normal \ias \citep{Maoz:2010pz,Soker:2021dii}. 
 SNe\,Iax in particular, present some properties that make them particularly attractive as potential ONe \ia counterparts. While they are usually interpreted as CO or (C)ONe WD deflagrations \citep[e.g.,][]{Kromer:2015lda,Yamanaka:2015qpa,Magee:2016vnu},  at least a fraction of them occur inside a helium-rich CSM \citep{Magee:2018aui,Jacobson-Galan:2018fqu}, while none has been observed in an elliptical galaxy host \citep{Foley:2012tu}. 
-Lastly, at least one nearby SN\,Iax, SN\,2012Z, has been securely associated with a luminous blue progenitor \citep{McCully:2014jva,Stritzinger:2014lva,Yamanaka:2015qpa,McCully:2021abc}, with properties similar to those inferred for our ONe models prior to collapse (Section~\ref{sec:results}). 
+Lastly, at least one nearby SN\,Iax, SN\,2012Z, has been securely associated with a luminous blue progenitor \citep{McCully:2014jva,Stritzinger:2014lva,Yamanaka:2015qpa,McCully:2021abc}, with properties similar to those inferred for our ONe models prior to collapse (Section~\ref{sec:ch2:results}). 
 
 Besides the explosions themselves, the progenitors of (C)ONe \ias might also be easily identifiable, particularly in the few thousand years leading to the collapse. This is  because of their high luminosities (Fig.~\ref{fig:hrd_series1}), but most importantly due to their hydrogen- and helium-free, metal-rich atmospheres (Fig.~\ref{fig:surface_abun_evol}). Such peculiar atmospheric abundances are not easily produced via ordinary stellar evolution 
 paths. A unique object that presents some interesting similarities to our progenitor models is WS35 \citep{Gvaramadze:2019abc,Oskinova:2019abc}. 
@@ -800,13 +800,13 @@ strong stellar wind. While our progenitor models  are somewhat cooler prior to c
 Other indirect, but distinct observational evidence could be related to the properties of compact-object populations at different metallicities. For instance if neutron star formation via ECSNe is suppressed at high-$Z$ environments (Fig.~\ref{fig:final_fates}), as our results suggest, both the integrated and $Z$-dependent double NS (DNS) merger rates would be affected \citep{Mandel:2021abc}. One would also expect to see differences  between Galactic and extra-galactic DNSs (e.g., in their mass ratio distributions). Similarly, the Galactic pulsar population might also be affected, for example fewer ECSNe could  lead to a decreased number of young radio pulsars in wide binary systems and globular clusters \citep[][and references therein]{Antoniadis:2020gos,Willcox:2021kbg}. However, we note that there might be other core-collapse SN mechanisms that produce low-velocity pulsars \citep[see ][and references therein]{Antoniadis:2021dhe}
 
 Lastly,  models that do not reach the Chandrasekhar limit, but become (C)ONe WDs instead, also 
-present some interest as possible thermonuclear SN and NS progenitors. Their high masses (up to 1.35\msun; Section~\ref{sec:wd_evolution}) 
+present some interest as possible thermonuclear SN and NS progenitors. Their high masses (up to 1.35\msun; Section~\ref{sec:ch2:wd_evolution}) 
 imply that they only need to accrete very small amounts of mass to become unstable. Their collapse would then lead to a thermonuclear deflagration
 \citep{Meng:2014qta,Willcox:2016yyp,Bravo:2019fwh}, or the formation of a neutron star in an accretion-induced collapse \citep[e.g.,][]{Nomoto:1991abc,Tauris:2013zna,Ruiter:2018ouw,Wang:2020pzc}. Similarly to what has been discussed in this work, we expect the core composition---particularly the amount of residual carbon and its distribution in the core---to play a critical role in determining their fate \citep{brooks2017}. It is conceivable that if these WDs can achieve oxygen ignition conditions similar to those of (C)ONe \ias, then the resulting explosions would also have similar appearance. In this case, (C)ONe WDs may contribute \ias with much longer delay times.    
 
 
 \begin{subappendices}
-\section{The \seriesone Grid}\label{apx:composition_seriesI}
+\section{The \seriesone Grid}\label{apx:ch2:composition_seriesI}
 
 
 \begin{figure*}[hbt!]
@@ -824,19 +824,19 @@ imply that they only need to accrete very small amounts of mass to become unstab
     \caption{Abundance profiles of the \seriesone $ 2.5\msun,  Z=0.02;f_{OV}=0.0$ stellar model. The top-left panel refers to the structure when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$. The distribution of residual carbon from previous burning stages is visible. The top-right panel shows the final composition of this model. Ignition of residual carbon leads to thermonuclear explosion.
     The panel at the bottom shows the final structure of the same model, in the case where carbon-consuming nuclear reactions have been turned off.
     In this scenario, the core reaches the density threshold for $e$-captures on Ne nuclei to commence, leading to formation of \iso{O}{20}, and most likely to an ECSN.}
-    \label{apx:fig:eta1p0}
+    \label{apx:ch2:fig:eta1p0}
 \end{figure*}
 
 
 \clearpage
-\section{The \seriestwo Grid}\label{apx:composition_seriesII}
+\section{The \seriestwo Grid}\label{apx:ch2:composition_seriesII}
 
 \begin{figure*}[hbt!]
     \centering 
     \includegraphics[height=8cm]{figures/chapter2/abundances/2p0_eta0p25_Rho9.pdf}\quad
     \includegraphics[height=8cm]{figures/chapter2/abundances/2p0_eta0p25_final_abun.pdf}
     \caption{Abundance profiles of the \seriestwo $ 2.0\msun,  Z=0.02;f_{OV}=0.0; \eta=0.25$ stellar model. The left panel refers to the structure when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$ (shortly before the Urca cooling phase). The right panel shows the final chemical composition of the model after the ignition of neon.}
-    \label{apx:fig:eta0p25}
+    \label{apx:ch2:fig:eta0p25}
 \end{figure*}
 
 \begin{figure*}[hbt!]
@@ -844,7 +844,7 @@ imply that they only need to accrete very small amounts of mass to become unstab
     \includegraphics[height=8cm]{figures/chapter2/abundances/2p7_eta0p8_Rho9.pdf}\quad
     \includegraphics[height=8cm]{figures/chapter2/abundances/2p7_eta0p8_final_abun.pdf}
     \caption{Abundance profiles of the \seriestwo $ 2.7\msun,  Z=0.02;f_{OV}=0.0; \eta=0.8$ stellar model. The left panel refers to the structure when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$ (shortly before the Urca cooling phase). The right panel shows the final chemical composition of the model after the ignition of neon. This model has reached the critical density for $e$-captures on \iso{Ne}{20} which leads to the formation of \iso{O}{20} (cyan line).}
-    \label{apx:fig:eta0p8}
+    \label{apx:ch2:fig:eta0p8}
 \end{figure*}
 
 \begin{figure*}[hbt!]
@@ -854,7 +854,7 @@ imply that they only need to accrete very small amounts of mass to become unstab
     \includegraphics[height=8cm]{figures/chapter2/abundances/2p4_eta1p58_Rho9.pdf}\quad
     \includegraphics[height=8cm]{figures/chapter2/abundances/2p4_eta1p58_final_abun.pdf}
     \caption{Abundance profiles for two of our \seriestwo models with $2.1\msun,  Z=0.02;f_{OV}=0.0; \eta=1.6$ (top panel) and $2.4\msun,  Z=0.02;f_{OV}=0.0; \eta=1.6$ (bottom panel). On the left, the plots refer to chemical composition when $\rm \log(\rho_c / g \ cm^{-3}) \simeq 9.0$ (shortly before the Urca cooling phase). On the right, the plots refer to the final chemical composition of our models. In the case of the $2.4\msun$ model, off-center ignition of oxygen leads to the formation of a silicon core with amounts of residual oxygen distributed within the core.}
-    \label{apx:fig:eta1p58}
+    \label{apx:ch2:fig:eta1p58}
 \end{figure*}
 \end{subappendices}
 
