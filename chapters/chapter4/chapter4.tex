@@ -1,18 +1,33 @@
 \documentclass[main.tex]{subfiles}
 
 \begin{document}
-    \chapter[The Influence of Hydrogen Envelopes in the Evolution of Partially-Stripped Helium Stars]{The Influence of Hydrogen Envelopes in the Evolution of Partially-Stripped Helium Stars}
+    \chapter[Formation of Compact Twin Stars in Low-Mass X-Ray Binaries]{Formation of Compact Twin Stars in Low-Mass X-Ray Binaries}
+    % \chaptermark{Astrophysical Consequences of Dense Matter Phase Transitions}
+
 
     \begin{center}
-        \textbf{S. Chanlaridis}, J. Antoniadis, and N. Langer \\
-    \end{center}
+        \textbf{S. Chanlaridis}, D. Ohse, D. E. Alvarez-Castillo, J. Antoniadis, D. Blaschke, V. Danchev, N. Langer, and D. Misra   \\
 
-    \textbf{Disclaimer:} This Chapter presents preliminary results from ongoing research that have not yet been subjected to peer review or published in any preprint format. As such, the findings and interpretations discussed in this chapter should be considered provisional and may be subject to revision. The results presented here are part of an ongoing investigation, and further analysis and validation are required before any definitive conclusions can be drawn.
+        \vspace{0.5cm}
+
+        \href{https://arxiv.org/abs/2409.04755}{arXiv:2409.04755} \\
+        Submitted for publication in Astronomy \& Astrophysics
+    \end{center}
         
         
     \begin{center}
         \textbf{\large Abstract}
     \end{center}
+
+    Millisecond pulsars (MSPs) are laboratories for stellar evolution, strong gravity, and ultra-dense matter. Although MSPs are thought to originate in low-mass X-ray binaries (LMXBs), approximately 27\% do not have a binary companion, whereas others are found in systems with large orbital eccentricities. Understanding how these systems form may provide insight into the internal properties of neutron stars (NSs).
+
+    In this paper, we study the formation of a twin compact star through  rapid first-order phase transitions in NS cores due to mass accretion in LMXBs. We investigate whether this mechanism, possibly coupled with secondary kick mechanisms such as neutrino or electromagnetic rocket effects, may leave an observable long-lasting imprint on the orbit.
+
+    We simulate mass accretion in LMXBs consisting of a NS and a low mass main sequence companion and follow the evolution of the NS mass, radius, and spin until a strong phase transition is triggered. For the internal NS structure, we assume a multipolytrope equation-of-state  that allows for a sharp phase transition from hadronic to quark matter and satisfies observational constraints.
+
+    We find that in compact binary systems with relatively short pre-Roche lobe overflow orbital periods, an accretion-induced phase transition may occur during the LMXB phase. In contrast, in binary systems with wider orbits, this transition may take place during the spin-down phase, leading to the formation of an eccentric binary MSP. If the transition is accompanied by a secondary kick of magnitude ($w > 20$\,km\,s$^{-1}$), then the binary has a high probability of being disrupted, thereby forming an isolated MSP, or being reconfigured to an ultra-wide orbit.
+
+    Our findings suggest that accretion in LMXB provides a viable path for the formation of twin compact stars that could leave a long-lived and thus observable imprint on the orbit. The eccentricity distribution of binary MSPs with long ($>50\,$d) orbital periods can provide stringent constraints on first-order phase transitions in dense nuclear matter.
     
     {\hypersetup{linkcolor=black, pdfborder={0 0 0}}
         \minitoc
@@ -20,7 +35,410 @@
     }
     
     \section{Introduction} \label{sec:ch4:intro}
-    \section{Simulations and physical assumptions} \label{sec:ch4:methodology}
+    Millisecond pulsars (MSPs) are widely considered to be old, spun-up neutron stars (NSs) characterized by high rotational frequencies, $\mathcal{O}(10^2\,\rm Hz)$, and weak surface magnetic fields, $\mathcal{O}(10^8\,\rm G)$. The formation of MSPs can be traced back to a recycling
+    phase in a low-mass X-ray binary \citep[LMXB; see][]{Tauris:2023nmj}. 
+    During the recycling process,  mass and angular momentum are accreted onto the NS from the companion star when the latter fills its Roche lobe \citep[e.g.,][and references therein]{Bhattacharya:1991pre, Tauris:aap1999, Tauris:2023nmj}. During mass transfer,  tidal interactions circularize the orbit on a timescale that is much shorter $(\sim 10^4\,\rm yr)$ than the  mass accretion phase. Therefore, MSPs are expected to populate binary systems with very small eccentricities \citep{Phinney:1992, Verbunt:aa1995}.
+    
+    Although the vast majority of MSPs are indeed situated in systems with highly circularized orbits, a considerable fraction  appear to be solitary \citep[$\sim 27$\% among known MSPs with spin periods $\leq 30$\,ms; see the ATNF pulsar catalogue;][]{Manchester_2005}\footnote{\url{https://www.atnf.csiro.au/research/pulsar/psrcat/}\\ accessed on 29 May 2024}. These isolated MSPs (iMSPs) raise questions about the recycling process, particularly about possible mechanisms that could eject, consume, or disrupt the MSP companion stars \citep{1987Natur.329..312V, 2019PASA...36....5S, 2019JApA...40...32N, 2020A&A...633A..45J, antoniadis:2021}. 
+    
+    In addition, recent pulsar surveys have revealed the existence of binary MSPs with eccentricities of up to $e \simeq 1$. With
+    the exception of MSPs in globular clusters, and PSR\,J1903+0327 \citep{Champion:sci2008} which is a Galactic field MSP with a
+    main-sequence companion and an eccentricity of $e\simeq0.4$, 
+     eccentric MSPs (eMSPs) appear to have orbital periods between 20 and 50\,d, and eccentricities $\mathcal{O}(0.1)$, 
+     \citep{Deneva:apj2013, Barr:mnras2013, Knispel:apj2015, Camilo:apj2015, antoniadis:apjl14, Antoniadis:2016bnj,  Stovall:apj2019}. 
+    Although chaotic gravitational interactions, such as the ejection of the least massive member of a hierarchical triple system
+    progenitor, have the potential to explain the formation of eMSPs in clusters \citep[e.g.,][]{2011MNRAS.412.2763F, 
+    2011ApJ...734...55P},   they are unlikely to produce systems that have similar binary parameters \citep[see][]
+    {Deneva:apj2013, Barr:mnras2013, Knispel:apj2015, Camilo:apj2015, Octau:aap2018}, such as those found in the Galactic field. 
+    However, several attempts have been made to investigate alternative formation channels that can accommodate the observed properties of eMSPs \citep[e.g., see ][for an overivew of various eMSP formation scenarios]{Freire:mnras14, antoniadis:apjl14, Jiang:apj15, Jiang:raa2021, ginzburg:mnras21}. 
+    
+    One possible way to explain the formation of both iMSPs and eMSPs could be related to abrupt changes in the interior of the NS \citep{Freire:mnras14, Jiang:apj15, Alvarez-Castillo:2019apz}. For instance, the dependence of the NS structure on the equation of state (EoS) highlights the possibility of exotic phases and phase transitions in their interiors. An interesting scenario is the existence of a third family of compact stars \citep[hencheforth ``twin stars''; see][]{Gerlach:1968zz}
+    beyond the conventional  white dwarf (WD) and NS classifications. 
+    Such a third family could emerge as a result of a phase transition in the NS core, leading to the formation of hybrid stars with an outer core of hadronic matter and an inner core of deconfined quark matter \citep[e.g.,][]
+    {Schertler:2000xq,Benic:2014jia, Alvarez-Castillo:2019apz, 2021AN....342..234A}. 
+    Given that baryon number and angular momentum can be conserved simultaneously during this process, the transition can occur almost instantaneously, on a dynamic timescale, which is insignificant compared to the orbital period.
+    
+    Within the context of MSP formation scenarios, such an instantaneous transition to the third-family branch could be
+    triggered during, or after, the LMXB phase due to mass accretion \citep[see, e.g.,][]
+    {Bejger:2016emu,Alvarez-Castillo:2019apz}. This transition could in turn induce instantaneous mass loss and/or a kick that can cause significant changes to orbital dynamics \citep{Jiang:apj15}. 
+    More specifically, the sudden decrease in gravitational mass due to quark deconfinement in the core \citep[owing to the 
+    ``catastrophic rearrangement'' and strong compactification of matter when transitioning to the third-family branch which 
+    increases the gravitational binding energy, see][]{Mishustin:2002xe}, may significantly increase eccentricity or even disrupt the binary \citep[see also][]{Jiang:raa2021}. The main aim of this work is to explore this possibility in more detail. 
+    
+    The investigation of such scenarios is important for advancing our understanding of dense matter under extreme conditions.  Recent advances in observational techniques, such as gravitational wave detections from NS mergers \citep[e.g.,][]{PhysRevLett.119.161101} and high-precision pulsar timing
+    \citep[e.g.,][]{Miller:2019cac, Riley:2019yda,Miller:2021qha,Bogdanov:2021yip}, offer unprecedented opportunities to test and refine such theoretical models predicting phase transitions \citep[e.g.,][]{Bauswein:2022vtq}.
+    For instance, gravitational waves from unstable fundamental $f$-mode oscillations can reveal the internal stellar
+    structure and matter distribution characteristic of a first-order phase transition, as shown in \cite{2023arXiv230908775K} 
+    where the estimations for the same class of models used in this work are presented. 
+    
+    In \cite{2023arXiv231115992K} NS evolution with an accretion-induced phase transition is simulated in a neutrino radiation hydrodynamics treatment,
+    implementing a three-flavor Boltzmann neutrino transport and a microscopic quark-hadron hybrid model EoS. 
+    This approach results in the production of gravitational radiation from $f$-mode excitation and the associated neutrino emission. 
+    The phase transition triggers an expansion of the accreted envelope with supersonic velocities resulting in a mass loss of $\sim 10^{-3}\msun$. 
+    It is worth noticing that finite temperatures are considered in this approach, which correspond to an entropy per baryon of $0.1-0.5$. 
+    Since finite temperatures soften the quark matter EoS, the onset densities for deconfinement are lowered and the latent heat is increased so that twin stars of identical mass but different radius and compactness \citep{Gerlach:1968zz, Schertler:2000xq}, become possible even when at vanishing temperature no gravitational instability was associated with the deconfinement transition \citep{Hempel:2015vlg,Carlomagno:2023nrc}. 
+    The associated mass defect of such an accretion-induced thermal star quake may be as large as $3\%$ of a solar mass \citep{Carlomagno:2024vvr}.
+    In fact, it is expected that with the precision of the next generation of gravitational wave detectors, these scenarios can be studied. 
+    In general, the timely synergy between theoretical developments and observational capabilities places us at the forefront of uncovering the complex NS physics, where phase transitions emerge as a central theme \citep{Bauswein:2022vtq}.
+    
+    In this work, we combine detailed binary evolution calculations with a simple analytic model for the response of the NS spin and radius to accretion to investigate whether twin stars can form in low-mass X-ray binaries. We also investigate whether such accretion-induced phase transitions could help explain the observed eMSP and iMSP populations. The text is organized as follows: in Sect.~\ref{sec:ch4:methods} we describe the methodology and physical assumptions. We present the results of our simulations in Sect.~\ref{sec:ch4:results} and conclude with a summary and discussion on the implications of our calculations in Sect.~\ref{sec:ch4:summary}.
+
+    \section{Methodology} \label{sec:ch4:methods}
+
+    \subsection{Initial setup and numerical calculations}\label{sec:ch4:setup}
+    Our main goal is to investigate whether first-order phase transitions can be triggered in LMXBs and recycled MSPs under realistic mass accretion and spin evolution scenarios. To this end, our working setup is divided into three distinct components:
+    
+    \begin{enumerate}
+        \item an EoS for dense nuclear matter that allows for a first-order phase transition paired with a mass-radius relation for spinning NSs; 
+        \item a stellar evolution model for the binary system, providing the mass-accretion profile as a function of time for the NS; 
+        \item an accretion model that allows us to calculate the spin, mass, and radius evolution of the NS during and after the LMXB phase.
+    \end{enumerate}
+    These are described in detail in the remainder of the section.
+    
+    
+    
+    \subsubsection{Equation of state and mass-radius relation}\label{sec:ch4:eos}
+    For the EoS, we select a multipolytrope model suitable for describing both nuclear and quark matter within NSs. This EoS is chosen for its ability to: (a) account for a strong first-order phase transition from hadronic to quark matter above $1.4\msun$ (depending on the angular momentum) and (b) satisfy current constraints derived from multimessenger astronomy \citep{antoniadis:2013sci, LIGOScientific:2018cki, Miller:2019cac, Riley:2019yda, 2020NatAs...4...72C}.
+    
+    The outer layers, characterized by densities $n \leq 0.5 n_0$, where $n_0$ denotes the nuclear saturation density, are modeled using the \texttt{BPS} EoS \citep{Baym:1971apj}. An intermediate density regime with $0.5 n_0 < n \leq 1.1 n_0$ is assumed to consist of homogeneous matter in $\beta$-equilibrium. For regions with densities $n > 1.1 n_0$ we distinguish four regimes, each described by a polytropic equation of state of the form:
+    
+    \begin{equation}
+        P(n) = \kappa_i \left( \frac{n}{n_0} \right)^{\Gamma_i},
+        \label{eq:acb5_eos}
+    \end{equation}
+    henceforth referred to as the \texttt{ACB5} EoS as in \cite{Paschalidis:2018prd}.
+    
+    The first polytrope, $(i=1)$, is a fit to the stiffest EoS version provided in \cite{Hebeler:2013apj}. The second polytrope, $(i=2)$, describes the first-order phase transition. The polytropic index $\Gamma$ allows us to distinguish between a sharp transition (Maxwell construction, $\Gamma = 0$) and a non-sharp transition (Gibbs construction, $\Gamma \neq 0$). Since we require a strong transition to produce a large jump in energy density, the second polytrope is defined as a region of constant pressure $P_c = \kappa_2$, where $\Gamma_2 = 0$ is imposed by the Maxwell construction. The remaining two polytropes $(i = 3,4)$ describe regions with densities that exceed the critical value for a first-order transition and correspond to stiff quark matter which should be able to support a NS with masses up to $\sim 2.0\msun$ \citep[e.g.,][]{2020NatAs...4...72C}.
+    The different density regimes are thermodynamically joined in a consistent manner. 
+    
+    To infer the corresponding mass-radius relation for rigidly spinning NSs, we used the numerical integrator described in \cite{Alvarez-Castillo:2019apz}. 
+    In this code, the integration of the structure equations proceeds radially outward from the center of the NS, where the density is highest, to its surface, where the pressure falls to zero, thus determining the total mass and radius for various central densities and angular momenta, $J$.
+    
+    The resulting mass-radius relations are illustrated in Fig.~\ref{fig:mvsr} where the baryonic mass (left) and gravitational mass (right) mass are plotted against the equatorial radius of the NS. 
+    The lower right section of each subfigure depicts the mass-radius relation for NSs within the hadronic branch, corresponding to the first \texttt{ACB5} polytrope and indicating a composition of purely hadronic matter. Moving towards the upper left segment of each subfigure, we shift into the twin (hybrid) star branch, representing NSs that have undergone a phase transition to include a quark matter core, described by the \texttt{ACB5}'s third and fourth polytropes. This transition is shown by a dashed black curve, representing the second polytrope of the \texttt{ACB5} EoS and indicating the highest mass that a stable NS composed entirely of hadronic matter can sustain. Beyond this threshold, additional mass triggers a phase transition to quark matter, moving the star to the hybrid branch.
+    
+    The role of spin and angular momentum in dictating the precise moment of transition is crucial; higher angular momentum allows a NS to support more mass in the hadronic phase. This effect is illustrated by the dotted curves, which denote varying levels of angular momenta, normalized by $J_0=G\msun^2/c$. Here, the innermost (dark blue) dotted line represents a static NS, and the outermost (light yellow) line corresponds to $J/J_0 = 0.45$. Beyond this point, the hadronic branch extends past the shedding limit, where equatorial matter attains Keplerian escape velocity and is ejected.
+    
+    For the calculations that follow, we assume that a NS reaching the transition line undergoes a phase transition on the dynamic timescale, under conservation of the angular momentum and baryonic mass. 
+    The transition moves the NS from the maximal stability threshold on the hadronic branch (dashed line), to a corresponding position (in terms of angular momentum and baryonic mass) on the third family. This principle is visually represented by the magenta curve, linking points on the hybrid branch that could be attained through the transition and defining the birth radius of the twin star. 
+    
+    \begin{figure*}
+        \centering
+        \includegraphics[width=\textwidth]{figures/chapter4/m_vs_r_grid.png}
+        \caption{\textit{Left Panel}: Baryonic mass vs. equatorial radius. Dotted and dot-dashed curves indicate lines of constant angular momentum and constant frequency respectively. The black dashed line highlights the points of maximum stability in the hadronic branches, signaling the onset of a phase transition (PT). Thin, horizontal magenta lines show trajectories where angular momentum ($J$) and baryonic mass ($M_b$) are conserved. The thick magenta curve connects points on the hybrid star branches that can be reached through a collapse conserving both $J$ and $M_b$.
+        \textit{Right Panel}: Similar to the left panel, but with the y-axis representing gravitational mass. Star markers denote the endpoint trajectories for direct (\textsc{m2}) and delayed (\textsc{m3}) collapse models. Here, the arrows are inclined because gravitational mass, unlike baryonic mass, is not conserved during the PT.}
+        \label{fig:mvsr}
+    \end{figure*}
+    
+    
+    
+    \subsubsection{Mass transfer and binary evolution models} \label{sec:ch4:input_params}
+    To obtain realistic mass-transfer models, we performed detailed numerical binary calculations using the implicit one-dimensional code \textbf{M}odules for \textbf{E}xperiments in \textbf{S}tellar \textbf{A}strophysics \citep[\mesa\,v12778;][]{Paxton:2010ji,Paxton:2013pj,Paxton:2015jva,Paxton:2017eie}. Our binary systems consisted of a zero-age main sequence (ZAMS) donor with an initial metallicity $Z=0.02$ and a NS accretor, which was treated as a point mass.
+    We calculated three models chosen as representative of three distinct cases: a LMXB in which a phase transition never occurs (model \textsc{m1}), one in which the transition occurs during the mass-transfer phase (\textsc{m2}), and a model for which the transition occurs after the accretion phase, due to the spin-down of the NS (\textsc{m3}). The initial binary parameters for each model are summarized in Table~\ref{tab:config}.
+    
+    \begin{table}[t]
+        \centering
+        \caption{Initial binary parameters for our stellar evolution models.}
+        \begin{tabular}{cccc}
+             \hline \hline \\
+             Model & $M_\mathrm{don}\,[\msun]$ & $M_\mathrm{ns}\,[\msun]$ & $P_\mathrm{orb}\,[\mathrm{days}]$  \\
+             \hline \\
+            \textsc{m1} & $1.0$ & $1.0$ & $8$ \\\\
+            \textsc{m2} & $1.0$ & $1.2$ & $8$ \\\\
+            \textsc{m3} & $1.0$ & $1.2$ & $22.627$ \\\\
+            \hline
+        \end{tabular}
+        \label{tab:config}
+    \end{table}
+    
+    For the donor-star evolution, we used the type-2 OPAL Rosseland mean opacity tables \citep{opal_opacities}. Convection was modeled using the modified mixing length theory (MLT) prescription of \cite{Henyey:apj1965} with a mixing length parameter of $\alpha_{\rm ML} = 1.8$. In our models, we enabled convective premixing while trying to avoid increases in the abundance of species that were burned, where possible. Stability against convection was determined according to the Ledoux criterion \citep[][]{Ledoux:apj1947}. Furthermore, we used semiconvection, which we treated as a diffusive process, with an efficiency parameter of $\alpha_{\rm SEM} = 1.0$ \citep[][]{Langer:aap1991}. Lastly, we account for the overshooting of convective material beyond the convective layers by adopting an exponential overshooting efficiency of $f_{\rm ov, core} = 0.016$ and $f_{\rm ov, env} = 0.0174$ in the core and envelope, respectively. 
+    
+    Rotational mixing was taken into consideration, including the effects of Eddington–Sweet circulations, secular and dynamical instability, and the Goldreich–Schubert–Fricke instability \citep[see][for details]{Heger:apj2000}. The contribution of these instabilities to the total diffusion coefficient was reduced by a mixing efficiency factor, $f_c = 1/30$ \citep[][]{1992A&A...253..173C, Heger:apj2000}. Moreover, we employed the Spruit-Tayler dynamo to compute the internal magnetic field strength and the corresponding transport of angular momentum, as described in \cite[][]{Spruit:aap2002, Heger:apj2005}.
+    
+    To calculate the mass loss rate due to stellar wind, we implemented the cool red giant branch wind scheme by \cite{Reimers:bk1975}:
+    \begin{equation}
+        \label{eq:reimers_mdot}
+        \dot{M}_{1, \text{wind}} = -4 \times 10^{-13} \eta \left(\frac{R_1}{R_\odot}\right) \left(\frac{L_1}{L_\odot}\right)\left(\frac{M_\odot}{M_1}\right)\quad [M_\odot\,\text{yr}^{-1}],
+    \end{equation}
+    using a scaling factor of $\eta = 0.1$. In cases of hydrogen-poor donor stars, where their hydrogen mantle has been stripped (surface hydrogen mass fraction $X_{\rm S} < 0.4$), we applied the prescription of \cite{Nugis:aap2000} with a scaling factor of $\eta = 1.0$. The latter is used in \mesa under the \texttt{Dutch} hot wind scheme \citep[][]{Glebbeek:aap2009}.
+    
+    We assumed that our binary models were initially tidally synchronized to the orbit at the beginning of the evolution (ZAMS stage) and that the initial eccentricity was negligible. These assumptions are justified as tidal forces would circularize (and synchronize) the orbit on a much shorter timescale compared to the main-sequence lifetime of a low-mass donor star \citep[e.g.,][]{Verbunt:aa1995}.
+    
+    To compute the mass transfer rates during Roche lobe overflow (RLOF), we used the prescription suggested by \cite{Kolb:aap1990}. In addition, an isotropic re-emission scenario of mass transfer was adopted \citep[see][for a review]{Tauris:bk2006}. In this scenario, we assumed that mass flows conservatively from the donor to the NS accretor via RLOF, and a fraction of the transferred material, $\beta$, is lost (re-emitted) from the vicinity of the NS as an isotropic fast wind, carrying away the specific angular momentum of the NS. Hence, the NS's efficiency of accretion, $\epsilon$, is defined as:
+    \begin{equation}
+        \label{eq:accretion_efficiency}
+        \epsilon = 1 - \alpha - \beta - \delta,
+    \end{equation}
+    where $\alpha$ is the fraction of mass lost directly from the donor via winds, and $\delta$ is the fraction of mass lost from a circumbinary coplanar toroid. Here, we omitted any losses from winds or circumbinary toroids ($\alpha = \delta = 0$) and assumed that 50\% of the transferred mass is re-emitted ($\beta = 0.5$) resulting in an accretion efficiency of $\epsilon = 0.5$.
+    Furthermore, we assumed that the accretion rate of the NS is limited by the Eddington mass accretion rate, which for accreted material composed of pure ionized hydrogen takes the form:
+    \begin{equation}
+        \label{eq:edd_limit}
+        \dot{M}_{\text{Edd}} = 1.5 \times 10^{-8} \left(\frac{M_{2,i}}{1.3 M_\odot}\right)\quad[M_\odot\,\text{yr}^{-1}],
+    \end{equation}
+    where $M_{2,i}$ is the initial mass of the accretor \citep{2020A&A...642A.174M}. Here, the mass accreted would not change the Eddington limit significantly, thus we fixed the Eddington limit at $\dot{M}_{\text{Edd}} = 1.5 \times 10^{-8}\,M_\odot\,\text{yr}^{-1}$.
+    
+    For orbital angular momentum losses, we considered  mechanisms such as gravitational wave (GW) radiation, mass lost from the system, spin-orbit coupling due to tidal effects, and magnetic braking for donors with convective envelopes.
+    The orbital angular momentum loss due to GW radiation were calculated using the formula: 
+    \begin{equation}
+        \label{eq:jdot_gw}
+        \frac{dJ_{\text{gw}}}{dt} = - \frac{32}{5}\frac{G^{7/2}}{c^5}\frac{M_1^2 M_2^2 (M_1 + M_2)^{1/2}}{\alpha^{7/2}},
+    \end{equation}
+    where $G$ is the gravitational constant, $c$ is the speed of light in vacuum, $\alpha$ is the binary separation, and $M_1, M_2$ are the masses of the donor and the accretor, respectively \citep{Tauris:bk2006}.
+    Angular momentum loss due to magnetic braking was computed following the prescription of \cite{Rappaport:apj1983}:
+    \begin{equation}
+        \label{eq:jdot_mb}
+        \frac{dJ_{\text{mb}}}{dt} = -3.8 \times 10^{-30} M_1 R_\odot^4 \left(\frac{R_1}{R_\odot}\right)^{\gamma}\Omega_1^3\quad\text{[dyn cm]},
+    \end{equation}
+    where $M_1, R_1$, and $\Omega_1$ are respectively the mass, radius, and angular velocity of the donor star. Here, the magnetic braking index was fixed to  $\gamma = 4$.
+    
+    We let our models evolve until the donor star forms a white dwarf or the number of computational steps needed for convergence exceeds a limit of $3\times 10^5$. In all cases, the spatial and temporal resolution were set to their default values. Nonetheless, to assess whether rapid torque fluctuations (see Sect.~\ref{sec:ch4:torque_fluctuations}) during the equilibrium phase are physical or numerical in nature, and whether they impact our conclusions, we performed a time-resolution sensitivity study, by running extra \mesa tracks. To this end, we varied the time resolution during the mass-transfer phase of our models across a range of values, from $8\times10^{-5}$ to $8\times10^{-3}$, to test the sensitivity of the spin evolution and check the robustness of our conclusions.
+    
+    \subsubsection{Evolution of NS spin and structure}
+    To simulate the response of the interior of the NS to mass accretion, we adopted
+    the accretion model of \cite{Tauris:sc2012}, that allows to calculate the accretion torque as a function of time, $N(t)$. We summarize this model here for completeness.  
+    
+    The torque model is based on two primary assumptions: (a) spherical accretion, which simplifies the inflow dynamics to a scenario where the flow of ionized gas is predominantly governed by gravity until it reaches the magnetosphere,
+    and (b) the magnetic dipole assumption, which posits that the NS surface magnetic field can be approximated as a dipole.
+    
+    As matter falls on the surface of the NS, the ram pressure of the infalling material is counteracted by the magnetic pressure \citep[e.g.,][]{1996ApJ...457L..31C}. Assuming a spherical accretion scenario, these two pressures can be equated to determine the so-called magnetospheric radius: 
+    \begin{equation}
+        \label{eq:rmag}
+        R_\mathrm{mag} \approx 7.8 \left(\frac{B}{10^8\,\mathrm{G}}\right)^{4/7} \left(\frac{R_\mathrm{ns}}{10\,\mathrm{km}}\right)^{12/7} \times \left(\frac{M_\mathrm{ns}}{1.4\msun}\right)^{-1/7} \left(\frac{\mdot}{\mdot_\mathrm{Edd}}\right)^{-2/7}\,[\mathrm{km}],
+    \end{equation}
+    inside of which the plasma flow is dictated by the magnetic field corotating with the NS \citep{10.1111/j.1365-2966.2005.09167.x}. This radius provides an estimate of the location of the inner edge of the accretion disk. The outer boundary of the magnetosphere is indicated by the light-cylinder radius:
+    \begin{equation}
+        \label{eq:rlc}
+        R_\mathrm{lc} = \frac{cP_\mathrm{spin}}{2\pi},
+    \end{equation}
+    which signifies the location where the corotation velocity equals the speed of light \citep[e.g.,][and references therein]{2004ApJ...606..436R, Tauris:sc2012, 2017ApJ...835....4B}. 
+    
+    Another important length scale is the corotation radius:
+    \begin{equation}
+        \label{eq:rcor}
+        R_\mathrm{co} = (G M_\mathrm{ns})^{1/3}\left(\frac{P_\mathrm{spin}}{2\pi}\right)^{2/3},
+    \end{equation}
+    which is defined as the radial distance at which material corotating with the NS attains the  
+    Keplerian angular frequency \citep[e.g.,][]{1996ApJ...457L..31C, 2017ApJ...835....4B, 
+    Bhattacharyya:mdpi23}. If $R_\mathrm{mag} < R_\mathrm{co}$, the accreted material follows the magnetic field lines and is deposited on the surface, carrying angular momentum and exerting a positive torque that tends to spin up the NS. However, if $R_\mathrm{mag} > R_\mathrm{co}$ a centrifugal barrier arises, inhibiting the accretion flow as the material accelerates to super-Keplerian velocities \citep[e.g.,][and references therein]{2017ApJ...835....4B, Bhattacharyya:mdpi23}. Within this so-called propeller regime, the accelerated plasma may reach escape speed and be ejected from the system. The expulsion of matter exerts a negative (braking) torque extracting angular momentum from the NS and causing it to spin down. Therefore, it is expected that accretion cannot spin up the NS beyond the point where $R_\mathrm{mag} = R_\mathrm{co}$. The fastest spin a NS can acquire from accretion is the so-called equilibrium spin period, given by:
+    \begin{equation}
+        \label{eq:p_eq}
+        P_\mathrm{eq} \approx 0.26 \left(\frac{B}{10^8\,\mathrm{G}}\right)^{6/7} \left(\frac{R}{10\,\mathrm{km}}\right)^{18/7} \times \left(\frac{M}{1.4\msun}\right)^{-5/7} \left(\frac{\mdot}{\mdot_\mathrm{Edd}}\right)^{-3/7}\,\mathrm{[ms],}
+    \end{equation}
+    as per \citet{10.1111/j.1365-2966.2005.09167.x}.
+    
+    To calculate the resulting accretion torque as a function of time, we used the formulation suggested by \cite{Tauris:sc2012}:
+    \begin{equation}
+        \label{eq:torque}
+        N(t) = n(\omega) \left[\mdot(t) \sqrt{GM_\mathrm{ns}R_\mathrm{mag}(t)}\xi + \frac{\mu^2}{9R^3_\mathrm{mag}(t)}\right] - \frac{\dot{E}_\mathrm{dipole}(t)}{\Omega(t)},
+    \end{equation}
+    Here, $n(\omega)$ is a dimensionless quantity defined as $n(\omega) = \tanh \left( \frac{1 - \omega}{\delta \omega} \right)$, where $\omega$ is the fastness parameter given by $\omega = \sqrt{\left( \frac{R_\mathrm{mag}}{R_\mathrm{co}} \right)^3}$. The parameter $\xi$ is a factor of order unity and is fixed to $\xi=1$  in our calculations. The parameter $\mu$ denotes the magnetic dipole moment, $\dot{E}_\mathrm{dipole}(t)$ represents the time-dependent dipole energy loss, and $\Omega$ is the spin frequency.
+    The mass-transfer rate, $\mdot$, was taken directly from our \mesa binary stellar evolution models. The terms $G$, $M_\mathrm{ns}$, and $R_\mathrm{mag}$ represent the gravitational constant, neutron star mass, and magnetic radius respectively.
+    The width of the transition zone near the magnetospheric boundary was assumed to be small enough ($\delta \omega = 0.02$) so that the quantity $n(\omega)$ corresponds to a step function, $n(\omega) = \pm 1$.
+    Finally, for a recycled pulsar, it is anticipated that the magnetic field decreases significantly during the early accretion phase, dropping by several orders of magnitude from its original strength \citep{1989Natur.342..656S}.
+    Because this reduction in the magnetic field is believed to occur over a short timescale compared to the duration of the mass-transfer phase \citep{Bhattacharya:1991pre, 2017ApJ...835....4B}, we consider the surface magnetic field strength to be  constant with a value of $B = 1.0 \times 10^8\,\mathrm{G}$. 
+    
+    In practice, we used the temporal evolution of mass loss from the donor star $\dot{M}_{\rm d}(t)$ provided by \mesa, together with the mass-radius relations described above to calculate the evolution of the NS radius, spin and mass as a function of time. 
+    More specifically, the angular momentum $J_\mathrm{ns}$, was calculated as the discrete summation: 
+    \begin{equation}\label{eq:j_numerical_integration}
+        J_\mathrm{ns}(t_n) = J_\mathrm{ns}(t_0) + \sum_{i=1}^n \Delta t_{i-1} N_{i-1},
+    \end{equation}
+    where the timestep $\Delta t$ was taken from our \mesa simulations, and the torque was evaluated using Eq.~\eqref{eq:torque}. Since the NS is considered old, we initialized the angular momentum as $J_\mathrm{ns}(0) = 0$.
+     At each step, the radius, $R_\mathrm{ns}(M_\mathrm{ns}, J_\mathrm{ns})$, and spin frequency, $f_\mathrm{ns}(M_\mathrm{ns}, J_\mathrm{ns})$, were interpolated from our tabulated EoS data, using a linear radial basis function. 
+    
+     Although the temporal evolution of the NS mass was already provided by \mesa assuming that the latter accretes half of the mass lost by the donor (see Sect.~\ref{sec:ch4:input_params}), we re-evaluated this parameter a posteriori using the torque model described in this section. More specifically, we assumed that mass accretion is limited by the Eddington mass accretion rate, and that the NS accumulates mass only when the fastness parameter is negative. 
+     Due to this treatment, the NS mass evolves slightly differently than the accreting point mass as simulated with \mesa, with the model \textsc{m3} showing the largest difference, showing an increase in the average accretion efficiency of approximately 10\%. 
+    
+    
+    \subsection{Accretion torque fluctuations} \label{sec:ch4:torque_fluctuations}
+    The torque equation, as expressed in Eq.~\eqref{eq:torque}, leads to fluctuations around the equilibrium frequency during the spin equilibrium phase, a phenomenon extensively reported in existing literature \citep[e.g.,][]{1997ApJS..113..367B, 2023arXiv231113303D}. For example, \cite{Tauris:sc2012} highlights how minor variations in the mass-transfer rate can impact the fastness parameter, resulting in rapid oscillations in the direction of the accretion torque. Similarly, \cite{1980ApJ...241L.155E} discuss the occurrence of alternating periods of spin-up and spin-down in pulsating X-ray sources, attributing these phases to variations in the luminosities of disk-fed NSs, which in turn affect the accretion torque. 
+    To assess the impact of these torque fluctuations on our findings, we conducted further analysis using additional \mesa models to explore the sensitivity of spin evolution to the timing resolution. We find that larger time intervals fail to accurately capture the Roche lobe decoupling phase, which interrupts the spin equilibrium. However, the evolution trajectories for spin, mass, and radius remained consistent across both larger and smaller time intervals. Consequently, even when adjusting the time resolution by an order of magnitude, the pre-transition mass is altered by less than 3\%. Therefore, we conclude that our findings are sufficiently robust against naturally occurring torque fluctuations.
+    However, studies of spin variations in numerous X-ray pulsar and accreting MSPs have raised a number of issues regarding the standard accretion model. Observational evidence of unexpected spin reversals and spin-down phases during outbursts in X-ray pulsars \citep[e.g.,][]{1997ApJS..113..367B, 2002ApJ...576L.137G}, or accretion during the propeller phase challenge the conventional model used in this study and call for more detailed investigations on the accretion torque exerted on magnetized NSs.
+    
+    
+    
+    \subsection{Orbital reconfiguration}\label{sec:ch4:orb_reconfig}
+    The evolution of the orbit and the NS spin were followed until the NS reached the phase transition threshold (see Fig.~\ref{fig:mvsr}). It was then assumed that the phase transition occurs instantaneously (i.e., on a time scale that is much shorter than the orbital period). To investigate the impact of the phase transition on the orbit, we used the prescriptions of \cite{1983apj:Hills} and \cite{Tauris:2017apj} in which, the post-transition semi-major axis is given by:
+    \begin{equation}
+        \label{eq:major_axis_posttrans}
+        \frac{a_\mathrm{f}}{a_\mathrm{i}} = \frac{1 - \Delta M/M}{1 - 2\Delta M/M - (w/v_\mathrm{rel})^2 - 2\cos\theta(w/v_\mathrm{rel})},
+    \end{equation}
+    where $\Delta M$ is the instantaneous mass defect  corresponding to the released gravitational binding energy during the phase transition, $M$ is the total mass of the pre-transition system, $v_\mathrm{rel}$ is the relative velocity between the two stars ($v_\mathrm{rel} = \sqrt{GM/a_i}$), $w$ is the magnitude of the kick velocity, and $\theta$ is the kick angle between the kick velocity vector, $\textbf{w}$, and the pre-transition orbital velocity vector.
+    The eccentricity of the post-transition binary system is given by:
+    \begin{equation}
+        \label{eq:eccentricity_posttrans}
+        e = \sqrt{1 + \frac{2E_\mathrm{orb,f}L_\mathrm{orb,f}^2}{\mu_\mathrm{f} G^2 M_\mathrm{f,1}^2 M_\mathrm{f,2}^2}},
+    \end{equation}
+    where $L_\mathrm{orb,f} = a_\mathrm{i} \mu_\mathrm{f} \sqrt{(v_\mathrm{rel} + w\cos\theta)^2 + (w\sin\theta \sin\phi)^2}$ is the post-transition orbital angular momentum, with $\phi$ being the kick angle on the plane perpendicular to the pre-transition velocity vector, $\mu_\mathrm{f}$ is the post-transition reduced mass, and $E_\mathrm{orb,f} = -GM_\mathrm{f,1}M_\mathrm{f,2}/2a_\mathrm{f}$ is the post-transition orbital energy. 
+    
+    To investigate the post-transition orbital configurations for our models, we consider a mass defect of $0.016\msun$ and secondary kicks with  magnitudes $w$, up to $100$ km s$^{-1}$ (see Sect.~\ref{sec:ch4:mass_defect} for justification). Furthermore, we assumed that the kick lacks a preferential orientation, leading us to model the kick angles $\theta$ and $\phi$ as uniformly distributed variables. 
+    
+    
+    
+    \subsection{Mass defect and secondary kicks}\label{sec:ch4:mass_defect}
+    In order to provide a reliable estimate for the mass defect parameter in our simulations, we discuss here the estimates from the literature for the case of a ``catastrophic rearrangement'' due to a mass twin transition. According to \cite{Mishustin:2002xe}, the energy defect in the gravitational field of about $\Delta E \sim  7 \times 10^{51}$ erg can heat the star to an initial temperature of $T\simeq 40$ MeV. 
+    At this temperature, neutrinos are copiously produced and trapped inside the star because their mean free path is much smaller than the size of the star.
+    This leads to the establishment of a neutrino chemical potential $\mu_\nu$ in the direct and inverse $\beta$-decay processes, which establish the $\beta$-equilibrium including neutrinos. In a microscopic model for the quark deconfinement transition, the neutrino chemical potential influences on the critical density of the transition. 
+    Estimating the mass defect, one compares the gravitational masses of NSs in the initial and final states (before and after the transition) at a fixed baryon number. Without considering neutrino trapping, the mass defect for the EoS adopted here was calculated by \cite{2021AN....342..234A} to be in the range of 0.5 - 1.0\% for NS masses between $1.2$ and $1.6\msun$.
+    The mass defect due to the neutrino trapping/untrapping transition, modeled by a drop of the neutrino chemical potential from $150$ MeV to zero, has been found by \cite{Aguilera:2002dh} to be $\Delta M \approx 0.01\msun$. Due to a nonlinear dependence of $\Delta M$ on $\mu_\nu$ one can estimate the mass defect to be doubled for $\mu_\nu\approx 200$ MeV. 
+    
+    In \cite{Aguilera:2002dh} a ``normal'' deconfinement transition without catastrophic rearrangement to a mass twin configuration has been considered. 
+    A scenario of neutrino untrapping in the cooling of a color superconducting quark star from a two-flavor (2SC phase) to a three-flavor (CFL phase) mass-twin configuration has been examined in great detail for $\mu_\nu = 200$ MeV by \cite{Sandin:2007zr}. The untrapping transition led to a mass defect of $0.05\msun$ and the subsequent transition to the twin star with a CFL quark matter core produced a further mass defect of $0.03\msun$.
+    It has recently been shown that the mass defect associated with an accretion-induced thermal star quake may reach $3\%$ of a solar mass \citep{Carlomagno:2024vvr}.
+    
+    \begin{figure}[t!]
+        \centering
+        \includegraphics[width=0.5\columnwidth]{figures/chapter4/mass_vs_energy.png}
+        \caption{Baryonic mass ($M_b$) and gravitational mass ($M_g$) as functions of the central energy density ($\varepsilon_c$) for a fixed angular momentum $J$. The solid black line represents the gravitational mass, while the black dashed line represents the baryonic mass. Vertical gray lines mark the central energy densities at the onset ($\varepsilon_c = 275\,\text{MeV/fm}^3$) and completion ($\varepsilon_c = 595\,\text{MeV/fm}^3$) of the phase transition (PT). Black dotted lines and the blue-shaded region denote unstable configurations.
+        The inset zooms into the PT region, illustrating the mass defect ($\Delta M_g$) of $0.016\msun$ associated with the transition from hadronic to quark matter. The horizontal gray lines indicate constant values of $M_b$ and $M_g$ during the PT. The star marker denotes the birth mass of the twin star configuration at $M_g = 1.499\msun$.}
+        \label{fig:mvse}
+    \end{figure}
+    
+    Figure~\ref{fig:mvse} shows the baryonic mass (dot-dashed line) and gravitational mass (solid line) as functions of the central energy density for a fixed angular momentum, $J/J_0 = 0.3$. From this plot, the mass defect expected from a phase transition from hadronic to quark matter can be constructed by analyzing changes in these mass functions and identifying the critical points of the transition. By locating the central energy density at the onset of the transition and noting that the baryonic mass remains constant, one can determine the energy jump and identify the central energy density marking the completion of the transition. Tracing the corresponding gravitational mass at these points allowed us to compare the gravitational mass before and after the transition. The difference between these values represents the mass defect, which quantifies the mass converted into energy during the phase transition.
+    
+    Our present EoS in the form of a multipolytrope model is too simple to allow for a more precise quantitative estimate of the mass defect  for a realistic dense-matter model with neutrino untrapping and (three-flavor) color superconductivity. This task is left to separate work.
+    In any case, the estimates provided in this subsection justify a variation of the mass defect parameter in a range $0.1\%$ up to $5\%$ assumed in \cite{Jiang:apj15} \citep[see also][]{Jiang:raa2021}.
+    
+    Besides orbital rearrangement due to a mass defect, we also consider the possibility of a secondary kick during the transition \citep{Hobbs:2005yx,Bombaci:2004nu}. 
+    In the context of this work, such a secondary kick could arise due to anisotropic mass loss. 
+    For the range of mass defects considered here, anisotropic emission could give rise to secondary kicks with magnitudes of up to $\Delta M c / M _{\rm NS} \simeq 20,000$\,km\,s$^{-1}$. 
+    
+    One possible mechanism that can give rise to such anisotropies is the channeling of the neutrino emission along a preferential axis due to parity violation in the strong internal magnetic field of the NS  \citep[see][for recent examples with typical B-field strengths of $B\sim 10^{12}$ Gauss]{Berdermann:2006rk,Kaminski:2014jda,Fukushima:2024cpg}. 
+    
+    The electromagnetic rocket effect which was introduced in \cite{1975ApJ...201..447H} and has recently been revisited by \cite{Agalianou:2023lvv} is based on a displacement of a similarly strong dipolar magnetic field from the center of the NS and its sufficiently fast rotation.
+    As it was discussed in \cite{Agalianou:2023lvv}, observational evidence provided by the \texttt{NICER} (Neutron star Interior Composition ExploreR) X-ray observatory, particularly from investigating the location of hot spots on the surfaces of MSPs \citep{Miller:2019cac, Riley:2019yda}, indicates that the magnetic field diverges from a centered dipole configuration.
+     Based on the results for PSR J0030+0451, \cite{Kalapotharakos:2020rmz} estimated the magnetic field structure and found an off-centered magnetic field consisting of dipole and quadruple components. 
+    
+    Since both the neutrino and electromagnetic rocket mechanisms require strong magnetic fields of at least the young pulsar field strength $B\sim 10^{12}$ Gauss, such effects seem at first glance unlikely for ``old'' MSPs with low magnetic fields of
+    $B\sim 10^{8}$ Gauss.
+    However, in systems with mass accretion from a companion star like in the case of LMXBs, the argument of \cite{1989ApJ...346..847C} can be applied that the strong magnetic field of the interior gets buried in the crust of the pulsar \citep[e.g.,][and references therein]{Bhattacharya:1991pre, 2001ApJ...557..958C, 10.1111/j.1365-2966.2004.07397.x}.
+    Thus, a small surface magnetic field is compatible with a super-strong magnetic field in the interior. 
+    Due to such a magnetic field profile, kick velocities of a few dozens of km s$^{-1}$ can be produced in MSPs, as it has been demonstrated by \cite{Agalianou:2023lvv} by applying the electromagnetic rocket effect to the case of PSR J0030+0451.
+    
+    A gravitational recoil effect arising from the anisotropic redistribution of matter following the phase transition, could also produce a secondary kick. This effect is independent of the magnetic field strength, making it a viable secondary kick mechanism for pulsars across a wide range of magnetic field intensities, including old MSPs with weak magnetic fields.
+    Considering the above, we include a possible secondary kick mechanism into our study by parametrically varying the kick velocity parameter in the range $w=0, \dots, 100$ km s$^{-1}$.
+
+    \newpage
+    \section{Results} \label{sec:ch4:results}
+    \subsection{Mass and spin accretion} \label{sec:ch4:pretrans_evolution}
+    Figure~\ref{fig:lmxb_grid} illustrates the evolution of our binary models from approximately the onset of the LMXB phase. The top and middle panels showcase that, due to their comparable initial 
+    setups,  models \textsc{m1} and \textsc{m2} share similar characteristics. 
+    Initially, the donor star in each model spends most of its life in the main sequence. After 
+    approximately $12.2\,\text{Gyr}$, it reaches the tip of the red giant branch and it fills its Roche 
+    lobe, initiating a mass flow towards the NS with a mass-transfer rate of $\mdot \simeq 
+    10^{-9}\mdotsun$. As detailed in Sect.~\ref{sec:ch4:methods}, the interaction of the accreted 
+    matter with the magnetic field of the NS generates an accretion torque \citep{Tauris:sc2012}. We find that the exerted torque significantly decreases the NS spin to nearly 
+    $1.1\,\rm{ms}$ shortly after the RLOF is initiated.
+    Over the next circa $56\,\rm{Myr}$ the mass-transfer rate gradually decreases, allowing the spin of the NS to approach a stable equilibrium period, exhibiting only minor fluctuations due to rapid 
+    torque reversals. 
+    At this point, the binary orbit widens to a period of $P_\mathrm{orb} \simeq 16.5\,\mathrm{d}$ with the donor star separating from its Roche lobe after shedding nearly half of its total mass. In contrast, the NS has gained approximately $0.2\msun$.
+    As the mass-transfer rate decreases, so does the ram pressure, allowing the magnetospheric boundary to extend outwards. Initially, during the early stages of Roche lobe decoupling, the NS spin 
+    decreases while remaining in equilibrium. However, the reduction in the mass-transfer rate over time disrupts the equilibrium, allowing the NS to enter a relatively brief phase, lasting 
+    approximately $28\,\rm{Myr}$, where its rotation rate further decreases. Eventually, the pulsar's spin relaxes to an average value of $\langle P_{\rm ns} \rangle = 2.8\,\rm{ms}$. Following this, the donor star refills its Roche lobe, initiating a second episode of mass transfer that lasts for approximately another $\simeq 63\,\text{Myr}$. In this stage, the NS mass increases, accompanied by a steady contraction in radius, ultimately reaching approximate values of $1.3\msun$ and 
+    $14\,\text{km}$ respectively, for model \textsc{m1}. Simultaneously, the donor star transitions into a low-mass helium white dwarf with $M_d \simeq 0.29\msun$.
+
+    \begin{figure*}[th]
+        \centering
+        \includegraphics[width=\columnwidth,angle=0]{figures/chapter4/lmxb_grid.pdf}
+        \caption{Summary of the evolution of the \textsc{m1} (top panel), \textsc{m2} (middle panel), and \textsc{m3} (bottom panel) models. The gray hashed region represents the posttransition evolution.}
+        \label{fig:lmxb_grid}
+    \end{figure*}   
+    
+    In contrast, towards the end of this second mass-transfer phase, model \textsc{m2} surpasses the maximum mass that can be supported by pure hadronic matter. This event is visually represented in Fig.~\ref{fig:mvsr} when the green curve intersects the phase transition boundary. At this point, the NS mass is approximately $1.5\msun$, and it has a radius of about $14.6\,\mathrm{km}$, while the orbital period of the binary system is $45.2\,\mathrm{d}$. To model the NS's core transitioning from hadronic to quark matter due to accretion, we assume a minor loss in gravitational mass of $\Delta M = 0.016\msun$. This assumption requires the core's instantaneous collapse, with both angular momentum ($J$) and baryonic mass ($M_b$) conserved, yielding a denser object, now with a reduced radius of approximately $13.7\,\mathrm{km}$. This transition is indicated by the black arrow in Fig.~\ref{fig:mvsr}, where its position on the third-family branch for compact objects is marked with a green star. For model \textsc{m2}, the twin star is 6.2\% more compact than its purely hadronic counterpart.
+    
+    The structure of the donor star at the time of the phase transition is shown on the left panel of Fig.~\ref{fig:donor_plots}. The bottom half shows the helium core mass which is approximately equal to $0.27\msun$, and the perceived color of the star (as seen by an observer) based on its surface effective temperature. The inline plot illustrates the evolution of the donor star on the Hertzsprung-Russell (HR) diagram with the yellow circle marking its current position. The top half depicts the energy generation that takes place on a thin layer above the helium core with the color bar indicating the energy generation rate divided by the losses due to neutrino emission.
+    The dominant mixing processes can also be discerned; at this point, the donor star has a fully convective envelope with a mass of approximately $0.1\msun$ and a  radius of $\sim 17\rsun$. 
+    
+    \begin{figure*}[th!]
+        \centering
+        \includegraphics[width=0.45\textwidth]{figures/chapter4/donor_m2_enegy_vs_mixing.png}
+        \hspace{1cm}
+        \includegraphics[width=0.45\textwidth]{figures/chapter4/donor_m3_enegy_vs_mixing.png}
+        \caption{The top half of each figure corresponds to energy generation and interior mixing of the donor star at the time of the phase transition for models \textsc{m2} (left) and \textsc{m3} (right). The bottom half shows the helium core mass and the color of the star based on its surface temperature. The yellow circle in the inline plot shows their position on a standard Hertzsprung-Russell diagram where the x-axis is the logarithm of effective temperature and the y-axis is the logarithm of surface luminosity. Dotted areas depict regions where convection is the dominant mixing mechanism.}
+        \label{fig:donor_plots}
+    \end{figure*}
+    
+    Binary systems harboring rapidly rotating NSs in wider orbits, such as our \textsc{m3} model, 
+    may experience a delayed accretion-induced phase transition as a result of the spin-down phase
+    following the cessation of mass transfer (see the blue curve in Fig.~\ref{fig:mvsr}). Owing to the 
+    larger initial orbital period, the model \textsc{m3} experiences a single mass-transfer episode 
+    due to a reduced gravitational influence from the neutron star, allowing the donor star to maintain a more stable evolutionary path. As a consequence, the donor star does not expand significantly until it reaches a later stage in its evolution, where it fills its Roche lobe only once.
+    The mass transfer commences approximately $104\,\mathrm{Myr}$ later compared to the first RLOF for models \textsc{m1} and \textsc{m2} (bottom panel in Fig.~\ref{fig:lmxb_grid}). The duration of the
+    mass transfer is close to $33\,\mathrm{Myr}$ and, at the end of it, the donor and the NS possess a mass of approximately $0.33\msun$ and $1.56\msun$, respectively. Subsequent to Roche lobe detachment, the NS spin rate decreases for approximately $117\,\mathrm{kyr}$ at which point becomes unstable and undergoes a phase transition. Similarly to model \textsc{m2}, its trajectory and final position on the third-family branch are marked with a black arrow and a blue star respectively. The resulting twin star is $\sim 8.4\%$ more compact than the initial NS, settling on a radius of approximately $13.9$ km. 
+    
+    The structure of the donor star at the time of the phase transition can be seen in Fig.~\ref{fig:donor_plots}. Although similar to the structure of the donor star in model \textsc{m2}, the envelope mass is lower ($\sim 0.04\msun$) and its total radius almost twice that of model \textsc{m2} ($\sim 34\rsun$) as it enters the asymptotic giant branch (AGB) phase.
+    
+    \begin{figure*}[t]
+        \centering
+        \includegraphics[width=0.45\textwidth]{figures/chapter4/mc_sim_m2.png}
+        \hspace{1cm}
+        \includegraphics[width=0.45\textwidth]{figures/chapter4/mc_sim_m3.png}
+        \caption{Monte-Carlo simulation for the post-transition distribution of orbital parameters corresponding to models \textsc{m2} (left) and \textsc{m3} (right). A transition-triggered mass loss of $\Delta M = 0.016\msun$ and a fixed magnitude kick velocity were assumed. The kick orientation was randomly sampled from a uniform distribution.}
+        \label{fig:mc_sim}
+    \end{figure*}
+    
+    
+    
+    \subsection{Orbital reconfiguration and post-transition evolution} \label{sec:ch4:posttrans_evolution}
+    Figure~\ref{fig:mc_sim} illustrates the post-transition binary system configurations for our progenitor models \textsc{m2} and \textsc{m3} for kick velocities with fixed magnitudes and random orientations imparted on the compact star. 
+    For both progenitor models \textsc{m2} and \textsc{m3},  even in the absence of a kick ($w=0\,\mathrm{km\,s^{-1}}$; depicted by the black markers), the binary systems exhibit an increase of their eccentricity that is directly proportional to the mass defect during the mass transition, $e = \Delta M / M \simeq 7\times10^{-2}$, for $\Delta M = 0.016\msun$. 
+    For $\textsc{m3}$, these orbital changes are preserved, as the system does not experience additional mass transfer after the phase transition, and thus the tidal forces are negligible \citep{Freire:mnras14, antoniadis:apjl14, Jiang:apj15}. 
+    When factoring in a secondary kick mechanism, as the kick velocity increases, there is a progressively larger spread in the distribution of both eccentricity and binary separation, leading to a more diverse range of possible post-kick orbits. 
+    For a kick of certain magnitude, wider systems such as \textsc{m3} are more likely to produce more eccentric systems or eject the compact star, resulting in the formation of an eMSP or iMSP, respectively.  
+    
+    Evolutionary calculations following the phase transition, provided by \mesa, in model \textsc{m2} may be unreliable as they do not take into account the effect of the orbital reconfiguration on the mass transfer. In contrast, the simulation for model \textsc{m3}, where the phase transition occurs during Roche lobe decoupling, remains generally reliable. However, it is important to note that the final orbital period in model \textsc{m3} may still be inaccurate due to the limitations in capturing the orbital reconfiguration.
+    In addition, the radius of the hybrid star decreases as a result of the phase transition. Due to the conservation of angular momentum, this reduction leads to a 15\% increase in the spin frequency of the compact star. 
+    Moreover, because of the magnetic flux conservation during the phase transition, the surface magnetic field of the hybrid star also increases. The new magnetic field strength can be calculated as:
+    \begin{equation}
+        B_\mathrm{hybrid} = B_\mathrm{ns} \left(\frac{R_\mathrm{ns}}{R_\mathrm{hybrid}}\right)^2 \simeq 1.14 \times 10^8\,\mathrm{G},
+    \end{equation}
+    where $B_\mathrm{ns}$, $R_\mathrm{ns}$ are the magnetic field and the radius of the NS respectively before the transition, and $R_\mathrm{hybrid}$ is the radius of the hybrid star after the transition.
+    
+    For \textsc{m2} where the phase transition takes place during the LMXB phase, the magnetospheric radius outgrows the corotation radius (i.e., the fastness parameter becomes greater than one) forcing the hybrid star to enter a propeller phase and inhibit further accretion. Hence, it is conceivable that the NS mass stops increasing, in spite of the ongoing mass transfer. Moreover, if the magnetospheric radius outgrows the light cylinder radius, the magnetic field is strong enough to prevent accretion altogether. This may lead to the formation of a binary system that consists of a rotation-powered pulsar and an evolved ``spider''-like companion \cite[see][and references therein]{Strader:2019,Papitto:2022}.  
+    
+    Although we did not perform detailed calculations with \mesa for the post-transition evolution of models \textsc{m2} and \textsc{m3}, we used the same accretion model to compute the mass, radius, and spin evolution of the hybrid stars (dash double dotted lines in Fig.~\ref{fig:lmxb_grid}). We find that model \textsc{m2} continues to go through sporadic episodes of mass accretion reaching a final mass of approximately $1.51\msun$. 
+    
+    In contrast, model \textsc{m3}, which had already decoupled from its Roche lobe prior to the strong phase transition, retained its post-transition mass of approximately $1.55\msun$. Following the cessation of  mass transfer, both models are further compactified as a result of the spin-down and angular momentum loss (see also Fig.~\ref{fig:mvsr}). By the end of the evolution, the hybrid star of model \textsc{m2} has a radius of approximately $12.4$ km compared to its pure hadronic counterpart with a radius of $14.6$ km at the time of transition. Similarly, in model \textsc{m3}, the hybrid star has a radius of $12.2$ km whereas the pure hadronic star has a radius of $15.2$ km.
+    
+    
+    \section{Discussion} \label{sec:ch4:summary}
+    
+    \subsection{Summary}
+    In this work, we investigated the potential role of rapid first-order phase transitions from ordinary baryonic to quark matter in the evolution of LMXB and post-LMXB systems. 
+    We performed detailed binary evolution modeling using \mesa and Monte Carlo simulations to explore the influence of mass transfer, accretion- and spin-down-induced phase transitions, and secondary kick mechanisms on the formation and evolution of these systems. Our results demonstrate that:
+    \begin{enumerate}
+        \item twin stars may form as a result of mass transfer in LMXBs; 
+        \item in systems with sufficiently large orbital periods, strong phase transitions may occur after the LMXB phase, when the NS is a rotation-powered MSP. In this case, the eccentricity of the resulting system can be several orders of magnitude larger than what is expected for recycled MSPs \citep{Phinney:1992}; 
+        \item if the transition is accompanied by a secondary kick (see Sect.~\ref{sec:ch4:orb_reconfig} for justification), then a considerable number of systems may  disrupt, even if the kick magnitude is moderate. Therefore, this mechanism may be a viable formation path for isolated MSPs;
+        \item secondary kicks also provide a mechanism for producing binary MSPs with very long orbital periods ($>1000$\,d) from systems that are initially more compact. 
+    \end{enumerate}
+    
+    
+    
+    \subsection{Formation of isolated and eccentric millisecond pulsars}\label{sec:ch4:msps}
+    
+    As discussed in Sect.~\ref{sec:ch4:posttrans_evolution},  the minimum post-transition eccentricity is directly related to the mass defect, $\Delta M$. The EoS model adopted in this work leads to a mass defect of $\Delta M = 0.016\msun$ which in turn produces eccentricities  of $e\leq\Delta M / M \simeq 7 \times 10^{-2}$. 
+    
+    For the \textsc{m2} model, this residual eccentricity would rapidly dissipate as a result of tidal forces acting on the envelope of the donor star \citep{1977A&A....57..383Z}.  
+    In contrast, for our \textsc{m3} model, the strong phase transition occurs during the spin-down phase (i.e., after the LMXB phase) when the donor star already evolves towards the WD cooling track. For this reason, the resulting orbital changes would persist \citep{Freire:mnras14,antoniadis:apjl14}, providing a potential mechanism for explaining eMSPs.  Although this particular model has an orbital period that is too large compared to those of known eMSPs with WD companions, it shows that strong phase transitions provide a possible formation mechanism for eMSPs.
+    
+    Because high-precision pulsar timing can constrain extremely small eccentricities ($\leq 10^{-8}$), even models with no neutrino trapping and small mass defects which would produce smaller deviation from the \cite{Phinney:1992} relation that could potentially be observed. This work suggests that the  MSP eccentricity distribution, especially in binary MSPs with long orbital periods,  can be used to constrain  not only stellar physics \citep{Phinney:1992, antoniadis:apjl14}, but also  nuclear matter models.   
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.45\textwidth]{figures/chapter4/emsp_vs_imsp.pdf}
+        \caption{Expected fraction of eMSPs (black curve, left y-axis) and iMSPs (red and blue curves, right y-axis) as a function of kick velocity, assuming a mass defect of $\Delta M = 0.016\msun$. For iMSPs, we consider those systems with eccentricities greater than unity. Model \textsc{m2} cannot create eccentric systems due to rapid re-circularization of the orbit.}
+        \label{fig:emsps_vs_imsps}
+    \end{figure}
+    
+    When considering secondary kick mechanisms, higher kick velocities produce a broader distribution of eccentricities and orbital periods, suggesting a diverse range of possible post-transition configurations. Figures~\ref{fig:mc_sim} and \ref{fig:emsps_vs_imsps} illustrate that both \textsc{m2} and \textsc{m3} models have a high probability of producing isolated MSPs or binary MSPs with extremely long orbital periods. More specifically, the red and blue curves in Fig.~\ref{fig:emsps_vs_imsps} (representing iMSPs from models \textsc{m2} and \textsc{m3}, respectively) illustrate the expected fraction of binary systems that, due to the imparted kick velocities, achieve eccentricities greater than unity—indicating the complete disruption of the binary and the formation of an iMSP. As the kick velocity increases, both curves show that a larger fraction of systems become unbound. Notably, the red curve, corresponding to model \textsc{m3}, exhibits a steeper rise in the fraction of isolated MSPs as the kick velocity increases, suggesting that model \textsc{m3} is more sensitive to these velocity changes compared to model \textsc{m2}. In contrast, the black curve on the left y-axis, representing the fraction of eccentric MSPs in model \textsc{m3}, shows an inverse relationship: as the kick velocity increases, the fraction of eMSPs declines. This suggests that higher kick velocities are more likely to disrupt the binary systems entirely, thereby preventing the formation of eccentric MSPs.
+    
+    In our study, we consider three different mechanisms that could introduce such a kick: the neutrino rocket effect, the electromagnetic rocket effect, and the gravitational wave recoil scenario. In the latter case, even if a small percentage ($\sim 0.5\%$) of the converted energy is emitted in the form of gravitational waves, it can account for the desired kick velocities. However, a fully relativistic approach in modeling the GW emission is necessary in order to accurately quantify the results of such a recoil.
+    Nevertheless, the possibility that these three mechanisms could coexist, or sequentially influence the binary during various evolutionary stages is intriguing, as each contributes differently to the system dynamics.  
+    Future pulsar surveys which will be more sensitive to these latter systems  will therefore play an important role in constraining the potential birth signatures of twin stars \citep{watts:2015, antoniadis:2021}.
+    
+
+    
+
 
 
 \end{document}
